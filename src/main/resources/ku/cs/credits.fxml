@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.CreditsController">
+   <children>
+      <Button fx:id="handleHomeButton" layoutX="45.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleHomeButton" text="home" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="504.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="504.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="178.0" layoutY="283.0" text="StudentNo.1" />
+   </children>
+</AnchorPane>

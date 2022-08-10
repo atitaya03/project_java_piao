@@ -5,5 +5,7 @@ module cs.ku {
 
     opens ku.cs to javafx.fxml;
     exports ku.cs;
+    exports ku.cs.home.controllers;
+    opens ku.cs.home.controllers to javafx.fxml;
 
 }
