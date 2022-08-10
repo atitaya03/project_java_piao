@@ -7,21 +7,21 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
    <children>
-      <Button layoutX="334.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleStudentButton" text="Students">
+      <Button layoutX="336.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleStudentButton" text="Students">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button layoutX="334.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="47.0" prefWidth="128.0" text="Staff">
+      <Button layoutX="336.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="47.0" prefWidth="128.0" text="Staff">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button layoutX="373.0" layoutY="518.0" mnemonicParsing="false" onAction="#handleCreditsButton" text="credits" />
-      <Button layoutX="709.0" layoutY="518.0" mnemonicParsing="false" text="admin" />
-      <Label layoutX="283.0" layoutY="79.0" text="Welcome to Thailand" textFill="#a91b1b">
+      <Button layoutX="372.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleCreditsButton" text="credits" />
+      <Button layoutX="709.0" layoutY="537.0" mnemonicParsing="false" text="admin" />
+      <Label layoutX="207.0" layoutY="142.0" text="Welcome to Application !" textFill="#048607">
          <font>
-            <Font size="25.0" />
+            <Font size="37.0" />
          </font>
       </Label>
    </children>
