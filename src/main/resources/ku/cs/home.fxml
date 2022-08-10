@@ -7,18 +7,18 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
    <children>
-      <Button layoutX="334.0" layoutY="154.0" mnemonicParsing="false" text="Students">
+      <Button layoutX="334.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleStudentButton" text="Students">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button layoutX="358.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleStaffButton" text="Staff">
+      <Button layoutX="334.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="47.0" prefWidth="128.0" text="Staff">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button layoutX="374.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleCreditsButton" text="credits" />
-      <Button layoutX="734.0" layoutY="531.0" mnemonicParsing="false" text="admin" />
+      <Button layoutX="373.0" layoutY="518.0" mnemonicParsing="false" onAction="#handleCreditsButton" text="credits" />
+      <Button layoutX="709.0" layoutY="518.0" mnemonicParsing="false" text="admin" />
       <Label layoutX="283.0" layoutY="79.0" text="Welcome to Thailand" textFill="#a91b1b">
          <font>
             <Font size="25.0" />

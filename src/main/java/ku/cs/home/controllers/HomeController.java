@@ -12,7 +12,7 @@ public class HomeController {
         try {
             com.github.saacsos.FXRouter.goTo("credits");
         } catch (IOException e) {
-            System.err.println("ไปที7หน้า credits ไม่ได้");
+            System.err.println("ไปที่หน้า credits ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
@@ -20,9 +20,19 @@ public class HomeController {
         try {
             com.github.saacsos.FXRouter.goTo("staff");
         } catch (IOException e) {
-            System.err.println("ไปที7หน้า staff ไม่ได้");
+            System.err.println("ไปที่หน้า staff ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
+    public void handleStudentButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("student");
+        } catch (IOException e) {
+            System.err.println("ไปที7หน้า student ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
+
 
 }

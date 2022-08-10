@@ -20,6 +20,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("home", packageStr+"home.fxml");
         FXRouter.when("credits", packageStr+"credits.fxml");
         FXRouter.when("staff", packageStr+"staff.fxml");
+        FXRouter.when("student", packageStr+"student.fxml");
     }
     public static void main(String[] args) {
         launch();

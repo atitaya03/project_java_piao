@@ -20,10 +20,15 @@ public class CreditsController {
 
     @FXML private ImageView nokkokImage;
     @FXML private ImageView atitayaImage;
+
+    @FXML private ImageView lemonImage;
+
     public void initialize(){
         String url = getClass().getResource("/ku/cs/images/nokkok.jpg").toExternalForm();
         nokkokImage.setImage(new Image(url));
         String url1 = getClass().getResource("/ku/cs/images/atitaya.jpg").toExternalForm();
         atitayaImage.setImage(new Image(url1));
+        String url2 = getClass().getResource("/ku/cs/images/lemon.jpg").toExternalForm();
+        lemonImage.setImage(new Image(url2));
     }
 }

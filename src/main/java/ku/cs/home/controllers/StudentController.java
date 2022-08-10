@@ -5,7 +5,8 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class StaffController {
+public class StudentController {
+
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
         try {
