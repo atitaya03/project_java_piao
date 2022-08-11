@@ -22,6 +22,7 @@ public class CreditsController {
     @FXML private ImageView atitayaImage;
 
     @FXML private ImageView lemonImage;
+    @FXML private ImageView chanittaImage;
 
     public void initialize(){
         String url = getClass().getResource("/ku/cs/images/nokkok.jpg").toExternalForm();
@@ -30,5 +31,7 @@ public class CreditsController {
         atitayaImage.setImage(new Image(url1));
         String url2 = getClass().getResource("/ku/cs/images/lemon.jpg").toExternalForm();
         lemonImage.setImage(new Image(url2));
+        String url3 = getClass().getResource("/ku/cs/images/chanitta.jpg").toExternalForm();
+        chanittaImage.setImage(new Image(url3));
     }
 }

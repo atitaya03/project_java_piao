@@ -18,7 +18,7 @@
          </font>
       </Button>
       <Button layoutX="372.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleCreditsButton" text="credits" />
-      <Button layoutX="709.0" layoutY="537.0" mnemonicParsing="false" text="admin" />
+      <Button layoutX="709.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleAdminButton" text="admin" />
       <Label layoutX="207.0" layoutY="142.0" text="Welcome to Application !" textFill="#048607">
          <font>
             <Font size="37.0" />

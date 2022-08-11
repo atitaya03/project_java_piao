@@ -11,9 +11,10 @@
       <ImageView fx:id="nokkokImage" fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="atitayaImage" fitHeight="150.0" fitWidth="200.0" layoutX="504.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="lemonImage" fitHeight="150.0" fitWidth="200.0" layoutX="83.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="504.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chanittaImage" fitHeight="150.0" fitWidth="200.0" layoutX="484.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="162.0" layoutY="264.0" text="Nokkok" />
-      <Label layoutX="565.0" layoutY="273.0" text="Atitaya" />
+      <Label layoutX="565.0" layoutY="264.0" text="Atitaya" />
       <Label layoutX="166.0" layoutY="487.0" text="lemon" />
+      <Label layoutX="569.0" layoutY="487.0" text="Chanitta" />
    </children>
 </AnchorPane>

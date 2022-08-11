@@ -34,5 +34,14 @@ public class HomeController {
         }
     }
 
+    public void handleAdminButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("admin");
+        } catch (IOException e) {
+            System.err.println("ไปที7หน้า admin ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
+
 
 }
