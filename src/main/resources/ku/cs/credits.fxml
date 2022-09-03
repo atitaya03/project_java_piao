@@ -4,17 +4,65 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.CreditsController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #c0f4de;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.CreditsController">
    <children>
-      <Button fx:id="handleHomeButton" layoutX="45.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleHomeButton" text="home" />
-      <ImageView fx:id="nokkokImage" fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="atitayaImage" fitHeight="150.0" fitWidth="200.0" layoutX="504.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="lemonImage" fitHeight="150.0" fitWidth="200.0" layoutX="83.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chanittaImage" fitHeight="150.0" fitWidth="200.0" layoutX="484.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="162.0" layoutY="264.0" text="Nokkok" />
-      <Label layoutX="565.0" layoutY="264.0" text="Atitaya" />
-      <Label layoutX="166.0" layoutY="487.0" text="lemon" />
-      <Label layoutX="569.0" layoutY="487.0" text="Chanitta" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e6957" height="265.0" layoutX="449.0" layoutY="18.0" stroke="#c0f4de" strokeType="INSIDE" width="284.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e6957" height="265.0" layoutX="449.0" layoutY="300.0" stroke="#c0f4de" strokeType="INSIDE" width="284.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="475.0" layoutY="39.0" stroke="WHITE" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="475.0" layoutY="321.0" stroke="WHITE" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e6957" height="265.0" layoutX="58.0" layoutY="18.0" stroke="#c0f4de" strokeType="INSIDE" width="284.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="84.0" layoutY="39.0" stroke="WHITE" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e6957" height="265.0" layoutX="59.0" layoutY="300.0" stroke="#c0f4de" strokeType="INSIDE" width="284.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="85.0" layoutY="321.0" stroke="WHITE" strokeType="INSIDE" width="233.0" />
+      <Button fx:id="handleHomeButton" layoutX="733.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fffefe">
+         <font>
+            <Font name="Eras Demi ITC" size="12.0" />
+         </font></Button>
+      <ImageView fx:id="nokkokImage" fitHeight="131.0" fitWidth="150.0" layoutX="124.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="atitayaImage" fitHeight="131.0" fitWidth="150.0" layoutX="515.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="lemonImage" fitHeight="131.0" fitWidth="150.0" layoutX="124.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chanittaImage" fitHeight="131.0" fitWidth="150.0" layoutX="517.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="553.0" layoutY="500.0" text="6410401035" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font></Label>
+      <Label layoutX="509.0" layoutY="520.0" text="Chanitta Leewongcharoen" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="218.0" text="6410406771" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="237.0" text="Punnatud Duengkae" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="218.0" text="6410406924" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="541.0" layoutY="237.0" text="Atitaya Promlers" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="162.0" layoutY="500.0" text="6410406703" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="126.0" layoutY="520.0" text="Napasamon Siribanjong" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
