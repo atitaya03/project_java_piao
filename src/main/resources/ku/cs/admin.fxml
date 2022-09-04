@@ -25,10 +25,11 @@
           <Tab text="รายงานผู้ใช้ไม่เหมาะสม" />
         </tabs>
       </TabPane>
-      <Label layoutX="432.0" layoutY="251.0" text="Username : " />
-      <Label layoutX="432.0" layoutY="283.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" />
+      <Label layoutX="435.0" layoutY="257.0" text="Username : " />
+      <Label layoutX="435.0" layoutY="313.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" />
       <Label layoutX="66.0" layoutY="32.0" text="Admin" />
-      <Button layoutX="683.0" layoutY="28.0" mnemonicParsing="false" text="ออกจากระบบ" />
-      <Button layoutX="432.0" layoutY="321.0" mnemonicParsing="false" text="แบน" />
+      <Button layoutX="683.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ออกจากระบบ" />
+      <Button layoutX="432.0" layoutY="367.0" mnemonicParsing="false" text="แบน" />
+      <Label layoutX="435.0" layoutY="283.0" text="ประเภทผู้ใช้ :" />
    </children>
 </AnchorPane>

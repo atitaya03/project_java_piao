@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #3E6957;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #016b68;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
    <children>
       <Pane layoutX="435.0" layoutY="52.0" prefHeight="494.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;">
          <children>
@@ -18,7 +18,7 @@
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
-            <TextField layoutX="44.0" layoutY="234.0" prefHeight="32.0" prefWidth="173.0" promptText="password">
+            <TextField layoutX="44.0" layoutY="234.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
@@ -38,8 +38,8 @@
                   <Font name="Eras Light ITC" size="13.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e9a63" height="3.0" layoutX="55.0" layoutY="149.0" stroke="#0e9a63" strokeType="INSIDE" width="142.0" />
-            <Label layoutX="56.0" layoutY="152.0" prefHeight="23.0" prefWidth="150.0" text="Sign in to your account" textFill="#355e35">
+            <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#196140" height="3.0" layoutX="55.0" layoutY="149.0" stroke="#196140" strokeType="INSIDE" width="142.0" />
+            <Label layoutX="56.0" layoutY="152.0" prefHeight="23.0" prefWidth="150.0" text="Sign in to your account" textFill="#196140">
                <font>
                   <Font name="Eras Demi ITC" size="13.0" />
                </font>
@@ -51,11 +51,11 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="80.0" layoutY="52.0" prefHeight="494.0" prefWidth="354.0" style="-fx-background-color: #6CB596;">
+      <Pane layoutX="80.0" layoutY="52.0" prefHeight="494.0" prefWidth="362.0" style="-fx-background-color: #f4f4f3;">
          <children>
             <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="image1" fitHeight="222.0" fitWidth="288.0" layoutX="39.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="14.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="16.0" prefWidth="73.0" style="-fx-background-color: #ADE9B9;" text="CREDITS" textFill="WHITE">
+            <ImageView fx:id="image1" fitHeight="222.0" fitWidth="288.0" layoutX="33.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="31.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="16.0" prefWidth="73.0" style="-fx-background-color: #016b68 #016b68;" text="CREDITS" textFill="WHITE">
                <font>
                   <Font name="Eras Demi ITC" size="12.0" />
                </font>
