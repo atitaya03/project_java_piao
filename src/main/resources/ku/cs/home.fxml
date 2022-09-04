@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #016b68;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #016b56;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HomeController">
    <children>
       <Pane layoutX="435.0" layoutY="52.0" prefHeight="494.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;">
          <children>
@@ -23,7 +23,7 @@
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
-            <Button layoutX="42.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #52CF9E;" text="SIGN IN" textFill="#fff9f9">
+            <Button layoutX="42.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77#03bd77;" text="SIGN IN" textFill="#fff9f9">
                <font>
                   <Font name="Eras Demi ITC" size="12.0" />
                </font>
@@ -55,7 +55,7 @@
          <children>
             <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image1" fitHeight="222.0" fitWidth="288.0" layoutX="33.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="31.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="16.0" prefWidth="73.0" style="-fx-background-color: #016b68 #016b68;" text="CREDITS" textFill="WHITE">
+            <Button layoutX="31.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="16.0" prefWidth="63.0" style="-fx-background-color: #016b68 #016b68;" text="CREDITS" textFill="WHITE">
                <font>
                   <Font name="Eras Demi ITC" size="12.0" />
                </font>
