@@ -25,4 +25,14 @@ public class AdminController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
+    @FXML
+    public void handleStaffSignUpButton(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("staffsignup");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
 }
