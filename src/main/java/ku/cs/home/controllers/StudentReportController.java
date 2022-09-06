@@ -8,7 +8,7 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
-public class StudentController {
+public class StudentReportController {
 
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
@@ -46,16 +46,14 @@ public class StudentController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
-    @FXML
-    private Circle circle;
-    public void initialize () {
+        @FXML
+        private Circle circle;
+        public void initialize () {
 
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-        circle.setFill(new ImagePattern(new Image(url)));
-    }
+            String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
+            circle.setFill(new ImagePattern(new Image(url)));
+        }
 
 }
-
-
 
 

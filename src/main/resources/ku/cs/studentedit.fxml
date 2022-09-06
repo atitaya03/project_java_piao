@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentEditController">
+    <children>
+        <Button layoutX="738.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleHomeButton" text="home">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Pane prefHeight="600.0" prefWidth="212.0" style="-fx-background-color: #016b56 #016b56;">
+            <children>
+                <Button layoutX="138.0" layoutY="559.0" mnemonicParsing="false" style="-fx-background-color: #ffeaea;" text="logout">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Label layoutX="51.0" layoutY="140.0" text="Name: Billkin" textFill="WHITE">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Button layoutX="71.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleStudentEditButton" style="-fx-background-color: #eae9b9;" text="edit profile" />
+                <Button layoutY="234.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="66.0" prefWidth="212.0" text="Report">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button layoutY="300.0" mnemonicParsing="false" onAction="#handleStudentHomeButton" prefHeight="66.0" prefWidth="212.0" text="Homepage">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button layoutY="366.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="212.0" text="Reported">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Circle fx:id="circle" fill="DODGERBLUE" layoutX="106.0" layoutY="73.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+            </children>
+        </Pane>
+        <Pane layoutX="209.0" prefHeight="600.0" prefWidth="588.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
+            <children>
+                <Button layoutX="502.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #ffeaea;" text="Home">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+            <TextField layoutX="340.0" layoutY="136.0" promptText="username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="340.0" layoutY="190.0" promptText="password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="340.0" layoutY="280.0" promptText="new password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="340.0" layoutY="331.0" promptText="confirm password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="81.0" layoutY="54.0" text="Profile Edit">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="120.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #016b56 #016b56;" text="upload image" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="443.0" layoutY="385.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #016b56 #016b56;" text="Change Profile" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -8,7 +8,7 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
-public class StudentController {
+public class StudentEditController {
 
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
@@ -55,7 +55,3 @@ public class StudentController {
     }
 
 }
-
-
-
-
