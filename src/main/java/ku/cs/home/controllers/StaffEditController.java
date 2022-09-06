@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-public class StaffController {
+public class StaffEditController {
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
         try {
@@ -19,11 +19,11 @@ public class StaffController {
     }
 
     @FXML
-    public void handleStaffEditButton(ActionEvent actionEvent) {
+    public void handleStaffButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("staffedit");
+            com.github.saacsos.FXRouter.goTo("staff");
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า staffedit ไม่ได้");
+            System.err.println("ไปที่หน้า staff ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
