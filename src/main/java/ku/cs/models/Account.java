@@ -22,4 +22,18 @@ public class Account {
     public String getConfirmpass() {
         return confirmpass;
     }
+
+    public boolean loginSuccess(String username, String password) {
+        if (this.username.equals(username) && this.password.equals(password)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkAccount(String username) {
+        if (this.username.equals(username))
+            return true;
+        return false;
+
+    }
 }

@@ -40,9 +40,6 @@ public class SignUpController {
 
 
 
-
-
-
     }
     public void handleUploadImageButton(ActionEvent actionEvent) {
 

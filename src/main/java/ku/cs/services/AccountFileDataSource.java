@@ -9,6 +9,9 @@ public class AccountFileDataSource implements DataSource<AccountList> {
     private String directoryName;
     private String fileName;
 
+    public AccountFileDataSource(){
+        this("data","userData.csv");
+    }
     public AccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
@@ -79,7 +82,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
         BufferedWriter buffer = null;
 
             try {
-                writer = new FileWriter(file);
+                writer = new FileWriter(file,true);
                 buffer = new BufferedWriter(writer);
 
                 for (Account ac : acList.getAllAccount()){
