@@ -14,7 +14,6 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eef2f0" height="511.0" layoutX="35.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="747.0" />
-      <Button layoutX="63.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleHomeButton" text="กลับ" />
       <Button layoutX="574.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
       <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="432.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
       <TextField layoutX="227.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" promptText="รหัสผ่านใหม่" />

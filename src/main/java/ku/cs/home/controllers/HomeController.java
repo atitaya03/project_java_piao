@@ -29,6 +29,13 @@ public class HomeController {
         }
     }
     public void handleSignInButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("staff");
+        } catch (IOException e) {
+            System.err.println("ไปทีหน้า signUp ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+
 
     }
     @FXML private ImageView logo;

@@ -19,7 +19,7 @@ public class StaffController {
     }
 
     @FXML
-    public void handleStaffEditButton(ActionEvent actionEvent) {
+    public void handleStaffEditProfileButton(ActionEvent actionEvent) {
         try {
             com.github.saacsos.FXRouter.goTo("staffedit");
         } catch (IOException e) {
@@ -28,11 +28,5 @@ public class StaffController {
         }
     }
 
-    @FXML
-    private ImageView billkinImage;
 
-    public void initialize() {
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-        billkinImage.setImage(new Image(url));
-    }
 }

@@ -15,6 +15,7 @@ public class SignUpController {
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
 
+
     }
     public void handleUploadImageButton(ActionEvent actionEvent) {
 

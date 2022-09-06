@@ -24,7 +24,6 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <ImageView fx:id="billkinImage" fitHeight="100.0" fitWidth="100.0" layoutX="60.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="51.0" layoutY="140.0" text="Name: Billkin" textFill="WHITE">
                <font>
                   <Font size="22.0" />
@@ -39,7 +38,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="71.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleStaffEditButton" style="-fx-background-color: #eae9b9;" text="edit profile" />
+            <Button layoutX="79.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleStaffEditProfileButton" text="edit profile" />
          </children>
       </Pane>
       <Pane layoutX="212.0" prefHeight="600.0" prefWidth="588.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
