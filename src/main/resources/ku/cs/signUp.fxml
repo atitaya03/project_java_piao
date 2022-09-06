@@ -12,12 +12,12 @@
     <children>
         <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f7f7f7;">
             <children>
-                <TextField layoutX="73.0" layoutY="289.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
+                <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="289.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
                 </TextField>
-                <TextField layoutX="73.0" layoutY="328.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
+                <TextField fx:id="inputPasswordTextField" layoutX="73.0" layoutY="328.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
@@ -37,7 +37,7 @@
                         <Font name="Eras Bold ITC" size="30.0" />
                     </font>
                 </Label>
-            <TextField layoutX="74.0" layoutY="368.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
+            <TextField fx:id="confirmPasswordTextField" layoutX="74.0" layoutY="368.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>

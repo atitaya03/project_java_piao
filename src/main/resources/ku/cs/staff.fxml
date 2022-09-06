@@ -17,50 +17,50 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Pane prefHeight="600.0" prefWidth="212.0" style="-fx-background-color: #016b56 #016b56;">
+      <Pane prefHeight="600.0" prefWidth="212.0" style="-fx-background-color: #2f3338;">
          <children>
             <Button layoutX="138.0" layoutY="559.0" mnemonicParsing="false" style="-fx-background-color: #ffeaea;" text="logout">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label layoutX="51.0" layoutY="140.0" text="Name: Billkin" textFill="WHITE">
+            <Label layoutX="53.0" layoutY="143.0" text="Name :" textFill="WHITE">
                <font>
-                  <Font size="22.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Pane layoutY="228.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #ffeaea;">
+            <Pane layoutY="228.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #08a86b;">
                <children>
-                  <Label layoutX="53.0" layoutY="14.0" text="Homepage">
+                  <Label layoutX="59.0" layoutY="14.0" text="Homepage">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="79.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleStaffEditProfileButton" text="edit profile" />
+            <Button layoutX="69.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleStaffEditProfileButton" style="-fx-background-color: #f9f9f9;" text="edit profile" />
          </children>
       </Pane>
-      <Pane layoutX="212.0" prefHeight="600.0" prefWidth="588.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
+      <Pane layoutX="212.0" prefHeight="600.0" prefWidth="588.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="84.0" fitWidth="98.0" layoutX="60.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-            <Pane layoutX="8.0" layoutY="65.0" prefHeight="229.0" prefWidth="550.0" style="-fx-background-color: #016b56 #016b56 #016b56 #016b56;">
+            <Pane layoutX="8.0" layoutY="65.0" prefHeight="236.0" prefWidth="554.0" style="-fx-background-color: #f9f9f9;">
                <children>
-                  <TextArea layoutX="5.0" layoutY="50.0" prefHeight="141.0" prefWidth="541.0" />
-                  <Label layoutX="16.0" layoutY="8.0" text="Header" textFill="WHITE">
+                  <TextArea layoutX="16.0" layoutY="40.0" prefHeight="147.0" prefWidth="524.0" />
+                  <Label layoutX="16.0" layoutY="8.0" text="Header">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="457.0" layoutY="8.0" style="-fx-background-color: #FDB%D7;" text="Status" textFill="WHITE">
+                  <Label layoutX="464.0" layoutY="8.0" style="-fx-background-color: #FDB%D7;" text="Status">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="484.0" layoutY="198.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="57.0" style="-fx-background-color: #ffeaea #ffeaea;" text="like" />
+                  <Button layoutX="482.0" layoutY="196.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="57.0" style="-fx-background-color: #08a86b;" text="like" />
                </children>
             </Pane>
-            <MenuButton layoutX="419.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #000000;" text="Sort" textFill="WHITE">
+            <MenuButton layoutX="464.0" layoutY="14.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #f9f9f9;" text="Sort">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
