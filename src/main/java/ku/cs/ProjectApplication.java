@@ -14,6 +14,7 @@ public class ProjectApplication extends Application {
         FXRouter.bind(this, stage, "caramelCase", 800, 600);
         configRoute();
         FXRouter.goTo("home");
+
     }
     private static void configRoute() {
         String packageStr = "ku/cs/";
@@ -26,6 +27,9 @@ public class ProjectApplication extends Application {
         FXRouter.when("staffsignup", packageStr+"staffsignup.fxml");
         FXRouter.when("staffedit", packageStr+"staffedit.fxml");
         FXRouter.when("staffdetail", packageStr+"staffdetail.fxml");
+        FXRouter.when("studentedit", packageStr+"studentedit.fxml");
+        FXRouter.when("studentreport", packageStr+"studentreport.fxml");
+
     }
     public static void main(String[] args) {
         launch();
