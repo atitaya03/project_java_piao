@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
@@ -23,6 +24,10 @@ public class HomeController {
 
     private DataSource<AccountList> dataSource = new AccountFileDataSource();
     private AccountList accountList = dataSource.readData();
+
+
+
+
 
 
     public void initialize(){
@@ -57,12 +62,13 @@ public class HomeController {
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
         } else
         try {
-            dataSource.writeData(accountList);
             com.github.saacsos.FXRouter.goTo("staff");
         } catch (IOException e) {
             System.err.println("ไปทีหน้า signUp ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+
+
 
 
     }
