@@ -27,15 +27,13 @@ public class HomeController {
 
 
 
-
-
-
     public void initialize(){
         String url = getClass().getResource("/ku/cs/images/logo.png").toExternalForm();
         logo.setImage(new Image(url));
         String url1 = getClass().getResource("/ku/cs/images/imagehome1.jpg").toExternalForm();
         image1.setImage(new Image(url1));
     }
+
     @FXML
     public void handleCreditsButton(ActionEvent actionEvent){
         try {
@@ -60,6 +58,7 @@ public class HomeController {
         String password = inputPasswordTextField.getText();
         if (!accountList.loginSuccess(username,password)){
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+            failedLabel.setStyle("-fx-text-fill: #f61e1e");
         } else
         try {
             Account user = accountList.searchAccountByUsername(username);

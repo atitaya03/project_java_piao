@@ -3,6 +3,7 @@ package ku.cs.home.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import ku.cs.models.Account;
 
@@ -10,8 +11,11 @@ import java.io.IOException;
 
 public class AdminController {
     Account admin;
+    @FXML private ImageView adminicon;
     public void initialize(){
         admin = (Account) com.github.saacsos.FXRouter.getData();
+        String url = getClass().getResource("/ku/cs/images/adminicon.png").toExternalForm();
+        adminicon.setImage(new Image(url));
     }
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {

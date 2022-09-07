@@ -38,13 +38,13 @@
                   <Font name="Eras Light ITC" size="13.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#196140" height="3.0" layoutX="55.0" layoutY="149.0" stroke="#196140" strokeType="INSIDE" width="142.0" />
-            <Label fx:id="failedLabel" layoutX="56.0" layoutY="152.0" prefHeight="23.0" prefWidth="150.0" text="Sign in to your account" textFill="#196140">
+            <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#196140" height="3.0" layoutX="60.0" layoutY="150.0" stroke="#196140" strokeType="INSIDE" width="142.0" />
+            <Label fx:id="failedLabel" alignment="CENTER" layoutX="36.0" layoutY="159.0" prefHeight="23.0" prefWidth="190.0" text="Sign in to your account" textAlignment="CENTER" textFill="#196140">
                <font>
                   <Font name="Eras Demi ITC" size="13.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="-8.0" layoutY="91.0" prefHeight="61.0" prefWidth="274.0" text="WELCOME!" textFill="#196140" textOverrun="CLIP">
+            <Label alignment="CENTER" layoutX="-6.0" layoutY="91.0" prefHeight="61.0" prefWidth="274.0" text="WELCOME!" textFill="#196140" textOverrun="CLIP">
                <font>
                   <Font name="Eras Bold ITC" size="30.0" />
                </font>
@@ -57,7 +57,7 @@
             <ImageView fx:id="image1" fitHeight="222.0" fitWidth="288.0" layoutX="33.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
             <Button layoutX="31.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="16.0" prefWidth="63.0" style="-fx-background-color: #016b68 #016b68;" text="CREDITS" textFill="WHITE">
                <font>
-                  <Font name="Eras Demi ITC" size="12.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
          </children>
