@@ -2,13 +2,27 @@ package ku.cs.home.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import ku.cs.models.Account;
 
 import java.io.IOException;
 
 public class StudentEditController {
+    Account student;
+    @FXML
+    private Circle circle;
+    @FXML
+    private Label nameLabel;
+
+    public void initialize(){
+        student = (Account) com.github.saacsos.FXRouter.getData();
+        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
+        circle.setFill(new ImagePattern(new Image(url)));
+        showUserData();
+    }
 
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
@@ -18,6 +32,10 @@ public class StudentEditController {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+    }
+    private void showUserData() {
+        nameLabel.setText(student.getUsername());
+
     }
 
     @FXML
@@ -46,12 +64,7 @@ public class StudentEditController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
-    @FXML
-    private Circle circle;
-    public void initialize () {
 
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-        circle.setFill(new ImagePattern(new Image(url)));
-    }
+
 
 }

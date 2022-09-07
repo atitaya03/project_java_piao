@@ -8,6 +8,9 @@ test,2,2
 hi,pass,pass
 a,b,b
 1,2,2
-x,y,y
-w,y,y
-testt,1,1
+x,y,admin
+w,y,staff
+testt,1,student
+st,11,student
+ll,44,student
+hihi,11,student

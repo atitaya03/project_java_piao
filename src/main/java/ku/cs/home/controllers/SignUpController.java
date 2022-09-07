@@ -3,6 +3,7 @@ package ku.cs.home.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
@@ -12,7 +13,7 @@ import ku.cs.services.DataSource;
 import java.io.IOException;
 
 public class SignUpController {
-
+    @FXML private Label failedPassword;
     @FXML private TextField inputUsernameTextField;
     @FXML private TextField inputPasswordTextField;
     @FXML private TextField confirmPasswordTextField;
@@ -27,20 +28,23 @@ public class SignUpController {
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
         AccountList regis = new AccountList();
-        regis.addAccount(new Account(inputUsernameTextField.getText(),inputPasswordTextField.getText(),confirmPasswordTextField.getText()));
-        DataSource<AccountList> write;
-        write = new AccountFileDataSource("data","userData.csv");
-        write.writeData(regis);
-        try {
-            com.github.saacsos.FXRouter.goTo("home");
+        if(!(inputPasswordTextField.getText()).equals(confirmPasswordTextField.getText()))
+                failedPassword.setText("รหัสผ่านไม่ตรงกัน");
+        else {regis.addAccount(new Account(inputUsernameTextField.getText(),inputPasswordTextField.getText(),"student"));
+            DataSource<AccountList> write;
+            write = new AccountFileDataSource("data","userData.csv");
+            write.writeData(regis);
+            try {
 
-        } catch (IOException e){
-            System.err.println("ไปหน้าแรกไม่ได้");
-        }
+                com.github.saacsos.FXRouter.goTo("home");
+
+            } catch (IOException e){
+                System.err.println("ไปหน้าแรกไม่ได้");
+            }
 
 
 
-    }
+    }}
     public void handleUploadImageButton(ActionEvent actionEvent) {
 
     }

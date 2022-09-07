@@ -12,32 +12,27 @@
     <children>
         <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f7f7f7;">
             <children>
-                <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="289.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
+                <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="315.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="inputPasswordTextField" layoutX="73.0" layoutY="328.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
+                <TextField fx:id="inputPasswordTextField" layoutX="73.0" layoutY="354.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
                 </TextField>
-                <Button layoutX="74.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="SIGN UP" textFill="#fff9f9">
+                <Button layoutX="74.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="SIGN UP" textFill="#fff9f9">
                     <font>
                         <Font name="Eras Demi ITC" size="12.0" />
                     </font>
                 </Button>
-                <Label layoutX="15.0" layoutY="57.0" prefHeight="23.0" prefWidth="132.0" text="Create your account" textAlignment="CENTER" textFill="#196140">
-                    <font>
-                        <Font name="Eras Demi ITC" size="13.0" />
-                    </font>
-                </Label>
                 <Label layoutX="15.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" text="SIGN UP" textFill="#196140" textOverrun="CLIP">
                     <font>
                         <Font name="Eras Bold ITC" size="30.0" />
                     </font>
                 </Label>
-            <TextField fx:id="confirmPasswordTextField" layoutX="74.0" layoutY="368.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
+            <TextField fx:id="confirmPasswordTextField" layoutX="74.0" layoutY="394.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
@@ -48,6 +43,11 @@
                </font>
             </Button>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="135.0" layoutX="89.0" layoutY="106.0" stroke="WHITE" strokeType="INSIDE" width="142.0" />
+            <Label fx:id="failedPassword" layoutX="106.0" layoutY="287.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
+               <font>
+                  <Font name="Eras Light ITC" size="12.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
       <Button layoutX="730.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fff9f9">

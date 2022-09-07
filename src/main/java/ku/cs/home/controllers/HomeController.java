@@ -62,7 +62,13 @@ public class HomeController {
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
         } else
         try {
-            com.github.saacsos.FXRouter.goTo("staff");
+            Account user = accountList.searchAccountByUsername(username);
+            if((user.getRole()).equals("student"))
+            com.github.saacsos.FXRouter.goTo("student",user);
+            else if((user.getRole()).equals("staff"))
+                com.github.saacsos.FXRouter.goTo("staff",user);
+            else if((user.getRole()).equals("admin"))
+                com.github.saacsos.FXRouter.goTo("admin",user);
         } catch (IOException e) {
             System.err.println("ไปทีหน้า signUp ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

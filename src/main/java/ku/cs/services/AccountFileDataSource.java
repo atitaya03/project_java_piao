@@ -86,7 +86,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
                 buffer = new BufferedWriter(writer);
 
                 for (Account ac : acList.getAllAccount()){
-                    String line = ac.getUsername() + "," + ac.getPassword() + "," + ac.getConfirmpass();
+                    String line = ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole();
                     buffer.append(line);
                     buffer.newLine();
                 }
