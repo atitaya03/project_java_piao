@@ -15,7 +15,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="212.0" style="-fx-background-color: #2f3338;">
          <children>
-            <Button layoutX="138.0" layoutY="559.0" mnemonicParsing="false" style="-fx-background-color: #ffeaea;" text="logout">
+            <Button layoutX="138.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleHomepageButton" style="-fx-background-color: #ffeaea;" text="logout">
                <font>
                   <Font size="15.0" />
                </font>
@@ -29,21 +29,7 @@
             <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="106.0" layoutY="79.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </Pane>
-      <Pane layoutY="228.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #08a86b #08a86b;">
-         <children>
-            <Label layoutX="53.0" layoutY="14.0" text="Homepage">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Button layoutX="19.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleHomepageButton" prefHeight="46.0" prefWidth="172.0" style="-fx-background-color: #08a86b #08a86b;" text="HomePage">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <Pane layoutY="288.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #08a86b #08a86b #08a86b #08a86b;">
+      <Pane layoutY="228.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #08a86b #08a86b #08a86b #08a86b;">
          <children>
             <Label layoutX="53.0" layoutY="14.0" text="Homepage">
                <font>
@@ -86,7 +72,7 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <Pane layoutY="348.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
+      <Pane layoutY="288.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
          <children>
             <Label layoutX="53.0" layoutY="14.0" text="Homepage">
                <font>
