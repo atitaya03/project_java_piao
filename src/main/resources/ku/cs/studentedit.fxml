@@ -21,7 +21,7 @@
                         <Font size="15.0" />
                     </font>
                 </Button>
-                <Label fx:id="nameLabel" alignment="CENTER" layoutX="63.0" layoutY="147.0" prefHeight="28.0" prefWidth="86.0" textAlignment="CENTER" textFill="WHITE">
+                <Label fx:id="nameLabel" alignment="CENTER" layoutX="65.0" layoutY="145.0" prefHeight="28.0" prefWidth="86.0" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -75,7 +75,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button layoutX="120.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #016b56 #016b56;" text="upload image" textFill="WHITE">
+            <Button layoutX="120.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #016b56 #016b56;" text="upload image" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

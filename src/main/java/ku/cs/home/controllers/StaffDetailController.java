@@ -20,12 +20,12 @@ public class StaffDetailController {
 
     public void initialize(){
         staff = (Account) com.github.saacsos.FXRouter.getData();
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-        staffimage.setFill(new ImagePattern(new Image(url)));
         showUserData();
     }
     private void showUserData() {
         nameLabel.setText(staff.getUsername());
+        String url = getClass().getResource(staff.getImagePath()).toExternalForm();
+        staffimage.setFill(new ImagePattern(new Image(url)));
 
     }
     @FXML

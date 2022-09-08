@@ -19,8 +19,6 @@ public class StudentEditController {
 
     public void initialize(){
         student = (Account) com.github.saacsos.FXRouter.getData();
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-        circle.setFill(new ImagePattern(new Image(url)));
         showUserData();
     }
 
@@ -35,6 +33,8 @@ public class StudentEditController {
     }
     private void showUserData() {
         nameLabel.setText(student.getUsername());
+        String url = getClass().getResource(student.getImagePath()).toExternalForm();
+        circle.setFill(new ImagePattern(new Image(url)));
 
     }
 
@@ -63,6 +63,9 @@ public class StudentEditController {
             System.err.println("ไปที่หน้า studentreport ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+    }
+    public void handleUploadImageButton(ActionEvent actionEvent){
+
     }
 
 

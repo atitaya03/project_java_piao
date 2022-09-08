@@ -19,12 +19,12 @@ public class StudentReportController {
 
     public void initialize(){
         student = (Account) com.github.saacsos.FXRouter.getData();
-        String url = getClass().getResource("/ku/cs/images/billkin1.jpg").toExternalForm();
-       circle.setFill(new ImagePattern(new Image(url)));
         showUserData();
     }
     private void showUserData() {
         nameLabel.setText(student.getUsername());
+        String url = getClass().getResource(student.getImagePath()).toExternalForm();
+        circle.setFill(new ImagePattern(new Image(url)));
 
     }
 
