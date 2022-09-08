@@ -12,7 +12,7 @@
     <children>
         <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f7f7f7;">
             <children>
-                <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="315.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
+                <TextField fx:id="inputUsernameTextField" layoutX="74.0" layoutY="315.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
@@ -43,7 +43,7 @@
                </font>
             </Button>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="135.0" layoutX="89.0" layoutY="106.0" stroke="WHITE" strokeType="INSIDE" width="142.0" />
-            <Label fx:id="failedPassword" layoutX="106.0" layoutY="287.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
+            <Label fx:id="failedPassword" alignment="CENTER" layoutX="105.0" layoutY="289.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
