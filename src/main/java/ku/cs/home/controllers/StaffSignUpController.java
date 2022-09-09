@@ -32,7 +32,7 @@ public class StaffSignUpController {
         else {
             staffregifs.addAccount(new Account(inputUsernameTextField.getText(), inputPasswordTextField.getText(), "staff"));
             DataSource<AccountList> write;
-            write = new AccountFileDataSource("data", "userData.csv");
+            write = new AccountFileDataSource("csv", "userData.csv");
             write.writeData(staffregifs);
             try {
                 com.github.saacsos.FXRouter.goTo("admin");
