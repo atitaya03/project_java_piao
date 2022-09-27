@@ -32,7 +32,7 @@ public class SignUpController {
                 failedPassword.setText("รหัสผ่านไม่ตรงกัน");
         else {regis.addAccount(new Account(inputUsernameTextField.getText(),inputPasswordTextField.getText(),"student"));
             DataSource<AccountList> write;
-            write = new AccountFileDataSource("csv","userData.csv");
+            write = new AccountFileDataSource("executablefiles+csv/csv/","userData.csv");
             write.writeData(regis);
             try {
 
