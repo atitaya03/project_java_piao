@@ -10,7 +10,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
     private String fileName;
 
     public AccountFileDataSource(){
-        this("csv","userData.csv");
+        this("executablefiles+csv/csv/","userData.csv");
     }
     public AccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
