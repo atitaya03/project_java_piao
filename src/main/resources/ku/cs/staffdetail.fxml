@@ -5,7 +5,6 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
@@ -13,101 +12,59 @@
 
 <AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffDetailController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="212.0" style="-fx-background-color: #2f3338;">
+      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Button layoutX="138.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleHomepageButton" style="-fx-background-color: #ffeaea;" text="logout">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Label fx:id="nameLabel" layoutX="43.0" layoutY="143.0" textFill="WHITE">
+            <Pane layoutX="69.0" layoutY="83.0" prefHeight="238.0" prefWidth="563.0" style="-fx-background-color: #196140#196140;">
+               <children>
+                  <Label layoutX="30.0" layoutY="14.0" text="Header" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="TOP_LEFT" layoutX="30.0" layoutY="54.0" prefHeight="155.0" prefWidth="504.0" promptText="รายละเอียดเรื่องที่แจ้ง">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+            <MenuButton layoutX="655.0" layoutY="83.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #2f3338 #2f3338;" text="Status" textFill="WHITE">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
                <font>
                   <Font size="18.0" />
                </font>
-            </Label>
-            <Button layoutX="66.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleStaffEditProfileButton" style="-fx-background-color: #f9f9f9;" text="edit profile" />
-            <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="106.0" layoutY="79.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+            </MenuButton>
+            <Pane prefHeight="59.0" prefWidth="809.0" style="-fx-background-color: #01a57a #01a57a #01a57a #01a57a;">
+               <children>
+                  <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="696.0" layoutY="11.0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="666.0" layoutY="30.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHomepageButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="69.0" layoutY="334.0" prefHeight="218.0" prefWidth="563.0" style="-fx-background-color: #196140#196140;">
+               <children>
+                  <Label layoutX="30.0" layoutY="8.0" text="Management" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="TOP_LEFT" layoutX="30.0" layoutY="45.0" prefHeight="144.0" prefWidth="504.0" promptText="รายละเอียดวิธีการจัดการ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Pane layoutY="228.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #08a86b #08a86b #08a86b #08a86b;">
-         <children>
-            <Label layoutX="53.0" layoutY="14.0" text="Homepage">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Button layoutX="19.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="46.0" prefWidth="172.0" style="-fx-background-color: #08a86b #08a86b #08a86b #08a86b;" text="AllReportsPage">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <Pane layoutX="212.0" prefHeight="600.0" prefWidth="588.0" style="-fx-background-color: #ffffff;">
-         <children>
-            <ImageView fitHeight="30.0" fitWidth="98.0" layoutX="60.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </Pane>
-      <Pane layoutX="232.0" layoutY="68.0" prefHeight="341.0" prefWidth="554.0" style="-fx-background-color: #196140#196140;">
-         <children>
-            <Label layoutX="16.0" layoutY="8.0" text="Header" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="464.0" layoutY="8.0" style="-fx-background-color: #FDB%D7;" text="Status" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="47.0" prefHeight="279.0" prefWidth="534.0" promptText="รายละเอียดเรื่องที่แจ้ง">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
-         </children>
-      </Pane>
-      <Label layoutX="418.0" layoutY="19.0" text="Detail report" textFill="#196140">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Label>
-      <Pane layoutY="288.0" prefHeight="53.0" prefWidth="212.0" style="-fx-background-color: #ADE9B9 #ADE9B9;">
-         <children>
-            <Label layoutX="53.0" layoutY="14.0" text="Homepage">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Button layoutX="19.0" layoutY="4.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="172.0" style="-fx-background-color: #ADE9B9 #ADE9B9;" text="DetailPage">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <Pane layoutX="232.0" layoutY="414.0" prefHeight="172.0" prefWidth="554.0" style="-fx-background-color: #196140#196140;">
-         <children>
-            <Label layoutX="16.0" layoutY="8.0" text="Management" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <TextField alignment="TOP_LEFT" layoutX="10.0" layoutY="47.0" prefHeight="113.0" prefWidth="534.0" promptText="รายละเอียดวิธีการจัดการ">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
-         </children>
-      </Pane>
-      <MenuButton layoutX="688.0" layoutY="17.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #2f3338 #2f3338;" text="Status" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
-         </items>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </MenuButton>
+      <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
+      <Label fx:id="editLabel" layoutX="695.0" layoutY="32.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE" />
    </children>
 </AnchorPane>

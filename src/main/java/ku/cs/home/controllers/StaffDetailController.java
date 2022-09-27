@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
@@ -16,6 +17,7 @@ public class StaffDetailController {
     private Circle staffimage;
 
     @FXML private Label nameLabel;
+    @FXML private Label editLabel;
 
 
     public void initialize(){
@@ -33,7 +35,7 @@ public class StaffDetailController {
         try {
             com.github.saacsos.FXRouter.goTo("staff",staff);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า staff ไม่ได้");
+            System.err.println("ไปที่หน้าหลักไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
@@ -43,20 +45,20 @@ public class StaffDetailController {
         try {
             com.github.saacsos.FXRouter.goTo("home");
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า home ไม่ได้");
+            System.err.println("ไปที่หน้าแรกไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
 
-
-
     @FXML
-    public void handleStaffEditProfileButton(ActionEvent actionEvent) {
+    public void handleedit(MouseEvent mouseEvent){
         try {
             com.github.saacsos.FXRouter.goTo("staffedit",staff);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า staffedit ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
+            System.err.println("ไปหน้าแก้ไขโปรไฟล์ไม่ได้");
         }
     }
+
+
+
 }

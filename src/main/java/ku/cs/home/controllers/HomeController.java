@@ -8,6 +8,7 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,7 +25,7 @@ public class HomeController {
     @FXML private ImageView logo;
     @FXML private ImageView image1;
     @FXML private TextField inputUsernameTextField;
-    @FXML private TextField inputPasswordTextField;
+    @FXML private PasswordField inputPasswordTextField;
     @FXML private Label failedLabel;
 
     @FXML private ComboBox<String> themeComboBox;
@@ -102,7 +103,7 @@ public class HomeController {
             else if((user.getRole()).equals("admin"))
                 com.github.saacsos.FXRouter.goTo("admin",user);
         } catch (IOException e) {
-            System.err.println("ไปทีหน้า signUp ไม่ได้");
+            System.err.println("ไปที่หน้าหลัก ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
 

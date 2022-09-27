@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -12,16 +14,6 @@
    <children>
       <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f7f7f7;">
          <children>
-            <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="315.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
-               <font>
-                  <Font name="Eras Light ITC" size="12.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="inputPasswordTextField" layoutX="73.0" layoutY="354.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
-               <font>
-                  <Font name="Eras Light ITC" size="12.0" />
-               </font>
-            </TextField>
             <Button layoutX="74.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="SIGN UP" textFill="#fff9f9">
                <font>
                   <Font name="Eras Demi ITC" size="12.0" />
@@ -32,22 +24,33 @@
                   <Font name="Eras Bold ITC" size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="confirmPasswordTextField" layoutX="74.0" layoutY="394.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
-               <font>
-                  <Font name="Eras Light ITC" size="12.0" />
-               </font>
-            </TextField>
-            <Button layoutX="110.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #ade9b9;" text="upload image" textFill="#fff8f8">
+            <Button layoutX="111.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #ade9b9;" text="upload image" textFill="#fff8f8">
                <font>
                   <Font name="Eras Demi ITC" size="11.0" />
                </font>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="135.0" layoutX="89.0" layoutY="106.0" stroke="WHITE" strokeType="INSIDE" width="142.0" />
-            <Label fx:id="failedPassword" alignment="CENTER" layoutX="105.0" layoutY="289.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
+            <Label fx:id="failedPassword" alignment="CENTER" layoutX="147.0" layoutY="30.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="96.0" layoutX="110.0" layoutY="269.0" stroke="WHITE" strokeType="INSIDE" width="100.0" />
+            <ComboBox layoutX="98.0" layoutY="69.0" prefHeight="17.0" prefWidth="124.0" />
+            <TextField fx:id="inputUsernameTextField" layoutX="73.0" layoutY="115.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
+               <font>
+                  <Font name="Eras Light ITC" size="12.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="inputPasswordTextField" layoutX="73.0" layoutY="156.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </PasswordField>
+            <PasswordField fx:id="confirmPasswordTextField" layoutX="73.0" layoutY="198.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </PasswordField>
          </children>
       </Pane>
       <Button layoutX="730.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fff9f9">

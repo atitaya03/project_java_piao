@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
@@ -15,8 +16,8 @@ import java.io.IOException;
 public class SignUpController {
     @FXML private Label failedPassword;
     @FXML private TextField inputUsernameTextField;
-    @FXML private TextField inputPasswordTextField;
-    @FXML private TextField confirmPasswordTextField;
+    @FXML private PasswordField inputPasswordTextField;
+    @FXML private PasswordField confirmPasswordTextField;
 
     public void handleHomeButton(ActionEvent actionEvent) {
         try {

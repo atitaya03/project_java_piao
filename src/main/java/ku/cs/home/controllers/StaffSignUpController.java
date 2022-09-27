@@ -3,6 +3,7 @@ package ku.cs.home.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import ku.cs.models.Account;
@@ -14,8 +15,8 @@ import java.io.IOException;
 
 public class StaffSignUpController {
     @FXML private TextField inputUsernameTextField;
-    @FXML private TextField inputPasswordTextField;
-    @FXML private TextField confirmPasswordTextField;
+    @FXML private PasswordField inputPasswordTextField;
+    @FXML private PasswordField confirmPasswordTextField;
     @FXML private Label failedPassword;
     public void handleHomeButton(ActionEvent actionEvent) {
         try {
@@ -26,14 +27,14 @@ public class StaffSignUpController {
         }
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
-        AccountList staffregifs = new AccountList();
+        AccountList staffregis = new AccountList();
         if (!(inputPasswordTextField.getText()).equals(confirmPasswordTextField.getText()))
             failedPassword.setText("รหัสผ่านไม่ตรงกัน");
         else {
-            staffregifs.addAccount(new Account(inputUsernameTextField.getText(), inputPasswordTextField.getText(), "staff"));
+            staffregis.addAccount(new Account(inputUsernameTextField.getText(), inputPasswordTextField.getText(), "staff"));
             DataSource<AccountList> write;
             write = new AccountFileDataSource("executablefiles+csv/csv/", "userData.csv");
-            write.writeData(staffregifs);
+            write.writeData(staffregis);
             try {
                 com.github.saacsos.FXRouter.goTo("admin");
             } catch (IOException e) {
