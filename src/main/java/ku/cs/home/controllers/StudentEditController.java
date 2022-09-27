@@ -38,6 +38,7 @@ public class StudentEditController {
 
     }
 
+
     @FXML
     public void handleStudentEditButton(ActionEvent actionEvent) {
         try {

@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
@@ -55,12 +56,11 @@ public class StudentReportController {
     }
 
     @FXML
-    public void handleStudentEditButton(ActionEvent actionEvent) {
+    public void handleedit(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("studentedit");
+            com.github.saacsos.FXRouter.goTo("studentedit",student);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า studentedit ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
+            System.err.println("Cannot reach Dictionary");
         }
     }
 
