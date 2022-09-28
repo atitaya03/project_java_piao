@@ -10,7 +10,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
     private String fileName;
 
     public AccountFileDataSource(){
-        this("executablefiles+csv/csv/","userData.csv");
+        this("executablefiles_csv/csv/","userData.csv");
     }
     public AccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
@@ -74,7 +74,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
 
         }
 
-    public void writeData(AccountList acList){
+    public void writeData(AccountList acList,boolean a){
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -82,9 +82,14 @@ public class AccountFileDataSource implements DataSource<AccountList> {
         BufferedWriter buffer = null;
 
             try {
-                writer = new FileWriter(file,true);
-                buffer = new BufferedWriter(writer);
+                if (a == true) {
+                    writer = new FileWriter(file, true);
+                    buffer = new BufferedWriter(writer);
+                } else {
+                    writer = new FileWriter(file, false);
+                    buffer = new BufferedWriter(writer);
 
+                }
                 for (Account ac : acList.getAllAccount()){
                     String line = ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole();
                     buffer.append(line);

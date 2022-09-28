@@ -12,7 +12,7 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
     private String fileName;
 
     public ComplaintFileDataSource(){
-        this("executablefiles+csv/csv/","complaintData.csv");
+        this("executablefiles_csv/csv/","complaintData.csv");
     }
     public ComplaintFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
@@ -77,7 +77,7 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
     }
 
     @Override
-    public void writeData(ComplaintList complaintList) {
+    public void writeData(ComplaintList complaintList,boolean a) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -85,8 +85,13 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
         BufferedWriter buffer = null;
 
         try {
+            if (a == true) {
             writer = new FileWriter(file,true);
             buffer = new BufferedWriter(writer);
+            } else {
+                writer = new FileWriter(file, false);
+                buffer = new BufferedWriter(writer);
+            }
 
             for (Complaint c : complaintList.getAllAccount()){
                 String line = c.toCSV();

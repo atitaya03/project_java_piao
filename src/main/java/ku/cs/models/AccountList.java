@@ -3,31 +3,36 @@ package ku.cs.models;
 import java.util.ArrayList;
 
 public class AccountList {
-    private ArrayList<Account> account;
+    private ArrayList<Account> accountList;
     public AccountList(){
 
-        account = new ArrayList<>();
+        accountList = new ArrayList<>();
     }
 
     public void addAccount(Account user){
-        account.add(user);
+        accountList.add(user);
     }
 
     public boolean loginSuccess(String username,String password){
-        Account acc = searchAccountByUsername(username);
-        if (acc != null & acc.loginSuccess(username,password))
+        Account account = searchAccountByUsername(username);
+        if (account != null & account.loginSuccess(username,password))
             return true;
         return false;
     }
 
     public Account searchAccountByUsername(String username){
-        for (Account acc: account)
-            if (acc.checkAccount(username))
-                return acc;
+        for (Account account: accountList)
+            if (account.checkAccount(username))
+                return account;
         return null;
     }
 
-    public ArrayList<Account> getAllAccount(){return account;}
+    public ArrayList<Account> getAllAccount(){return accountList;}
 
+    public boolean changePasswordByUsername(String username, String newPassword){
+        Account account = searchAccountByUsername(username);
+        account.changePassword(newPassword);
+        return true;
+    }
 }
 

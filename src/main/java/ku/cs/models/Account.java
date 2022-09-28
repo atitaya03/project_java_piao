@@ -35,11 +35,15 @@ public class Account {
         return role;
     }
 
+
     public boolean loginSuccess(String username, String password) {
         if (this.username.equals(username) && this.password.equals(password)) {
             return true;
         }
         return false;
+    }
+    public void changePassword(String newPassword){
+        password = newPassword;
     }
 
     public boolean checkAccount(String username) {

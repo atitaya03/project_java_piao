@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -16,10 +15,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f9f9f9" height="511.0" layoutX="27.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="747.0" />
       <Button layoutX="574.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
       <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="432.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField layoutX="227.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" promptText="รหัสผ่านใหม่" />
-      <TextField layoutX="370.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" promptText="ยืนยันรหัสผ่าน" />
-      <Label layoutX="127.0" layoutY="32.0" text="เปลี่ยนรหัสผ่าน" textFill="WHITE" />
-      <Button layoutX="511.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-color: #03bd77;" text="บันทึก" textFill="WHITE" />
       <ListView layoutX="65.0" layoutY="127.0" prefHeight="382.0" prefWidth="324.0" />
       <TabPane layoutX="53.0" layoutY="86.0" prefHeight="440.0" prefWidth="348.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -38,7 +33,6 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="76.0" layoutY="33.0" text="Admin" textFill="WHITE" />
       <Button layoutX="675.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
       <Button layoutX="432.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
          <font>
@@ -49,5 +43,6 @@
             <Font size="18.0" />
          </font></Label>
       <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="39.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="464.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleChangePassword" style="-fx-background-color: #03bd77;" text="เปลี่ยนรหัสผ่าน" textFill="WHITE" />
    </children>
 </AnchorPane>

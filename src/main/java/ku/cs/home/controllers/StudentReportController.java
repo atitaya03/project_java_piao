@@ -88,8 +88,8 @@ public class StudentReportController {
             Complaint c = new Complaint("category",title,detail,student.getUsername());
             complaints.addComplaint(c);
             DataSource<ComplaintList> write;
-            write = new ComplaintFileDataSource("executablefiles+csv/csv/","complaintData.csv");
-            write.writeData(complaints);
+            write = new ComplaintFileDataSource("executablefiles_csv/csv/","complaintData.csv");
+            write.writeData(complaints,true);
 
             }
         else
