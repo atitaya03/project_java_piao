@@ -15,7 +15,13 @@ public class AccountList {
 
     public boolean loginSuccess(String username,String password){
         Account account = searchAccountByUsername(username);
-        if (account != null & account.loginSuccess(username,password))
+        if (account != null & account.loginSuccess(username,password) )
+            return true;
+        return false;
+    }
+    public boolean usernameIsUsed(String username){
+        Account account = searchAccountByUsername(username);
+        if (account != null )
             return true;
         return false;
     }
@@ -34,5 +40,6 @@ public class AccountList {
         account.changePassword(newPassword);
         return true;
     }
+
 }
 

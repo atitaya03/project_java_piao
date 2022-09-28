@@ -50,8 +50,8 @@ public class AccountFileDataSource implements DataSource<AccountList> {
             String line = "";
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
-                Account acc = new Account(
-                        data[0].trim(), data[1].trim(),(data[2].trim())
+                Account acc = new Account( //username,password,role,isBaned,loginAttempt,imagePath,loginTime
+                        data[0].trim(),data[1].trim(),(data[2].trim()),Boolean.parseBoolean(data[3].trim()),Integer.parseInt(data[4].trim()),(data[5].trim()),(data[6].trim())
                 );
                 accountList.addAccount(acc);
 
@@ -91,7 +91,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
 
                 }
                 for (Account ac : acList.getAllAccount()){
-                    String line = ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole();
+                    String line = ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole()+","+ac.isBaned()+","+ac.getLoginAttempt()+"," +ac.getImagePath()+","+ ac.getLoginTime();
                     buffer.append(line);
                     buffer.newLine();
                 }

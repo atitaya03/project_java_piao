@@ -50,6 +50,6 @@ public class Complaint {
 
     public String toCSV() {
         return
-                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status + ',' ;
+                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  ;
     }
 }

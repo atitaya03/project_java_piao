@@ -23,7 +23,7 @@ import java.io.IOException;
 public class StudentReportController {
     private Account student;
     @FXML
-    private ComboBox categoryComboBox;
+    private ComboBox categoryComboBox = null;
     @FXML
     private Circle circle;
     @FXML
@@ -34,7 +34,11 @@ public class StudentReportController {
     private Label nameLabel;
 
     public void initialize(){
-        //categoryComboBox.getItems().addAll("หน่วย1", "หน่วย2", "หน่วย3", "หน่วย4");
+        categoryComboBox.getItems().add("หน่วย 1");
+        categoryComboBox.getItems().add("หน่วย 2");
+        categoryComboBox.getItems().add("หน่วย 3");
+        categoryComboBox.getItems().add("หน่วย 4");
+        categoryComboBox.getItems().add("หน่วย 5");
         student = (Account) com.github.saacsos.FXRouter.getData();
         showUserData();
     }
@@ -83,13 +87,17 @@ public class StudentReportController {
     public void handleSubmitButton(){
         ComplaintList complaints = new ComplaintList();
         if(titleAddTextField.getText() != "" &&  detailAddTextField.getText() != "") {
+            String category = (String) categoryComboBox.getValue();
             String title = titleAddTextField.getText();
             String detail = detailAddTextField.getText();
-            Complaint c = new Complaint("category",title,detail,student.getUsername());
+            Complaint c = new Complaint(category,title,detail,student.getUsername());
             complaints.addComplaint(c);
             DataSource<ComplaintList> write;
             write = new ComplaintFileDataSource("executablefiles_csv/csv/","complaintData.csv");
             write.writeData(complaints,true);
+            titleAddTextField.clear();
+            detailAddTextField.clear();
+            categoryComboBox.valueProperty().set(null);
 
             }
         else

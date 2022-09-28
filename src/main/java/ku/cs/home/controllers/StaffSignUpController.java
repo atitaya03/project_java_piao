@@ -17,7 +17,17 @@ public class StaffSignUpController {
     @FXML private TextField inputUsernameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
-    @FXML private Label failedPassword;
+    @FXML private Label failed;
+    private AccountList accountList;
+    private DataSource<AccountList> dataSource;
+    public void initialize(){
+        readData();
+    }
+    private void readData() {
+        dataSource = new AccountFileDataSource();
+        accountList = dataSource.readData();
+    }
+
     public void handleHomeButton(ActionEvent actionEvent) {
         try {
             com.github.saacsos.FXRouter.goTo("home");
@@ -28,10 +38,17 @@ public class StaffSignUpController {
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
         AccountList staffregis = new AccountList();
-        if (!(inputPasswordTextField.getText()).equals(confirmPasswordTextField.getText()))
-            failedPassword.setText("รหัสผ่านไม่ตรงกัน");
+        String password = inputPasswordTextField.getText();
+        String confirmPass = confirmPasswordTextField.getText();
+        String username = inputUsernameTextField.getText();
+        if (accountList.usernameIsUsed(username))
+        {failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
+            failed.setStyle("-fx-text-fill: #f61e1e");}
+        else if (!(password).equals(confirmPass))
+        {failed.setText("รหัสผ่านไม่ตรงกัน");
+            failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            staffregis.addAccount(new Account(inputUsernameTextField.getText(), inputPasswordTextField.getText(), "staff"));
+            staffregis.addAccount(new Account(username, password, "staff"));
             DataSource<AccountList> write;
             write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
             write.writeData(staffregis,true);
