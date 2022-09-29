@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
@@ -32,7 +33,6 @@ public class StaffEditController {
 
     }
 
-
     private void showUserData() {
         nameLabel.setText(staff.getDisplayname());
         String url = getClass().getResource(staff.getImagePath()).toExternalForm();
@@ -54,7 +54,17 @@ public class StaffEditController {
         try {
             com.github.saacsos.FXRouter.goTo("home");
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า home ไม่ได้");
+            System.err.println("ไปที่หน้าแรกไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
+
+    @FXML
+    public void handleChangePW(MouseEvent mouseEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("changepassword");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้าเปลี่ยนรหัสไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }

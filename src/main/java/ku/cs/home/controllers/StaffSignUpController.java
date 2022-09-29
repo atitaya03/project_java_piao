@@ -51,7 +51,10 @@ public class StaffSignUpController {
         String displayname = inputDisplaynameTextField.getText();
         String confirmPass = confirmPasswordTextField.getText();
         String username = inputUsernameTextField.getText();
-        if (accountList.usernameIsUsed(username))
+        if (organization==null)
+        {failed.setText("โปรดเลือกหน่วยงาน");
+            failed.setStyle("-fx-text-fill: #f61e1e");}
+        else if (accountList.usernameIsUsed(username))
         {failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else if (!(password).equals(confirmPass))

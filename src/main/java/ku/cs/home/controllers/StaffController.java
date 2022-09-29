@@ -26,6 +26,7 @@ public class StaffController {
     @FXML private Button test;
 
 
+
     public void initialize(){
         staff = (Account) com.github.saacsos.FXRouter.getData();
         showUserData();
@@ -63,6 +64,7 @@ public class StaffController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
 
 
 

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffEditController">
+<AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffEditController">
    <children>
       <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
          <children>
@@ -21,42 +23,27 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="42.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: #01a57a #01a57a;" text="home" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: #01a57a #01a57a;" text="home" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <ImageView fx:id="homeicon" fitHeight="20.0" fitWidth="20.0" layoutX="32.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="homeicon" fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="44.0" layoutY="162.0" onMouseClicked="#handleChangePW" text="เปลี่ยนรหัสผ่าน" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="147.0" prefHeight="600.0" prefWidth="653.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Button layoutX="114.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #f1f3f6;" text="upload image" textFill="#01a57a">
+            <Button layoutX="287.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #f1f3f6;" text="upload image" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="284.0" layoutY="126.0" prefHeight="48.0" prefWidth="271.0" promptText="username">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="284.0" layoutY="201.0" prefHeight="48.0" prefWidth="271.0" promptText="password">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="284.0" layoutY="274.0" prefHeight="48.0" prefWidth="271.0" promptText="new password">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="284.0" layoutY="344.0" prefHeight="48.0" prefWidth="271.0" promptText="confirm new password">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <Button layoutX="452.0" layoutY="426.0" mnemonicParsing="false" style="-fx-background-color: #f1f3f6;" text="change profile" textFill="#01a57a">
+            <Button layoutX="285.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #f1f3f6;" text="change profile" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
