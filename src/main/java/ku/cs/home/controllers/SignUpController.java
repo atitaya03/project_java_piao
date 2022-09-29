@@ -16,6 +16,7 @@ import java.io.IOException;
 public class SignUpController {
     @FXML private Label failed;
     @FXML private TextField inputUsernameTextField;
+    @FXML private TextField inputDisplaynameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
     private AccountList accountList;
@@ -38,6 +39,7 @@ public class SignUpController {
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
         AccountList regis = new AccountList();
+        String displayname = inputDisplaynameTextField.getText();
         String password = inputPasswordTextField.getText();
         String confirmPass = confirmPasswordTextField.getText();
         String username = inputUsernameTextField.getText();
@@ -49,7 +51,7 @@ public class SignUpController {
         {failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            regis.addAccount(new Account(username, password, "student"));
+            regis.addAccount(new Account(displayname,username, password, "student","student"));
             DataSource<AccountList> write;
             write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
             write.writeData(regis,true);

@@ -32,7 +32,7 @@ public class StudentEditController {
         }
     }
     private void showUserData() {
-        nameLabel.setText(student.getUsername());
+        nameLabel.setText(student.getDisplayname());
         String url = getClass().getResource(student.getImagePath()).toExternalForm();
         circle.setFill(new ImagePattern(new Image(url)));
 

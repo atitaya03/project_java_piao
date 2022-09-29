@@ -25,6 +25,8 @@ public class HomeController {
     @FXML private ImageView logo;
     @FXML private ImageView image1;
     @FXML private TextField inputUsernameTextField;
+
+
     @FXML private PasswordField inputPasswordTextField;
     @FXML private Label failedLabel;
 
@@ -95,8 +97,10 @@ public class HomeController {
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
             failedLabel.setStyle("-fx-text-fill: #f61e1e");
         } else if (user.isBaned()) {
+            user.updateLoginAttempt();
             failedLabel.setText("คุณถูกแบน");
             failedLabel.setStyle("-fx-text-fill: #f61e1e");
+            dataSource.writeData(accountList, false);
 
         } else {
             try {

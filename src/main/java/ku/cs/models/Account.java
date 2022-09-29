@@ -6,6 +6,9 @@ import java.time.format.DateTimeFormatter;
 public class Account {
     private String role;
     private String username;
+    private String displayname;
+
+    private String organization;
     private String password;
     private  String imagePath;
     private boolean isBaned;
@@ -14,20 +17,24 @@ public class Account {
     private String loginTime;
 
 
-    public Account(String username, String password, String role) {
+    public Account(String displaynamename,String username, String password, String role,String organization) {
         this.role = role;
+        this.displayname = displaynamename;
         this.username = username;
         this.password = password;
+        this.organization = organization;
         this.imagePath = "/ku/cs/profileUsers/defaultProfile.jpg";
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime="00";
 
     }
-    public Account(String username, String password, String role,boolean isBaned,int loginAttempt , String imagePath, String loginTime) {
+    public Account(String displayname,String username, String password, String role,String organization,boolean isBaned,int loginAttempt , String imagePath, String loginTime) {
         this.role = role;
         this.username = username;
         this.password = password;
+        this.displayname = displayname;
+        this.organization = organization;
         this.imagePath = imagePath;
         this.isBaned = isBaned;
         this.loginAttempt = loginAttempt;
@@ -38,7 +45,7 @@ public class Account {
         LocalDateTime now = LocalDateTime.now();
         System.out.println("Before Formatting: " + now);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-         this.loginTime = now.format(format);
+        this.loginTime = now.format(format);
     }
 
     public String getImagePath() {
@@ -69,6 +76,14 @@ public class Account {
         return loginAttempt;
     }
 
+    public String getDisplayname() {
+        return displayname;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
     public String getLoginTime() {
         return loginTime;
     }
@@ -90,23 +105,23 @@ public class Account {
 
     }
     public boolean isStudent() {
-        if (this.role.equals("student"))
-            return true;
-        return false;
+        return this.role.equals("student");
 
     }
     public boolean isStaff() {
-        if (this.role.equals("staff"))
-            return true;
-        return false;
+        return this.role.equals("staff");
 
     }
     public boolean isAdmin() {
-        if (this.role.equals("admin"))
-            return true;
-        return false;
+        return this.role.equals("admin");
 
     }
 
-
+    public void updateLoginAttempt() {
+        this.loginAttempt ++ ;
+    }
+    public void unBan(Account student) {
+        if (isAdmin())
+            student.isBaned = false ;
+    }
 }
