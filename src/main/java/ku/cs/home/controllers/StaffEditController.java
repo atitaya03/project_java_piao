@@ -16,8 +16,7 @@ import java.io.IOException;
 
 public class StaffEditController {
     Account staff;
-    @FXML
-    private Circle staffimage;
+    @FXML private Circle staffimage;
     @FXML private Circle newStaffImage;
 
     @FXML private Label nameLabel;
@@ -62,7 +61,7 @@ public class StaffEditController {
     @FXML
     public void handleChangePW(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("changepassword");
+            com.github.saacsos.FXRouter.goTo("changepassword",staff);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าเปลี่ยนรหัสไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
