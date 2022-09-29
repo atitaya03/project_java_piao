@@ -7,14 +7,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import ku.cs.models.Account;
 
+import java.io.File;
 import java.io.IOException;
 
 public class StaffEditController {
     Account staff;
     @FXML
     private Circle staffimage;
+    @FXML private Circle newStaffImage;
 
     @FXML private Label nameLabel;
     @FXML private ImageView homeicon;
@@ -55,7 +58,36 @@ public class StaffEditController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+    @FXML
+    public void handleUploadImageButton(ActionEvent actionEvent){
+        FileChooser fileChooser = new FileChooser();
+        //Set extension filter
+        //***can upload only image type file***
+        FileChooser.ExtensionFilter extFilterJPG
+                = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterjpg
+                = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
+        FileChooser.ExtensionFilter extFilterPNG
+                = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
+        FileChooser.ExtensionFilter extFilterpng
+                = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fileChooser.getExtensionFilters()
+                .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
+        File imageFile = fileChooser.showOpenDialog(null);
 
+
+        if(imageFile != null){
+            String imagePath = imageFile.getAbsolutePath();
+            newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
+        }else{
+            System.out.println("file is not valid!!");
+        }
+
+        /*TODO set image url in changeProfileButton
+            add newProfile image in to resource instead of using absolute path*/
+
+
+    }
 
 
 
