@@ -88,11 +88,11 @@ public class StaffEditController {
 
         if(imageFile != null){
             String imagePath = imageFile.getAbsolutePath();
+            System.out.println(imagePath);
             newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
         }else{
             System.out.println("file is not valid!!");
         }
-
         /*TODO set image url in changeProfileButton
             add newProfile image in to resource instead of using absolute path*/
 
