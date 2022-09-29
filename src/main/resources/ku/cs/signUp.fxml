@@ -33,7 +33,7 @@
                   <Font name="Eras Demi ITC" size="11.0" />
                </font>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="114.0" layoutX="100.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
+            <Rectangle fx:id="profileImageRec" arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="114.0" layoutX="100.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
             <Label fx:id="failed" alignment="CENTER" layoutX="105.0" layoutY="247.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />

@@ -6,12 +6,21 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.FileChooser;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class SignUpController {
     @FXML private Label failed;
@@ -19,8 +28,10 @@ public class SignUpController {
     @FXML private TextField inputDisplaynameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
+    @FXML private Rectangle profileImageRec;
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
+    private File imageFile;
     public void initialize(){
         readData();
     }
@@ -38,7 +49,6 @@ public class SignUpController {
         }
     }
     public void handleSignUpButton(ActionEvent actionEvent) {
-        AccountList regis = new AccountList();
         String displayname = inputDisplaynameTextField.getText();
         String password = inputPasswordTextField.getText();
         String confirmPass = confirmPasswordTextField.getText();
@@ -51,10 +61,22 @@ public class SignUpController {
         {failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            regis.addAccount(new Account(displayname,username, password, "student","student"));
+            Account account = new Account(displayname,username, password, "student","student");
+            accountList.addAccount(account);
+            String imageFilePath;
+            if(imageFile != null){
+                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                String imagename = username+".png";
+                File renameImage = new File("src/main/resources/ku/cs/profileUsers" + File.separator + imagename);
+                tempImagePNG.renameTo(renameImage);
+                System.out.println(renameImage.getPath());
+                imageFilePath = "/ku/cs/profileUsers/" +imagename;
+                account.setImagePath(imageFilePath);
+
+            }
             DataSource<AccountList> write;
             write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
-            write.writeData(regis,true);
+            write.writeData(accountList,false);
             try {
                 com.github.saacsos.FXRouter.goTo("home");
             } catch (IOException e) {
@@ -65,7 +87,41 @@ public class SignUpController {
 
 
     }
-    public void handleUploadImageButton(ActionEvent actionEvent) {
+    public void handleUploadImageButton(ActionEvent actionEvent) {        FileChooser fileChooser = new FileChooser();
+        //Set extension filter
+        //***can upload only image type file***
+        FileChooser.ExtensionFilter extFilterJPG
+                = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterjpg
+                = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
+        FileChooser.ExtensionFilter extFilterPNG
+                = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
+        FileChooser.ExtensionFilter extFilterpng
+                = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fileChooser.getExtensionFilters()
+                .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
+            imageFile = fileChooser.showOpenDialog(null);
+
+
+        if(imageFile != null){
+            try {
+                String imagePath = imageFile.getAbsolutePath();
+                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
+                Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println(imagePath);
+                profileImageRec.setFill(new ImagePattern(new Image(imagePath)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            System.err.println("Can't upload image");
+        }
+
+        /*TODO set image url in changeProfileButton
+            add newProfile image in to resource instead of using absolute path*/
+
+
 
     }
 }
