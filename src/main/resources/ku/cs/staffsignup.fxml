@@ -29,7 +29,7 @@
                   <Font name="Eras Demi ITC" size="11.0" />
                </font>
             </Button>
-            <Label fx:id="failedPassword" alignment="CENTER" layoutX="147.0" layoutY="30.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
+            <Label fx:id="failed" alignment="CENTER" layoutX="147.0" layoutY="30.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>

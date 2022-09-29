@@ -90,23 +90,30 @@ public class HomeController {
     public void handleSignInButton(ActionEvent actionEvent){
         String username = inputUsernameTextField.getText();
         String password = inputPasswordTextField.getText();
+        Account user = accountList.searchAccountByUsername(username);
         if (!accountList.loginSuccess(username,password)){
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
             failedLabel.setStyle("-fx-text-fill: #f61e1e");
-        } else
-        try {
-            Account user = accountList.searchAccountByUsername(username);
-            if((user.getRole()).equals("student"))
-            com.github.saacsos.FXRouter.goTo("student",user);
-            else if((user.getRole()).equals("staff"))
-                com.github.saacsos.FXRouter.goTo("staff",user);
-            else if((user.getRole()).equals("admin"))
-                com.github.saacsos.FXRouter.goTo("admin",user);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้าหลัก ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
-        }
+        } else if (user.isBaned()) {
+            failedLabel.setText("คุณถูกแบน");
+            failedLabel.setStyle("-fx-text-fill: #f61e1e");
 
+        } else {
+            try {
+                user.initialLoginTime();
+                if (user.isStudent())
+                    com.github.saacsos.FXRouter.goTo("student", user);
+                else if (user.isStaff())
+                    com.github.saacsos.FXRouter.goTo("staff", user);
+                else if (user.isAdmin())
+                    com.github.saacsos.FXRouter.goTo("admin", user);
+                dataSource.writeData(accountList, false);
+
+            } catch (IOException e) {
+                System.err.println("ไปที่หน้าหลัก ไม่ได้");
+                System.err.println("ให้ตรวจสอบการกําหนด route");
+            }
+        }
 
 
 
