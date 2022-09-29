@@ -32,7 +32,7 @@ public class StaffController {
         showUserData();
     }
     private void showUserData() {
-        nameLabel.setText(staff.getUsername());
+        nameLabel.setText(staff.getDisplayname());
         String url = getClass().getResource(staff.getImagePath()).toExternalForm();
         staffimage.setFill(new ImagePattern(new Image(url)));
 
