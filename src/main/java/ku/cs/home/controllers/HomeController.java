@@ -66,7 +66,7 @@ public class HomeController {
     }
 
     private void refreshPage() {
-        dataSource.writeData(accountList,true);
+        dataSource.writeData(accountList,false);
         effect.changePage(root, "home");
     }
 
