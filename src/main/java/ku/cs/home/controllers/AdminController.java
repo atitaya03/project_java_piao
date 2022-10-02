@@ -28,7 +28,7 @@ public class AdminController {
     @FXML private Label userLabel;
     @FXML private Label typeLabel;
     @FXML private Label logintimeLabel;
-
+    @FXML private ImageView accountImageView;
 
 
     public void initialize(){
@@ -44,14 +44,10 @@ public class AdminController {
 
     }
 
-
-
-
     private void showAccListView(){
         showAccListView.getItems().addAll(accountList.getAllAccount());
         showAccListView.refresh();
     }
-
 
 
     private void handleSelectedListView() {
@@ -71,6 +67,7 @@ public class AdminController {
         userLabel.setText(account.getUsername());
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
+        accountImageView.setImage(new Image(account.getImagePath()));
 
     }
 
