@@ -3,46 +3,42 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2d2e2d;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f9f9f9" height="511.0" layoutX="27.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="747.0" />
-      <Button layoutX="574.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
-      <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="432.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
-      <ListView layoutX="65.0" layoutY="127.0" prefHeight="382.0" prefWidth="324.0" />
-      <TabPane layoutX="53.0" layoutY="86.0" prefHeight="440.0" prefWidth="348.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="ผู้ใช้งาน">
-               <content>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               </content></Tab>
-          <Tab style="fx-background-color: #03bd77;" text="รายงานผู้ใช้ไม่เหมาะสม" />
-        </tabs>
-      </TabPane>
-      <Label layoutX="435.0" layoutY="257.0" text="Username : ">
+      <Button layoutX="564.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
+      <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="428.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
+      <ListView fx:id="showAccListView" layoutX="65.0" layoutY="114.0" prefHeight="460.0" prefWidth="324.0" />
+      <Label layoutX="432.0" layoutY="272.0" text="Username : ">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="435.0" layoutY="313.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :">
+      <Label layoutX="434.0" layoutY="376.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button layoutX="675.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
-      <Button layoutX="432.0" layoutY="367.0" mnemonicParsing="false" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
+      <Button layoutX="672.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
+      <Button layoutX="432.0" layoutY="539.0" mnemonicParsing="false" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label layoutX="435.0" layoutY="283.0" text="ประเภทผู้ใช้ :">
+      <Label layoutX="434.0" layoutY="306.0" text="ประเภทผู้ใช้ :">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="39.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="464.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleChangePassword" style="-fx-background-color: #03bd77;" text="เปลี่ยนรหัสผ่าน" textFill="WHITE" />
+      <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="332.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="461.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleChangePassword" style="-fx-background-color: #03bd77;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+      <Label layoutX="434.0" layoutY="344.0" text="เข้าใช้งานล่าสุด :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="userLabel" layoutX="549.0" layoutY="275.0" text="Label" />
+      <Label fx:id="typeLabel" layoutX="560.0" layoutY="309.0" text="Label" />
+      <Label fx:id="logintimeLabel" layoutX="586.0" layoutY="347.0" text="Label" />
+      <Label layoutX="698.0" layoutY="379.0" text="Label" />
    </children>
 </AnchorPane>

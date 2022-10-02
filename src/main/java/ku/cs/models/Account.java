@@ -88,6 +88,13 @@ public class Account {
         return loginTime;
     }
 
+    @Override
+    public String toString() {
+        String banStatus = "ปกติ";
+        if (this.isBaned == true) banStatus = "ถูกแบน";
+        return "ชื่อบัญชีผู้ใช้: " + username + " [สถานะ: " + banStatus + "]\nประเภทผู้ใช้: "+ role + "\nเข้าใช้งานล่าสุด: " + loginTime;
+    }
+
     public boolean loginSuccess(String username, String password) {
         if (this.username.equals(username) && this.password.equals(password)) {
             return true;

@@ -19,7 +19,7 @@ import ku.cs.services.DataSource;
 import java.io.IOException;
 
 public class ChangePasswordController {
-    Account staff;
+    Account account;
 
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
@@ -33,7 +33,7 @@ public class ChangePasswordController {
 
 
     public void initialize(){
-        staff = (Account) com.github.saacsos.FXRouter.getData();
+        account = (Account) com.github.saacsos.FXRouter.getData();
         readData();
         showUserData();
 
@@ -50,8 +50,8 @@ public class ChangePasswordController {
     }
 
     private void showUserData() {
-        nameLabel.setText(staff.getDisplayname());
-        String url = getClass().getResource(staff.getImagePath()).toExternalForm();
+        nameLabel.setText(account.getDisplayname());
+        String url = getClass().getResource(account.getImagePath()).toExternalForm();
         staffimage.setFill(new ImagePattern(new Image(url)));
     }
 
