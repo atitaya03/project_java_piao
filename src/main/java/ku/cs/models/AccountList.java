@@ -1,6 +1,8 @@
 package ku.cs.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class AccountList {
     private ArrayList<Account> accountList;
@@ -39,6 +41,10 @@ public class AccountList {
         Account account = searchAccountByUsername(username);
         account.changePassword(newPassword);
         return true;
+    }
+
+    public void sort(Comparator<Account> accountComparator){
+        Collections.sort(this.accountList, accountComparator);
     }
 
 }

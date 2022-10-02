@@ -16,6 +16,7 @@ import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 
 public class AdminController {
@@ -38,6 +39,9 @@ public class AdminController {
 
         dataSource = new AccountFileDataSource("executablefiles_csv/csv/","userData.csv");
         accountList = dataSource.readData();
+
+
+
         showAccListView();
         clearSelectedAccount();
         handleSelectedListView();
@@ -67,7 +71,7 @@ public class AdminController {
         userLabel.setText(account.getUsername());
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
-        accountImageView.setImage(new Image(account.getImagePath()));
+//        accountImageView.setImage(new Image(account.getImagePath()));
 
     }
 

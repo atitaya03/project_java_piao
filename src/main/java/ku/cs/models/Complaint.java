@@ -1,5 +1,8 @@
 package ku.cs.models;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Complaint {
     private String category;
     private String title;
@@ -52,4 +55,7 @@ public class Complaint {
         return
                  category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  ;
     }
+
+
+
 }
