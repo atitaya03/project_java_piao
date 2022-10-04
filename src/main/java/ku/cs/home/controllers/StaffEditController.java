@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class StaffEditController {
-    Account staff;
+    Account account;
     @FXML private Circle staffimage;
     @FXML private Circle newStaffImage;
 
@@ -24,7 +24,7 @@ public class StaffEditController {
 
 
     public void initialize(){
-        staff = (Account) com.github.saacsos.FXRouter.getData();
+        account = (Account) com.github.saacsos.FXRouter.getData();
 
         String url = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
         homeicon.setImage(new Image(url));
@@ -33,17 +33,19 @@ public class StaffEditController {
     }
 
     private void showUserData() {
-        nameLabel.setText(staff.getDisplayname());
-        String url = getClass().getResource(staff.getImagePath()).toExternalForm();
+        nameLabel.setText(account.getDisplayname());
+        String url = getClass().getResource(account.getImagePath()).toExternalForm();
         staffimage.setFill(new ImagePattern(new Image(url)));
 
     }
     @FXML
-    public void handleStaffButton(ActionEvent actionEvent) {
+    public void handleHomeButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("staff",staff);
+            if(account.isStaff()) com.github.saacsos.FXRouter.goTo("staff",account);
+            else if (account.isAdmin()) com.github.saacsos.FXRouter.goTo("admin",account);
+            else  com.github.saacsos.FXRouter.goTo("student",account);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า staff ไม่ได้");
+            System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
@@ -61,7 +63,7 @@ public class StaffEditController {
     @FXML
     public void handleChangePW(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("changepassword",staff);
+            com.github.saacsos.FXRouter.goTo("changepassword",account);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าเปลี่ยนรหัสไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
