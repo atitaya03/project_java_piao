@@ -27,7 +27,6 @@ public class ProjectApplication extends Application {
         FXRouter.when("staffsignup", packageStr+"staffsignup.fxml");
         FXRouter.when("edit", packageStr+"edit.fxml");
         FXRouter.when("staffdetail", packageStr+"staffdetail.fxml");
-        FXRouter.when("studentedit", packageStr+"studentedit.fxml");
         FXRouter.when("studentreport", packageStr+"studentreport.fxml");
         FXRouter.when("report", packageStr+"report.fxml");
         FXRouter.when("changepassword", packageStr+"changepassword.fxml");

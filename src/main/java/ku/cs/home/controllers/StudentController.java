@@ -26,7 +26,7 @@ public class StudentController {
     @FXML
     public void handleedit(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("studentedit",student);
+            com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
             System.err.println("Cannot reach Dictionary");
         }

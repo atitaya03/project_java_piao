@@ -29,12 +29,12 @@
                </font>
             </Button>
             <ImageView fx:id="homeicon" fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="19.0" layoutY="169.0" onMouseClicked="#handleChangePW" text="เปลี่ยนรหัสผ่าน" textFill="WHITE">
+            <Label layoutX="19.0" layoutY="210.0" onMouseClicked="#handleChangePW" text="เปลี่ยนรหัสผ่าน" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="19.0" layoutY="210.0" text="เปลี่ยนรูปโปรไฟล์" textFill="WHITE">
+            <Label layoutX="19.0" layoutY="169.0" text="ข้อมูลทั่วไป" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -43,18 +43,58 @@
       </Pane>
       <Pane layoutX="147.0" prefHeight="600.0" prefWidth="653.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Button layoutX="114.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #ffffff;" text="upload image" textFill="#01a57a">
+            <Button layoutX="81.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #ffffff;" text="อัพโหลดรูปภาพ" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="change profile" textFill="#01a57a">
+            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: #01a57a #01a57a;" text="แก้ไขข้อมูล" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Circle fx:id="newStaffImage" fill="DODGERBLUE" layoutX="163.0" layoutY="201.0" radius="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="newStaffImage" fill="DODGERBLUE" layoutX="137.0" layoutY="288.0" radius="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="257.0" layoutY="225.0" text="ชื่อบัญชีผู้ใช้" textFill="#4d4d4d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="257.0" layoutY="269.0" text="ชื่อที่แสดง" textFill="#4d4d4d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="257.0" layoutY="311.0" text="ประเภทบัญชี" textFill="#4d4d4d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameLabel" layoutX="389.0" layoutY="227.0" text="1" textFill="#01a57a">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="displayLabel" layoutX="389.0" layoutY="269.0" text="2" textFill="#01a57a">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="roleLabel" layoutX="389.0" layoutY="311.0" text="3" textFill="#01a57a">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="orgLabel" layoutX="440.0" layoutY="311.0" textFill="#01a57a">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <Label layoutX="216.0" layoutY="141.0" text="ข้อมูลทั่วไป" textFill="#4d4d4d">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

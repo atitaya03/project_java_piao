@@ -30,7 +30,7 @@
             <Font size="18.0" />
          </font></Label>
       <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="332.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="461.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleChangePassword" style="-fx-background-color: #03bd77;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+      <Button layoutX="461.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleChangeProfile" style="-fx-background-color: #03bd77;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
       <Label layoutX="434.0" layoutY="361.0" text="เข้าใช้งานล่าสุด :" textFill="#4d4d4d">
          <font>
             <Font size="18.0" />

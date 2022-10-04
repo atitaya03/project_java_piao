@@ -21,6 +21,10 @@ public class EditController {
 
     @FXML private Label nameLabel;
     @FXML private ImageView homeicon;
+    @FXML private Label usernameLabel;
+    @FXML private Label displayLabel;
+    @FXML private Label roleLabel;
+    @FXML private Label orgLabel;
 
 
     public void initialize(){
@@ -28,6 +32,15 @@ public class EditController {
 
         String url = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
         homeicon.setImage(new Image(url));
+
+        usernameLabel.setText(account.getUsername());
+        displayLabel.setText(account.getDisplayname());
+        roleLabel.setText(account.getRole());
+
+        if (account.isStaff()) orgLabel.setText(account.getOrganization());
+
+
+
         showUserData();
 
     }

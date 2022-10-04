@@ -81,12 +81,6 @@ public class AdminController {
         logintimeLabel.setText("");
     }
 
-
-
-
-
-
-
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
         try {
@@ -96,9 +90,9 @@ public class AdminController {
         }
     }
     @FXML
-    public void handleChangePassword(ActionEvent actionEvent) {
+    public void handleChangeProfile(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("changepassword",admin);
+            com.github.saacsos.FXRouter.goTo("edit",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าเปลี่ยนรหัสไม่ได้");
         }
