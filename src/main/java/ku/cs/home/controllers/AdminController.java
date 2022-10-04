@@ -24,37 +24,47 @@ public class AdminController {
     Account account;
     private DataSource<AccountList> dataSource;
     private AccountList accountList;
-    @FXML private ImageView adminicon;
-    @FXML private ListView<Account> showAccListView;
-    @FXML private Label userLabel;
-    @FXML private Label typeLabel;
-    @FXML private Label logintimeLabel;
-    @FXML private ImageView accountImageView;
+    @FXML
+    private ImageView adminicon;
+    @FXML
+    private ListView<Account> showAccListView;
+    @FXML
+    private Label userLabel;
+    @FXML
+    private Label attemptLogin;
+    @FXML
+    private Label typeLabel;
+    @FXML
+    private Label logintimeLabel;
+    @FXML
+    private Label banSucceeded;
+    @FXML
+    private ImageView accountImageView;
 
 
-    public void initialize(){
+    public void initialize() {
         admin = (Account) com.github.saacsos.FXRouter.getData();
         String url = getClass().getResource("/ku/cs/images/adminicon.png").toExternalForm();
         adminicon.setImage(new Image(url));
 
-        dataSource = new AccountFileDataSource("executablefiles_csv/csv/","userData.csv");
+        dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
         accountList = dataSource.readData();
-
 
 
         showAccListView();
         clearSelectedAccount();
-        handleSelectedListView();
+          handleSelectedListView();
 
     }
 
-    private void showAccListView(){
+    private void showAccListView() {
         showAccListView.getItems().addAll(accountList.getAllAccount());
         showAccListView.refresh();
     }
 
 
-    private void handleSelectedListView() {
+     private void handleSelectedListView() {
+
         showAccListView.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Account>() {
                     @Override
@@ -62,23 +72,28 @@ public class AdminController {
                                         Account oldValue, Account newValue) {
                         System.out.println(newValue + " is selected");
                         showSelectedAccount(newValue);
+                        account = newValue;
                     }
                 });
+
     }
 
 
-    private void showSelectedAccount(Account account){
+    private void showSelectedAccount(Account account) {
+        banSucceeded.setText("");
         userLabel.setText(account.getUsername());
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
+        attemptLogin.setText(account.getLoginAttempt()+"");
 //        accountImageView.setImage(new Image(account.getImagePath()));
 
     }
 
-    private void clearSelectedAccount(){
+    private void clearSelectedAccount() {
         userLabel.setText("");
         typeLabel.setText("");
         logintimeLabel.setText("");
+        banSucceeded.setText("");
     }
 
     @FXML
@@ -89,10 +104,11 @@ public class AdminController {
             System.err.println("ไปที่หน้า home ไม่ได้");
         }
     }
+
     @FXML
     public void handleChangeProfile(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("edit",admin);
+            com.github.saacsos.FXRouter.goTo("edit", admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าเปลี่ยนรหัสไม่ได้");
         }
@@ -106,5 +122,26 @@ public class AdminController {
             System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+    }
+
+    @FXML
+    public void handleBanButton(ActionEvent actionEvent){
+        admin.Ban(account);
+        banSucceeded.setText("ระงับการใช้งานสำเร็จ");
+        banSucceeded.setStyle("-fx-text-fill: #f61e1e");
+        dataSource.writeData(accountList,false);
+
+
+
+    }
+    @FXML
+    public void handleUnBanButton(ActionEvent actionEvent){
+        if(account.isBaned()){admin.unBan(account);
+        banSucceeded.setText("คืนการใช้งานสำเร็จ");
+        banSucceeded.setStyle("-fx-text-fill: #03bd00");
+        dataSource.writeData(accountList,false);}
+
+
+
     }
 }

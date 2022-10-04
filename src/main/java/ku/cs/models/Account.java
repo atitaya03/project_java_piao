@@ -128,7 +128,12 @@ public class Account {
         this.loginAttempt ++ ;
     }
     public void unBan(Account student) {
-        if (isAdmin())
+        if (isAdmin()){
             student.isBaned = false ;
+            student.loginAttempt = 0;}
+    }
+    public void Ban(Account student) {
+        if (isAdmin())
+            student.isBaned = true ;
     }
 }

@@ -21,7 +21,7 @@
             <Font size="18.0" />
          </font></Label>
       <Button layoutX="672.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
-      <Button layoutX="432.0" layoutY="539.0" mnemonicParsing="false" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
+      <Button layoutX="432.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleBanButton" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>
@@ -51,10 +51,16 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="698.0" layoutY="393.0" textFill="#4d4d4d">
+      <Label fx:id="attemptLogin" layoutX="698.0" layoutY="393.0" textFill="#4d4d4d">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="banSucceeded" layoutX="629.0" layoutY="550.0" prefHeight="18.0" prefWidth="98.0" />
+      <Button layoutX="507.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleUnBanButton" style="-fx-background-color: #03bd00;" text="ปลดแบน" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
