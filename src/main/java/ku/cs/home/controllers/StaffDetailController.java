@@ -41,9 +41,9 @@ public class StaffDetailController {
     }
 
     @FXML
-    public void handleHomepageButton(ActionEvent actionEvent) {
+    public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("home");
+            com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที่หน้าแรกไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

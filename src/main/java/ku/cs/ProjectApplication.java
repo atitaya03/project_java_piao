@@ -13,19 +13,19 @@ public class ProjectApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXRouter.bind(this, stage, "caramelCase", 800, 600);
         configRoute();
-        FXRouter.goTo("home");
+        FXRouter.goTo("login");
 
     }
     private static void configRoute() {
         String packageStr = "ku/cs/";
-        FXRouter.when("home", packageStr+"home.fxml");
+        FXRouter.when("login", packageStr+"login.fxml");
         FXRouter.when("credits", packageStr+"credits.fxml");
         FXRouter.when("staff", packageStr+"staff.fxml");
         FXRouter.when("student", packageStr+"student.fxml");
         FXRouter.when("admin", packageStr+"admin.fxml");
         FXRouter.when("signUp", packageStr+"signUp.fxml");
         FXRouter.when("staffsignup", packageStr+"staffsignup.fxml");
-        FXRouter.when("staffedit", packageStr+"staffedit.fxml");
+        FXRouter.when("edit", packageStr+"edit.fxml");
         FXRouter.when("staffdetail", packageStr+"staffdetail.fxml");
         FXRouter.when("studentedit", packageStr+"studentedit.fxml");
         FXRouter.when("studentreport", packageStr+"studentreport.fxml");

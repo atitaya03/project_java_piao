@@ -5,7 +5,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -21,7 +20,7 @@ import ku.cs.services.Effect;
 
 import java.io.IOException;
 
-public class HomeController {
+public class LoginController {
     @FXML private ImageView logo;
     @FXML private ImageView image1;
     @FXML private TextField inputUsernameTextField;

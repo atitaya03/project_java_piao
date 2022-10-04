@@ -14,7 +14,7 @@ import ku.cs.models.Account;
 import java.io.File;
 import java.io.IOException;
 
-public class StaffEditController {
+public class EditController {
     Account account;
     @FXML private Circle staffimage;
     @FXML private Circle newStaffImage;
@@ -51,9 +51,9 @@ public class StaffEditController {
     }
 
     @FXML
-    public void handleHomepageButton(ActionEvent actionEvent) {
+    public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("home");
+            com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที่หน้าแรกไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

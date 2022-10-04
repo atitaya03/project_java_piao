@@ -40,9 +40,9 @@ public class SignUpController {
         accountList = dataSource.readData();
     }
 
-    public void handleHomeButton(ActionEvent actionEvent) {
+    public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("home");
+            com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที7หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
@@ -78,7 +78,7 @@ public class SignUpController {
             write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
             write.writeData(accountList,false);
             try {
-                com.github.saacsos.FXRouter.goTo("home");
+                com.github.saacsos.FXRouter.goTo("login");
             } catch (IOException e) {
                 System.err.println("ไปหน้าแรกไม่ได้");
             }

@@ -20,7 +20,7 @@
                </font>
             </Label>
             <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
-            <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHomepageButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
             <Label fx:id="editLabel" layoutX="695.0" layoutY="34.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE" />
          </children>
       </Pane>

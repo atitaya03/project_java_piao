@@ -98,9 +98,9 @@ public class ChangePasswordController {
 
     }
     @FXML
-    private void handleHomepageButton(ActionEvent actionEvent){
+    private void handleLogoutButton(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("home");
+            com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
@@ -111,7 +111,7 @@ public class ChangePasswordController {
     @FXML
     private void handleChangePF(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("staffedit",account);
+            com.github.saacsos.FXRouter.goTo("edit",account);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

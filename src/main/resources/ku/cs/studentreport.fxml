@@ -14,7 +14,7 @@
     <children>
         <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a;">
             <children>
-                <Button layoutX="24.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE">
+                <Button layoutX="24.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>

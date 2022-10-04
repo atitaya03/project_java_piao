@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffEditController">
+<AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.EditController">
    <children>
       <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
          <children>
@@ -18,7 +18,7 @@
                </font>
             </Label>
             <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="74.0" layoutY="52.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button layoutX="25.0" layoutY="551.0" mnemonicParsing="false" onAction="#handleHomepageButton" style="-fx-background-color: #01a57a #01a57a;" text="ออกจากระบบ" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="551.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a #01a57a;" text="ออกจากระบบ" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

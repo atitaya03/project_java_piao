@@ -38,9 +38,9 @@ public class StaffController {
 
     }
     @FXML
-    public void handleHomepageButton(ActionEvent actionEvent) {
+    public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("home",staff);
+            com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
@@ -50,7 +50,7 @@ public class StaffController {
     @FXML
     public void handleedit(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("staffedit",staff);
+            com.github.saacsos.FXRouter.goTo("edit",staff);
         } catch (IOException e) {
             System.err.println("Cannot reach Dictionary");
         }
