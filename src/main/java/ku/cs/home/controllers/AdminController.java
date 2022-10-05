@@ -39,6 +39,12 @@ public class AdminController {
     @FXML
     private Label banSucceeded;
     @FXML
+    private Label attemptLoginPrompt;
+    @FXML
+    private Label detailRequestPrompt;
+    @FXML
+    private Label detailRequest;
+    @FXML
     private ImageView accountImageView;
 
 
@@ -80,11 +86,20 @@ public class AdminController {
 
 
     private void showSelectedAccount(Account account) {
-        banSucceeded.setText("");
+        clearSelectedAccount();
+        if(account.isBanned()){
+            attemptLoginPrompt.setText("จำนวนครั้งที่พยายามเข้าสู่ระบบ :");
+            attemptLoginPrompt.setStyle("-fx-text-fill: #f61e1e");
+            attemptLogin.setText(account.getLoginAttempt()+"");
+            attemptLogin.setStyle("-fx-text-fill: #f61e1e");
+            detailRequestPrompt.setText("คำขอการคืนสิทธิ์ : ");
+            detailRequestPrompt.setStyle("-fx-text-fill: #f61e1e");
+            detailRequest.setText(account.getUnbanRequest());
+            detailRequest.setStyle("-fx-text-fill: #f61e1e");
+            }
         userLabel.setText(account.getUsername());
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
-        attemptLogin.setText(account.getLoginAttempt()+"");
 //        accountImageView.setImage(new Image(account.getImagePath()));
 
     }
@@ -94,6 +109,10 @@ public class AdminController {
         typeLabel.setText("");
         logintimeLabel.setText("");
         banSucceeded.setText("");
+        detailRequestPrompt.setText("");
+        detailRequest.setText("");
+        attemptLoginPrompt.setText("");
+        attemptLogin.setText("");
     }
 
     @FXML
@@ -126,7 +145,7 @@ public class AdminController {
 
     @FXML
     public void handleBanButton(ActionEvent actionEvent){
-        admin.Ban(account);
+        admin.ban(account);
         banSucceeded.setText("ระงับการใช้งานสำเร็จ");
         banSucceeded.setStyle("-fx-text-fill: #f61e1e");
         dataSource.writeData(accountList,false);
@@ -136,7 +155,7 @@ public class AdminController {
     }
     @FXML
     public void handleUnBanButton(ActionEvent actionEvent){
-        if(account.isBaned()){admin.unBan(account);
+        if(account.isBanned()){admin.unBan(account);
         banSucceeded.setText("คืนการใช้งานสำเร็จ");
         banSucceeded.setStyle("-fx-text-fill: #03bd00");
         dataSource.writeData(accountList,false);}

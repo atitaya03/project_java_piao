@@ -19,6 +19,7 @@ public class ProjectApplication extends Application {
     private static void configRoute() {
         String packageStr = "ku/cs/";
         FXRouter.when("login", packageStr+"login.fxml");
+        FXRouter.when("banned", packageStr+"banned.fxml");
         FXRouter.when("credits", packageStr+"credits.fxml");
         FXRouter.when("staff", packageStr+"staff.fxml");
         FXRouter.when("student", packageStr+"student.fxml");

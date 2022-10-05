@@ -50,8 +50,8 @@ public class AccountFileDataSource implements DataSource<AccountList> {
             String line = "";
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
-                Account acc = new Account( //displayname,username,password,role,organization,isBaned,loginAttempt,imagePath,loginTime
-                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),Boolean.parseBoolean(data[5].trim()),Integer.parseInt(data[6].trim()),data[7].trim(),(data[8].trim())
+                Account acc = new Account( //displayname,username,password,role,organization,isBaned,loginAttempt,imagePath,loginTime,unBannedRequest
+                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),Boolean.parseBoolean(data[5].trim()),Integer.parseInt(data[6].trim()),data[7].trim(),(data[8].trim()),(data[9].trim())
                 );
                 accountList.addAccount(acc);
 
@@ -91,7 +91,7 @@ public class AccountFileDataSource implements DataSource<AccountList> {
 
                 }
                 for (Account ac : acList.getAllAccount()){
-                    String line = ac.getDisplayname()+","+ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole()+ "," + ac.getOrganization()+","+ac.isBaned()+","+ac.getLoginAttempt()+"," +ac.getImagePath()+","+ ac.getLoginTime();
+                    String line = ac.getDisplayname()+","+ac.getUsername() + "," + ac.getPassword() + "," + ac.getRole()+ "," + ac.getOrganization()+","+ac.isBanned()+","+ac.getLoginAttempt()+"," +ac.getImagePath()+","+ ac.getLoginTime()+","+ ac.getUnbanRequest();
                     buffer.append(line);
                     buffer.newLine();
                 }

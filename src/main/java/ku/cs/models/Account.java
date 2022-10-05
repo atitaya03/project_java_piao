@@ -15,6 +15,7 @@ public class Account {
     private int loginAttempt;
 
     private String loginTime;
+    private String unBannedRequest;
 
 
     public Account(String displaynamename,String username, String password, String role,String organization) {
@@ -27,9 +28,8 @@ public class Account {
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime="00";
-
-    }
-    public Account(String displayname,String username, String password, String role,String organization,boolean isBaned,int loginAttempt , String imagePath, String loginTime) {
+        this.unBannedRequest = " "; }
+    public Account(String displayname,String username, String password, String role,String organization,boolean isBaned,int loginAttempt , String imagePath, String loginTime,String unBannedRequest) {
         this.role = role;
         this.username = username;
         this.password = password;
@@ -39,6 +39,7 @@ public class Account {
         this.isBaned = isBaned;
         this.loginAttempt = loginAttempt;
         this.loginTime=loginTime;
+        this.unBannedRequest = unBannedRequest;
 
     }
     public void initialLoginTime() {
@@ -68,7 +69,7 @@ public class Account {
         return role;
     }
 
-    public boolean isBaned() {
+    public boolean isBanned() {
         return isBaned;
     }
 
@@ -92,7 +93,8 @@ public class Account {
     public String toString() {
         String banStatus = "ปกติ";
         if (this.isBaned == true) banStatus = "ถูกแบน";
-        return "ชื่อบัญชีผู้ใช้: " + username + " [สถานะ: " + banStatus + "]\nประเภทผู้ใช้: "+ role + "\nเข้าใช้งานล่าสุด: " + loginTime;
+        return "ชื่อบัญชีผู้ใช้: " + username + " [สถานะ: " + banStatus + "]\nประเภทผู้ใช้: "+ role + "\nเข้าใช้งานล่าสุด: " + loginTime +
+                "เข้าใช้งานล่าสุด: " ;
     }
 
     public boolean loginSuccess(String username, String password) {
@@ -130,10 +132,18 @@ public class Account {
     public void unBan(Account student) {
         if (isAdmin()){
             student.isBaned = false ;
-            student.loginAttempt = 0;}
+            student.loginAttempt = 0;
+            student.unBannedRequest="-";}
     }
-    public void Ban(Account student) {
+    public void ban(Account student) {
         if (isAdmin())
             student.isBaned = true ;
+    }
+    public void unBanRequest(String request) {
+        unBannedRequest = request;
+    }
+
+    public String getUnbanRequest() {
+        return unBannedRequest;
     }
 }

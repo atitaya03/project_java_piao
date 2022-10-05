@@ -95,11 +95,14 @@ public class LoginController {
         if (!accountList.loginSuccess(username,password)){
             failedLabel.setText("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
             failedLabel.setStyle("-fx-text-fill: #f61e1e");
-        } else if (user.isBaned()) {
+        } else if (user.isBanned()) {
             user.updateLoginAttempt();
-            failedLabel.setText("คุณถูกแบน");
-            failedLabel.setStyle("-fx-text-fill: #f61e1e");
             dataSource.writeData(accountList, false);
+            try {
+                FXRouter.goTo("banned");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
         } else {
             try {
