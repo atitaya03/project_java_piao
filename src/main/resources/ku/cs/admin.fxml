@@ -62,15 +62,20 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="detailRequestPrompt" layoutX="431.0" layoutY="389.0" text="คำขอการคืนสิทธิ์">
+      <Label fx:id="detailRequestPrompt" layoutX="431.0" layoutY="389.0" text="คำขอการคืนสิทธิ์" textFill="#4d4d4d">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="detailRequest" layoutX="431.0" layoutY="423.0" prefHeight="90.0" prefWidth="292.0" text="Label">
+      <Label fx:id="detailRequest" layoutX="431.0" layoutY="423.0" prefHeight="90.0" prefWidth="292.0" text="Label" textFill="#4d4d4d">
          <font>
-            <Font size="11.0" />
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="orgLabel" layoutX="650.0" layoutY="283.0" textFill="#4d4d4d">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
+      <Button layoutX="292.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleReport" style="-fx-background-color: #03bd77;" text="รายงานความไม่เหมาะสม" textFill="WHITE" />
    </children>
 </AnchorPane>

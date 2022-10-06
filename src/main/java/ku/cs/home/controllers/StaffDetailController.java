@@ -12,7 +12,7 @@ import ku.cs.models.Account;
 import java.io.IOException;
 
 public class StaffDetailController {
-    Account staff;
+    private Account staff;
     @FXML
     private Circle staffimage;
 

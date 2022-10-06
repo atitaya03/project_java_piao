@@ -28,7 +28,7 @@ public class Account {
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime="00";
-        this.unBannedRequest = " "; }
+        this.unBannedRequest = "-"; }
     public Account(String displayname,String username, String password, String role,String organization,boolean isBaned,int loginAttempt , String imagePath, String loginTime,String unBannedRequest) {
         this.role = role;
         this.username = username;
@@ -93,8 +93,7 @@ public class Account {
     public String toString() {
         String banStatus = "ปกติ";
         if (this.isBaned == true) banStatus = "ถูกแบน";
-        return "ชื่อบัญชีผู้ใช้: " + username + " [สถานะ: " + banStatus + "]\nประเภทผู้ใช้: "+ role + "\nเข้าใช้งานล่าสุด: " + loginTime +
-                "เข้าใช้งานล่าสุด: " ;
+        return "ชื่อบัญชีผู้ใช้: " + username + " [สถานะ: " + banStatus + "]\nประเภทผู้ใช้: "+ role + "\nเข้าใช้งานล่าสุด: " + loginTime;
     }
 
     public boolean loginSuccess(String username, String password) {

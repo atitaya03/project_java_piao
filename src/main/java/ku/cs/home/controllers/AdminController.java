@@ -20,8 +20,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class AdminController {
-    Account admin;
-    Account account;
+    private Account admin;
+    private Account account;
     private DataSource<AccountList> dataSource;
     private AccountList accountList;
     @FXML
@@ -46,20 +46,22 @@ public class AdminController {
     private Label detailRequest;
     @FXML
     private ImageView accountImageView;
+    @FXML private Label orgLabel;
 
 
     public void initialize() {
         admin = (Account) com.github.saacsos.FXRouter.getData();
+        account = (Account) com.github.saacsos.FXRouter.getData();
+
         String url = getClass().getResource("/ku/cs/images/adminicon.png").toExternalForm();
         adminicon.setImage(new Image(url));
 
         dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
         accountList = dataSource.readData();
 
-
         showAccListView();
         clearSelectedAccount();
-          handleSelectedListView();
+        handleSelectedListView();
 
     }
 
@@ -100,6 +102,7 @@ public class AdminController {
         userLabel.setText(account.getUsername());
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
+        if (account.isStaff()) orgLabel.setText(account.getOrganization());
 //        accountImageView.setImage(new Image(account.getImagePath()));
 
     }
@@ -113,6 +116,7 @@ public class AdminController {
         detailRequest.setText("");
         attemptLoginPrompt.setText("");
         attemptLogin.setText("");
+        orgLabel.setText("");
     }
 
     @FXML
@@ -143,6 +147,15 @@ public class AdminController {
         }
     }
 
+    @FXML
+    public void handleReport(){
+        try {
+            com.github.saacsos.FXRouter.goTo("staffsignup");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
     @FXML
     public void handleBanButton(ActionEvent actionEvent){
         admin.ban(account);

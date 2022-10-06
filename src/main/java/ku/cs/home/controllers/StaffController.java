@@ -18,7 +18,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 
 public class StaffController {
-    Account staff;
+    private Account staff;
     @FXML
     private Circle staffimage;
     @FXML private Label nameLabel;

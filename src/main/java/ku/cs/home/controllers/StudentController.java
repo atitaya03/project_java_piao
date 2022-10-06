@@ -21,10 +21,11 @@ import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
 
 public class StudentController {
-    Account student;
+    private Account student;
     @FXML
     private Label nameLabel;
     @FXML private Label editLabel;
@@ -97,8 +98,8 @@ public class StudentController {
     }
     private void showUserData() {
         nameLabel.setText(student.getDisplayname());
-        String url = getClass().getResource(student.getImagePath()).toExternalForm();
-        circle.setFill(new ImagePattern(new Image(url)));
+        File image = new File(student.getImagePath());
+        circle.setFill(new ImagePattern(new Image(image.toURI().toString())));
 
     }
 
