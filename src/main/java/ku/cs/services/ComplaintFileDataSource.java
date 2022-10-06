@@ -53,7 +53,7 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
                 Complaint c = new Complaint(
-                        data[0].trim(), data[1].trim(),(data[2].trim()),(data[3].trim())
+                        data[0].trim(), data[1].trim(),(data[2].trim()),Integer.parseInt (data[3].trim()),data[4].trim(),data[5].trim(),data[6].trim()
                 );
                 complaintList.addComplaint(c);
 
@@ -93,7 +93,7 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
                 buffer = new BufferedWriter(writer);
             }
 
-            for (Complaint c : complaintList.getAllAccount()){
+            for (Complaint c : complaintList.getAllComplaints()){
                 String line = c.toCSV();
                 buffer.append(line);
                 buffer.newLine();

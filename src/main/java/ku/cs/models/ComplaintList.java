@@ -12,5 +12,5 @@ public class ComplaintList {
     public void addComplaint(Complaint complaint){
         complaints.add(complaint);
     }
-    public ArrayList<Complaint> getAllAccount(){return complaints;}
+    public ArrayList<Complaint> getAllComplaints(){return complaints;}
 }

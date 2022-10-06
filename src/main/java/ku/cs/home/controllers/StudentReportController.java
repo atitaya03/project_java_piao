@@ -33,6 +33,9 @@ public class StudentReportController {
     @FXML
     private Label nameLabel;
 
+    private ComplaintList complaintList;
+    private DataSource<ComplaintList> complaintsDataSource;
+
     public void initialize(){
         categoryComboBox.getItems().add("หน่วย 1");
         categoryComboBox.getItems().add("หน่วย 2");
@@ -40,6 +43,9 @@ public class StudentReportController {
         categoryComboBox.getItems().add("หน่วย 4");
         categoryComboBox.getItems().add("หน่วย 5");
         student = (Account) com.github.saacsos.FXRouter.getData();
+        complaintsDataSource = new ComplaintFileDataSource();
+        complaintList = complaintsDataSource.readData();
+
         showUserData();
     }
     private void showUserData() {
@@ -85,16 +91,15 @@ public class StudentReportController {
         }
     }
     public void handleSubmitButton(){
-        ComplaintList complaints = new ComplaintList();
         if(titleAddTextField.getText() != "" &&  detailAddTextField.getText() != "") {
             String category = (String) categoryComboBox.getValue();
             String title = titleAddTextField.getText();
             String detail = detailAddTextField.getText();
             Complaint c = new Complaint(category,title,detail,student.getUsername());
-            complaints.addComplaint(c);
-            DataSource<ComplaintList> write;
-            write = new ComplaintFileDataSource("executablefiles_csv/csv/","complaintData.csv");
-            write.writeData(complaints,true);
+            c.initialCreateTime();
+            complaintList.addComplaint(c);
+            complaintsDataSource.writeData(complaintList, false);
+
             titleAddTextField.clear();
             detailAddTextField.clear();
             categoryComboBox.valueProperty().set(null);
