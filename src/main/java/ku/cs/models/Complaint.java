@@ -14,7 +14,7 @@ public class Complaint {
     private String status;
 
     private String time;
-
+//    private AccountList votedList;
     public Complaint(String category, String title, String detail, String user) {
         this.category = category;
         this.title = title;
@@ -58,6 +58,11 @@ public class Complaint {
     public String getStatus() {
         return status;
     }
+
+    public String getTime() {
+        return time;
+    }
+
     public void updateStatus(String s){
         this.status = s;
     }
