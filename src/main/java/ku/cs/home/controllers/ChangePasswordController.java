@@ -19,7 +19,7 @@ import ku.cs.services.DataSource;
 import java.io.IOException;
 
 public class ChangePasswordController {
-    Account account;
+    private Account account;
 
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
@@ -30,6 +30,7 @@ public class ChangePasswordController {
     @FXML private ImageView homeicon;
     @FXML private Circle staffimage;
     @FXML private Label nameLabel;
+
 
 
     public void initialize(){

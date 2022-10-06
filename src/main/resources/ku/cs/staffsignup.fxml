@@ -12,11 +12,11 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
    <children>
-      <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="SIGN UP" textFill="#fff9f9">
+            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" style="-fx-background-color: #01a57a;" text="ลงทะเบียน" textFill="WHITE">
                <font>
-                  <Font name="Eras Demi ITC" size="12.0" />
+                  <Font size="14.0" />
                </font>
             </Button>
             <Label layoutX="32.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" text="ลงทะเบียน" textFill="#4d4d4d" textOverrun="CLIP">
@@ -24,44 +24,45 @@
                   <Font name="Eras Bold ITC" size="30.0" />
                </font>
             </Label>
-            <Button layoutX="164.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #f1f3f6;" text="upload image" textFill="#4d4d4d">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Button>
+            <Button layoutX="160.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="27.0" prefWidth="136.0" style="-fx-background-color: #ffffff;" text="อัพโหลดรูปภาพ" textFill="#4d4d4d" />
             <Label fx:id="failed" alignment="CENTER" layoutX="33.0" layoutY="281.0" prefHeight="17.0" prefWidth="109.0" textAlignment="CENTER">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1f3f6" height="107.0" layoutX="33.0" layoutY="310.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="109.0" />
-            <ComboBox fx:id="organizationComboBox" layoutX="31.0" layoutY="68.0" prefHeight="26.0" prefWidth="149.0" promptText="เลือกหน่วยงาน" style="-fx-background-color: #f1f3f6;" />
-            <TextField fx:id="inputUsernameTextField" layoutX="32.0" layoutY="153.0" prefHeight="32.0" prefWidth="173.0" promptText="Username" style="-fx-background-color: #f1f3f6;">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="107.0" layoutX="33.0" layoutY="310.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="109.0" />
+            <ComboBox fx:id="organizationComboBox" layoutX="31.0" layoutY="68.0" prefHeight="26.0" prefWidth="149.0" promptText="เลือกหน่วยงาน" style="-fx-background-color: #ffffff;" />
+            <TextField fx:id="inputUsernameTextField" layoutX="124.0" layoutY="160.0" prefHeight="32.0" prefWidth="173.0" promptText="Username" style="-fx-background-color: #ffffff;">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="inputPasswordTextField" layoutX="32.0" layoutY="194.0" prefHeight="32.0" prefWidth="173.0" promptText="Password" style="-fx-background-color: #f1f3f6;">
+            <PasswordField fx:id="inputPasswordTextField" layoutX="124.0" layoutY="201.0" prefHeight="32.0" prefWidth="173.0" promptText="Password" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="12.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="confirmPasswordTextField" layoutX="32.0" layoutY="236.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password" style="-fx-background-color: #f1f3f6;">
+            <PasswordField fx:id="confirmPasswordTextField" layoutX="124.0" layoutY="243.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="12.0" />
                </font>
             </PasswordField>
-            <TextField fx:id="inputDisplaynameTextField" layoutX="33.0" layoutY="110.0" prefHeight="32.0" prefWidth="173.0" promptText="Name" style="-fx-background-color: #f1f3f6;">
+            <TextField fx:id="inputDisplaynameTextField" layoutX="125.0" layoutY="117.0" prefHeight="32.0" prefWidth="173.0" promptText="Display Name" style="-fx-background-color: #ffffff;">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
+            <Label layoutX="35.0" layoutY="130.0" text="ชื่อที่แสดง" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="171.0" text="ชื่อบัญชี" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="214.0" text="รหัสผ่าน" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="256.0" text="ยืนยันรหัสผ่าน" textFill="#4d4d4d" />
+            <Label layoutX="167.0" layoutY="371.0" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Button layoutX="730.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fff9f9">
-         <font>
-            <Font name="Eras Demi ITC" size="12.0" />
-         </font>
-      </Button>
+      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #f1f3f6;" text="กลับ" textFill="#01a57a" />
    </children>
 </AnchorPane>
