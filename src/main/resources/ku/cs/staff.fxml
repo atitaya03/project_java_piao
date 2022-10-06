@@ -34,7 +34,6 @@
             <Font size="14.0" />
          </font>
       </MenuButton>
-      <Button layoutX="50.0" layoutY="79.0" mnemonicParsing="false" onAction="#handledetail" text="test to detail" />
       <TableView fx:id="complaintsTable" layoutX="50.0" layoutY="133.0" prefHeight="435.0" prefWidth="700.0" />
    </children>
 </AnchorPane>

@@ -8,20 +8,33 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
+import ku.cs.models.Complaint;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class StaffDetailController {
     Account staff;
     @FXML
     private Circle staffimage;
+    private Complaint complaint;
 
     @FXML private Label nameLabel;
-    @FXML private Label editLabel;
+    @FXML private Label statusLabel;
+    @FXML private Label titleLabel;
+    @FXML private Label detailLabel;
+    @FXML private Label timeLabel;
+
+    private ArrayList<Object> dataList;
 
 
     public void initialize(){
-        staff = (Account) com.github.saacsos.FXRouter.getData();
+        dataList = new ArrayList<>();
+        dataList = (ArrayList<Object>) com.github.saacsos.FXRouter.getData();
+        staff = (Account) dataList.get(0);
+        complaint = (Complaint) dataList.get(1);
+        System.out.println(complaint);
+        showComplaint();
         showUserData();
     }
     private void showUserData() {
@@ -29,6 +42,12 @@ public class StaffDetailController {
         String url = getClass().getResource(staff.getImagePath()).toExternalForm();
         staffimage.setFill(new ImagePattern(new Image(url)));
 
+    }
+    private void showComplaint(){
+        titleLabel.setText(complaint.getTitle());
+        detailLabel.setText(complaint.getDetail());
+        statusLabel.setText(complaint.getStatus());
+        timeLabel.setText(complaint.getTime());
     }
     @FXML
     public void handleStaffButton(ActionEvent actionEvent) {

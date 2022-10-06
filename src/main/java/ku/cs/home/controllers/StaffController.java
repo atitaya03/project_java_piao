@@ -1,5 +1,7 @@
 package ku.cs.home.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +25,7 @@ import ku.cs.services.DataSource;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class StaffController {
     Account staff;
@@ -34,17 +37,21 @@ public class StaffController {
     @FXML private TableView<Complaint> complaintsTable;
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintListDataSource;
+    private ArrayList<Object> dataList;
 
 
 
 
     public void initialize(){
         staff = (Account) com.github.saacsos.FXRouter.getData();
+        dataList = new ArrayList<>();
+        dataList.add(staff);
         complaintListDataSource = new ComplaintFileDataSource();
         complaintList = complaintListDataSource.readData();
 
         showUserData();
         showComplaintsData();
+        handleSelectedTableView();
     }
     private void showUserData() {
         nameLabel.setText(staff.getDisplayname());
@@ -102,6 +109,23 @@ public class StaffController {
         );
         complaintsTable.setItems(data);
         complaintsTable.getColumns().addAll(titleColumn, detailsColumn, voteColumn, userColumn, statusColumn, timeColumn);
+
+    }
+    private void handleSelectedTableView(){
+        complaintsTable.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<Complaint>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Complaint> observableValue, Complaint oldValue, Complaint newValue) {
+                        System.out.println(newValue + " is selected");
+                        dataList.add(newValue);
+                        try {
+                            com.github.saacsos.FXRouter.goTo("staffdetail",dataList);
+                        } catch (IOException e) {
+                            System.err.println("ไปที่หน้า detail ไม่ได้");
+                            System.err.println("ให้ตรวจสอบการกําหนด route");
+                        }
+                    }
+                });
 
     }
     @FXML

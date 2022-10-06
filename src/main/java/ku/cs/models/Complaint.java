@@ -76,6 +76,10 @@ public class Complaint {
                  category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  + ',' + time;
     }
 
+    @Override
+    public String toString() {
+        return title + ' ' + user+ ' ' + status;
+    }
 
     public void initialCreateTime() {
         LocalDateTime now = LocalDateTime.now();
