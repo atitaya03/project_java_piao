@@ -55,7 +55,4 @@ public class Complaint {
         return
                  category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  ;
     }
-
-
-
 }
