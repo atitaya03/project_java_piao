@@ -43,8 +43,8 @@ public class EditController {
 
     private void showUserData() {
         nameLabel.setText(account.getDisplayname());
-        String url = getClass().getResource(account.getImagePath()).toExternalForm();
-        staffimage.setFill(new ImagePattern(new Image(url)));
+        File image = new File(account.getImagePath());
+        staffimage.setFill(new ImagePattern(new Image(image.toURI().toString())));
         usernameLabel.setText(account.getUsername());
         displayLabel.setText(account.getDisplayname());
         roleLabel.setText(account.getRole());
@@ -108,7 +108,7 @@ public class EditController {
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-               staffimage.setFill(new ImagePattern(new Image(imagePath)));
+               newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -6,15 +6,25 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class StaffSignUpController {
+    @FXML private Rectangle newStaffImage;
     @FXML private  TextField inputDisplaynameTextField;
     @FXML private TextField inputUsernameTextField;
     @FXML private PasswordField inputPasswordTextField;
@@ -74,6 +84,38 @@ public class StaffSignUpController {
         }
     }
     public void handleUploadImageButton(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        //Set extension filter
+        //***can upload only image type file***
+        FileChooser.ExtensionFilter extFilterJPG
+                = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterjpg
+                = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
+        FileChooser.ExtensionFilter extFilterPNG
+                = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
+        FileChooser.ExtensionFilter extFilterpng
+                = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fileChooser.getExtensionFilters()
+                .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
+        File imageFile = fileChooser.showOpenDialog(null);
+
+
+        if(imageFile != null){
+            try {
+                String imagePath = imageFile.getAbsolutePath();
+                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
+                Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println(imagePath);
+                newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            System.err.println("Can't upload image");
+        }
+        /*TODO set image url in changeProfileButton
+            add newProfile image in to resource instead of using absolute path*/
 
     }
 }
