@@ -32,6 +32,7 @@ public class SignUpController {
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     private File imageFile;
+
     public void initialize(){
         readData();
     }
@@ -61,17 +62,18 @@ public class SignUpController {
         {failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            Account account = new Account(displayname,username, password, "student","student");
+            Account account = new Account(displayname,username, password, " ","student");
             accountList.addAccount(account);
             String imageFilePath;
             if(imageFile != null){
-                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
                 String imagename = username+".png";
-                File renameImage = new File("src/main/resources/ku/cs/profileUsers" + File.separator + imagename);
-                tempImagePNG.renameTo(renameImage);
-                System.out.println(renameImage.getPath());
-                imageFilePath = "/ku/cs/profileUsers/" +imagename;
-                account.setImagePath(imageFilePath);
+                File renameImage = new File("executablefiles_csv/profileUsers" + File.separator + imagename);
+                if (tempImagePNG.renameTo(renameImage)) {
+                    System.out.println(renameImage.getPath());
+                    imageFilePath = "executablefiles_csv/profileUsers" + File.separator +imagename;
+                    account.setImagePath(imageFilePath);
+                }
 
             }
             DataSource<AccountList> write;
@@ -106,11 +108,11 @@ public class SignUpController {
         if(imageFile != null){
             try {
                 String imagePath = imageFile.getAbsolutePath();
-                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-                profileImageRec.setFill(new ImagePattern(new Image(imagePath)));
+                profileImageRec.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

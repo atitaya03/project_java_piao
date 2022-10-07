@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class StaffDetailController {
-    Account staff;
+    private Account staff;
     @FXML
     private Circle staffimage;
     private Complaint complaint;

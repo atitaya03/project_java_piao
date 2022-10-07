@@ -17,8 +17,8 @@ public class AccountList {
 
     public boolean loginSuccess(String username,String password){
         Account account = searchAccountByUsername(username);
-        if (account != null & account.loginSuccess(username,password) )
-            return true;
+        if (account != null  )
+            return account.loginSuccess(username,password);
         return false;
     }
     public boolean usernameIsUsed(String username){

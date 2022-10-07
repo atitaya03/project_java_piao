@@ -9,5 +9,6 @@ module cs.ku {
     opens ku.cs.home.controllers to javafx.fxml;
 
     exports ku.cs.models;
-    opens ku.cs.models to javafx.base;
+    opens ku.cs.models to javafx.fxml;
+
 }

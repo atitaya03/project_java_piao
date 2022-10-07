@@ -9,57 +9,63 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #016b56;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.SignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.SignUpController">
     <children>
-        <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f7f7f7;">
+        <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
             <children>
-                <TextField fx:id="inputUsernameTextField" layoutX="74.0" layoutY="315.0" prefHeight="32.0" prefWidth="173.0" promptText="Username">
+                <TextField fx:id="inputUsernameTextField" layoutX="121.0" layoutY="130.0" prefHeight="32.0" prefWidth="173.0" promptText="Username" style="-fx-background-color: #ffffff;">
                     <font>
                         <Font name="Eras Light ITC" size="12.0" />
                     </font>
                 </TextField>
-                <Button layoutX="74.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="SIGN UP" textFill="#fff9f9">
-                    <font>
-                        <Font name="Eras Demi ITC" size="12.0" />
-                    </font>
-                </Button>
-                <Label layoutX="15.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" text="SIGN UP" textFill="#196140" textOverrun="CLIP">
+                <Button layoutX="74.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" style="-fx-background-color: #03bd77;" text="ลงทะเบียน" textFill="#fff9f9" />
+                <Label layoutX="32.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" text="ลงทะเบียน" textFill="#4d4d4d" textOverrun="CLIP">
                     <font>
                         <Font name="Eras Bold ITC" size="30.0" />
                     </font>
                 </Label>
-            <Button layoutX="110.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="23.0" prefWidth="100.0" style="-fx-background-color: #ade9b9;" text="upload image" textFill="#fff8f8">
-               <font>
-                  <Font name="Eras Demi ITC" size="11.0" />
-               </font>
-            </Button>
-            <Rectangle fx:id="profileImageRec" arcHeight="5.0" arcWidth="5.0" fill="#f7f7f7" height="114.0" layoutX="100.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
-            <Label fx:id="failed" alignment="CENTER" layoutX="105.0" layoutY="247.0" prefHeight="17.0" prefWidth="109.0" text="create your account" textAlignment="CENTER">
-               <font>
-                  <Font name="Eras Light ITC" size="12.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="confirmPasswordTextField" layoutX="74.0" layoutY="400.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password">
+            <PasswordField fx:id="confirmPasswordTextField" layoutX="121.0" layoutY="215.0" prefHeight="32.0" prefWidth="173.0" promptText="Confirm Password" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="12.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="inputPasswordTextField" layoutX="74.0" layoutY="359.0" prefHeight="32.0" prefWidth="173.0" promptText="Password">
+            <PasswordField fx:id="inputPasswordTextField" layoutX="121.0" layoutY="174.0" prefHeight="32.0" prefWidth="173.0" promptText="Password" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="12.0" />
                </font>
             </PasswordField>
-            <TextField fx:id="inputDisplaynameTextField" layoutX="74.0" layoutY="275.0" prefHeight="32.0" prefWidth="173.0" promptText="name">
+            <TextField fx:id="inputDisplaynameTextField" layoutX="121.0" layoutY="90.0" prefHeight="32.0" prefWidth="173.0" promptText="Display Name" style="-fx-background-color: #ffffff;">
                <font>
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
+            <Label layoutX="173.0" layoutY="34.0" text="สำหรับนิสิต" textFill="#4d4d4d">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="profileImageRec" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="114.0" layoutX="41.0" layoutY="297.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
+            <Label layoutX="28.0" layoutY="101.0" text="ชื่อที่แสดง" textFill="#4d4d4d" />
+            <Label layoutX="28.0" layoutY="142.0" text="ชื่อบัญชี" textFill="#4d4d4d" />
+            <Label layoutX="28.0" layoutY="185.0" text="รหัสผ่าน" textFill="#4d4d4d" />
+            <Label layoutX="28.0" layoutY="227.0" text="ยืนยันรหัสผ่าน" textFill="#4d4d4d" />
+            <Button layoutX="175.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="อัพโหลดรูปภาพ" textFill="#4d4d4d" />
+            <Label layoutX="173.0" layoutY="368.0" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
-      <Button layoutX="730.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fff9f9">
+      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #f1f3f6;" text="กลับ" textFill="#01a57a">
          <font>
             <Font name="Eras Demi ITC" size="12.0" />
          </font>
       </Button>
+      <Label fx:id="failed" alignment="CENTER" layoutX="604.0" layoutY="441.0" prefHeight="17.0" prefWidth="109.0" text="-" textAlignment="CENTER">
+         <font>
+            <Font name="Eras Light ITC" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

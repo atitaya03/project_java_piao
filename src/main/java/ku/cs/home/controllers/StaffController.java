@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class StaffController {
-    Account staff;
+    private Account staff;
     @FXML
     private Circle staffimage;
     @FXML private Label nameLabel;

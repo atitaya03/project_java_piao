@@ -13,9 +13,13 @@ import ku.cs.models.Account;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class EditController {
-    Account account;
+    private Account account;
     @FXML private Circle staffimage;
     @FXML private Circle newStaffImage;
 
@@ -33,14 +37,6 @@ public class EditController {
         String url = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
         homeicon.setImage(new Image(url));
 
-        usernameLabel.setText(account.getUsername());
-        displayLabel.setText(account.getDisplayname());
-        roleLabel.setText(account.getRole());
-
-        if (account.isStaff()) orgLabel.setText(account.getOrganization());
-
-
-
         showUserData();
 
     }
@@ -49,6 +45,11 @@ public class EditController {
         nameLabel.setText(account.getDisplayname());
         String url = getClass().getResource(account.getImagePath()).toExternalForm();
         staffimage.setFill(new ImagePattern(new Image(url)));
+        usernameLabel.setText(account.getUsername());
+        displayLabel.setText(account.getDisplayname());
+        roleLabel.setText(account.getRole());
+
+        if (account.isStaff()) orgLabel.setText(account.getOrganization());
 
     }
     @FXML
@@ -101,19 +102,23 @@ public class EditController {
 
 
         if(imageFile != null){
-            String imagePath = imageFile.getAbsolutePath();
-            System.out.println(imagePath);
-            newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
-        }else{
-            System.out.println("file is not valid!!");
+            try {
+                String imagePath = imageFile.getAbsolutePath();
+                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
+                Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println(imagePath);
+               staffimage.setFill(new ImagePattern(new Image(imagePath)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            System.err.println("Can't upload image");
         }
         /*TODO set image url in changeProfileButton
             add newProfile image in to resource instead of using absolute path*/
 
-
     }
-
-
 
 
 }
