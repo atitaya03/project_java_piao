@@ -12,6 +12,7 @@ public class Complaint {
     private int voted;
     private String user;
     private String status;
+    private String management;
 
     private String time;
 //    private AccountList votedList;
@@ -23,9 +24,10 @@ public class Complaint {
         this.user = user;
         this.status = "ยังไม่ดำเนินการ";
         this.time = "00";
+        this.management = "-";
     }
 
-    public Complaint(String category, String title, String detail, int voted, String user, String status, String time) {
+    public Complaint(String category, String title, String detail, int voted, String user, String status, String time, String management) {
         this.category = category;
         this.title = title;
         this.detail = detail;
@@ -33,6 +35,7 @@ public class Complaint {
         this.user = user;
         this.status = status;
         this.time = time;
+        this.management = management;
     }
 
     public String getCategory() {
@@ -63,6 +66,18 @@ public class Complaint {
         return time;
     }
 
+    public String getManagement() {
+        return management;
+    }
+
+    public void setManagement(String management) {
+        this.management = management;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public void updateStatus(String s){
         this.status = s;
     }
@@ -73,7 +88,7 @@ public class Complaint {
 
     public String toCSV() {
         return
-                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  + ',' + time;
+                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  + ',' + time + ',' + management;
     }
 
     @Override

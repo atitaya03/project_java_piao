@@ -67,7 +67,7 @@ public class StudentController {
     }
 
     public void showTable(ComplaintList complaintList){
-        ObservableList<Complaint> data = FXCollections.observableArrayList(complaintList.getAllAccount());
+        ObservableList<Complaint> data = FXCollections.observableArrayList(complaintList.getAllComplaints());
         categoryTable.setCellValueFactory(new PropertyValueFactory<>("category"));
         topicTable.setCellValueFactory(new PropertyValueFactory<>("title"));
         voteTable.setCellValueFactory(new PropertyValueFactory<>("voted"));
