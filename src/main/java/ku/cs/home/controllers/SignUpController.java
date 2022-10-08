@@ -28,7 +28,7 @@ public class SignUpController {
     @FXML private TextField inputDisplaynameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
-    @FXML private Rectangle profileImageRec;
+    @FXML private Rectangle newStaffImage;
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     private File imageFile;
@@ -89,7 +89,8 @@ public class SignUpController {
 
 
     }
-    public void handleUploadImageButton(ActionEvent actionEvent) {        FileChooser fileChooser = new FileChooser();
+    public void handleUploadImageButton(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
         //Set extension filter
         //***can upload only image type file***
         FileChooser.ExtensionFilter extFilterJPG
@@ -112,7 +113,7 @@ public class SignUpController {
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-                profileImageRec.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
+                newStaffImage.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

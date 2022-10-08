@@ -25,7 +25,7 @@ import java.nio.file.StandardCopyOption;
 
 public class StaffSignUpController {
     @FXML private Rectangle newStaffImage;
-    @FXML private  TextField inputDisplaynameTextField;
+    @FXML private TextField inputDisplaynameTextField;
     @FXML private TextField inputUsernameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
@@ -111,7 +111,7 @@ public class StaffSignUpController {
                 = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
         fileChooser.getExtensionFilters()
                 .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
-         imageFile = fileChooser.showOpenDialog(null);
+        imageFile = fileChooser.showOpenDialog(null);
 
 
         if(imageFile != null){
@@ -121,7 +121,7 @@ public class StaffSignUpController {
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-                newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
+                newStaffImage.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

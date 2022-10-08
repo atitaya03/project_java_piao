@@ -2,10 +2,7 @@ package ku.cs.home.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
@@ -30,7 +27,7 @@ public class StudentReportController {
     @FXML
     private TextField titleAddTextField;
     @FXML
-    private TextField detailAddTextField;
+    private TextArea detailAddTextField;
     @FXML
     private Label nameLabel;
 
