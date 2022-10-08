@@ -45,6 +45,10 @@ public class EditController {
         nameLabel.setText(account.getDisplayname());
         File image = new File(account.getImagePath());
         staffimage.setFill(new ImagePattern(new Image(image.toURI().toString())));
+
+        File biggercircle = new File(account.getImagePath());
+        newStaffImage.setFill(new ImagePattern(new Image(biggercircle.toURI().toString())));
+
         usernameLabel.setText(account.getUsername());
         displayLabel.setText(account.getDisplayname());
         roleLabel.setText(account.getRole());
@@ -104,15 +108,15 @@ public class EditController {
         if(imageFile != null){
             try {
                 String imagePath = imageFile.getAbsolutePath();
-                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-               newStaffImage.setFill(new ImagePattern(new Image(imagePath)));
+                newStaffImage.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }else {
+        } else {
             System.err.println("Can't upload image");
         }
         /*TODO set image url in changeProfileButton
