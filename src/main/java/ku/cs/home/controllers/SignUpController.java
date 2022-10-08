@@ -28,7 +28,7 @@ public class SignUpController {
     @FXML private TextField inputDisplaynameTextField;
     @FXML private PasswordField inputPasswordTextField;
     @FXML private PasswordField confirmPasswordTextField;
-    @FXML private Rectangle newStaffImage;
+    @FXML private Rectangle previewImage;
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     private File imageFile;
@@ -113,7 +113,7 @@ public class SignUpController {
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
-                newStaffImage.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
+                previewImage.setFill(new ImagePattern(new Image(tempImagePNG.toURI().toString())));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
