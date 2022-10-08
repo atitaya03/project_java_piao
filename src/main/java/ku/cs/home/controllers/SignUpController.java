@@ -62,7 +62,7 @@ public class SignUpController {
         {failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            Account account = new Account(displayname,username, password, " ","student");
+            Account account = new Account(displayname,username, password, "student","");
             accountList.addAccount(account);
             String imageFilePath;
             if(imageFile != null){

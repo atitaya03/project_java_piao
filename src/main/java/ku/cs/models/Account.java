@@ -24,7 +24,7 @@ public class Account {
         this.username = username;
         this.password = password;
         this.organization = organization;
-        this.imagePath = "/ku/cs/profileUsers/defaultProfile.jpg";
+        this.imagePath = "executablefiles_csv/profileUsers/defaultProfile.jpg";
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime="00";
@@ -44,7 +44,6 @@ public class Account {
     }
     public void initialLoginTime() {
         LocalDateTime now = LocalDateTime.now();
-        System.out.println("Before Formatting: " + now);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         this.loginTime = now.format(format);
     }

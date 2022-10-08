@@ -31,6 +31,7 @@ public class StaffSignUpController {
     @FXML private PasswordField confirmPasswordTextField;
     @FXML private ComboBox organizationComboBox;
     @FXML private Label failed;
+    private File imageFile;
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     public void initialize(){
@@ -71,7 +72,20 @@ public class StaffSignUpController {
         {failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
-            staffregis.addAccount(new Account(displayname,username, password, "staff",organization));
+            Account newStaff = new Account(displayname,username, password, "staff",organization);
+            staffregis.addAccount(newStaff);
+            String imageFilePath;
+            if(imageFile != null){
+                System.out.println("image not null");
+                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
+                String staffImage = username+".png";
+                File renameImage = new File("executablefiles_csv/profileUsers" + File.separator + staffImage);
+                if (tempImagePNG.renameTo(renameImage)) {
+                    System.out.println(renameImage.getPath());
+                    imageFilePath = "executablefiles_csv/profileUsers" + File.separator +staffImage;
+                    newStaff.setImagePath(imageFilePath);
+                }
+            }
             DataSource<AccountList> write;
             write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
             write.writeData(staffregis,true);
@@ -97,13 +111,13 @@ public class StaffSignUpController {
                 = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
         fileChooser.getExtensionFilters()
                 .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
-        File imageFile = fileChooser.showOpenDialog(null);
+         imageFile = fileChooser.showOpenDialog(null);
 
 
         if(imageFile != null){
             try {
                 String imagePath = imageFile.getAbsolutePath();
-                File tempImagePNG = new File("src/main/resources/ku/cs/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
