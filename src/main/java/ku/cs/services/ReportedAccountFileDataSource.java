@@ -1,17 +1,17 @@
 package ku.cs.services;
 
-import ku.cs.models.Report;
-import ku.cs.models.ReportList;
+import ku.cs.models.ReportAccount;
+import ku.cs.models.ReportAccList;
 import java.io.*;
 
-public class ReportFileDataSource implements DataSource<ReportList> {
+public class ReportedAccountFileDataSource implements DataSource<ReportAccList> {
     private String directoryName;
     private String fileName;
 
-    public ReportFileDataSource(){
-        this("executablefiles_csv/csv/","reportData.csv");
+    public ReportedAccountFileDataSource(){
+        this("executablefiles_csv/csv/","reportedAccount.csv");
     }
-    public ReportFileDataSource(String directoryName, String fileName) {
+    public ReportedAccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
@@ -36,8 +36,8 @@ public class ReportFileDataSource implements DataSource<ReportList> {
     }
 
     @Override
-    public ReportList readData(){
-        ReportList reportList = new ReportList();
+    public ReportAccList readData(){
+        ReportAccList reportList = new ReportAccList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -50,10 +50,10 @@ public class ReportFileDataSource implements DataSource<ReportList> {
             String line = "";
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
-                Report report = new Report( //reporterUsername, reportedUsername,detail, title, category
-                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim()
+                ReportAccount report = new ReportAccount( //reportedAccountName, subject,detail, reporterAccount
+                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim()
                 );
-                reportList.addReport(report);
+                reportList.addAccReport(report);
 
             }
 
@@ -74,7 +74,7 @@ public class ReportFileDataSource implements DataSource<ReportList> {
 
     }
 
-    public void writeData(ReportList repList,boolean a){
+    public void writeData(ReportAccList repList, boolean a){
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -90,8 +90,8 @@ public class ReportFileDataSource implements DataSource<ReportList> {
                 buffer = new BufferedWriter(writer);
 
             }
-            for (Report report : repList.getAllReport()){
-                String line = report.getReporterUsername()+","+report.getReportedUsername()+","+report.getDetail()+","+report.getDetail()+","+report.getCategory();
+            for (ReportAccount report : repList.getAllReport()){
+                String line = report.getReportedAccountUsername()+","+report.getSubject()+","+report.getDetail()+","+report.getReporterAccount();
 //
                 buffer.append(line);
                 buffer.newLine();

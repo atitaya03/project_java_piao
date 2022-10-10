@@ -34,6 +34,7 @@ public class StudentDetailController {
     private ArrayList<Object> dataList;
 
 
+
     public void initialize(){
         dataList = (ArrayList<Object>) com.github.saacsos.FXRouter.getData();
         student = (Account) dataList.get(0);
@@ -108,7 +109,7 @@ public class StudentDetailController {
     @FXML
     public void handleReportInDetail(MouseEvent mouseEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("reportindetail",student);
+            com.github.saacsos.FXRouter.goTo("reportindetail",dataList);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า reportindetail ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
