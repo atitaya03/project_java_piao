@@ -36,7 +36,7 @@
                     </font>
                 </Button>
                 <Circle fx:id="circle" fill="DODGERBLUE" layoutX="74.0" layoutY="52.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Label layoutX="35.0" layoutY="135.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล​์" textFill="WHITE">
+            <Label layoutX="35.0" layoutY="135.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -60,7 +60,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <ComboBox fx:id="categoryComboBox" editable="true" layoutX="224.0" layoutY="62.0" prefHeight="20.0" prefWidth="150.0" promptText="หัวข้อ" style="-fx-background-color: #01a57a;" visibleRowCount="5" />
+            <ComboBox fx:id="categoryComboBox" editable="true" layoutX="224.0" layoutY="62.0" prefHeight="20.0" prefWidth="150.0" promptText="หมวดหมู่" style="-fx-background-color: #01a57a;" visibleRowCount="5" />
             <Label layoutX="89.0" layoutY="111.0" text="หัวข้อเรื่องร้องเรียน" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
@@ -72,7 +72,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="89.0" layoutY="65.0" text="หน่วยงานที่เกี่ยวข้อง" textFill="#4d4d4d">
+            <Label layoutX="89.0" layoutY="65.0" text="หมวดหมู่" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>

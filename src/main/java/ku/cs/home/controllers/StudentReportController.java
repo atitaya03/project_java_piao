@@ -100,13 +100,13 @@ public class StudentReportController {
     public void handleChooseButton(){
         category = (String) categoryComboBox.getValue();
         if(category!=""){
-            aleartLabel.setText("เลือกหน่วยงาน "+category);
+            aleartLabel.setText("เลือกหมวดหมู่ "+category);
             aleartLabel.setStyle("-fx-text-fill: #03bd00");
             if(category.equals("ความสะอาด")||category.equals("ความปลอดภัย")||category.equals("ถนน ทางเท้า")) categoryFeaturePrompt.setText("สถานที่");
             else if (category.equals("ยานพาหนะ")) categoryFeaturePrompt.setText("ประเภทรถ");
             else if (category.equals("อาคารชำรุด")) categoryFeaturePrompt.setText("อาคาร");
             else categoryFeaturePrompt.setText("อื่นๆ");}
-        else {aleartLabel.setText("โปรดเลือกหน่วยงาน");aleartLabel.setStyle("-fx-text-fill: #f61e1e");}
+        else {aleartLabel.setText("โปรดเลือกหมวดหมู่");aleartLabel.setStyle("-fx-text-fill: #f61e1e");}
     }
     public void clear(){
         titleAddTextField.clear();
