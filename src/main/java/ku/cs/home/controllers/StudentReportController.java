@@ -35,11 +35,11 @@ public class StudentReportController {
     private DataSource<ComplaintList> complaintsDataSource;
 
     public void initialize(){
-        categoryComboBox.getItems().add("หน่วย 1");
-        categoryComboBox.getItems().add("หน่วย 2");
-        categoryComboBox.getItems().add("หน่วย 3");
-        categoryComboBox.getItems().add("หน่วย 4");
-        categoryComboBox.getItems().add("หน่วย 5");
+        categoryComboBox.getItems().add("ความปลอดภัย");
+        categoryComboBox.getItems().add("ความสะอาด");
+        categoryComboBox.getItems().add("อาคารชำรุด");
+        categoryComboBox.getItems().add("ถนน ทางเท้า");
+        categoryComboBox.getItems().add("ยานพาหนะ");
         student = (Account) com.github.saacsos.FXRouter.getData();
         complaintsDataSource = new ComplaintFileDataSource();
         complaintList = complaintsDataSource.readData();

@@ -13,6 +13,8 @@ public class Complaint {
     private String user;
     private String status;
     private String management;
+    private String categoryFeature;
+    private String categoryDetail;
 
     private String time;
 //    private AccountList votedList;
@@ -25,9 +27,12 @@ public class Complaint {
         this.status = "ยังไม่ดำเนินการ";
         this.time = "00";
         this.management = "-";
+        if(this.category.equals("ความสะอาด")||this.category.equals("ความปลอดภัย")||this.category.equals("อาคารชำรุด")||this.category.equals("ถนน ทางเท้า"))  this.categoryFeature = "สถานที่";
+        else if (this.category.equals("ยานพาหนะ")) this.categoryFeature = "ประเภท";
+        this.categoryDetail = "-";
     }
 
-    public Complaint(String category, String title, String detail, int voted, String user, String status, String time, String management) {
+    public Complaint(String category, String title, String detail, int voted, String user, String status, String time, String management,String categoryDetail) {
         this.category = category;
         this.title = title;
         this.detail = detail;
@@ -36,7 +41,10 @@ public class Complaint {
         this.status = status;
         this.time = time;
         this.management = management;
-    }
+        if(this.category.equals("ความสะอาด")||this.category.equals("ความปลอดภัย")||this.category.equals("อาคารชำรุด")||this.category.equals("ถนน ทางเท้า"))  this.categoryFeature = "สถานที่";
+        else if (this.category.equals("ยานพาหนะ")) this.categoryFeature = "ประเภท";
+        this.categoryDetail = categoryDetail;
+           }
 
     public String getCategory() {
         return category;
@@ -52,6 +60,14 @@ public class Complaint {
 
     public int getVoted() {
         return voted;
+    }
+
+    public String getCategoryFeature() {
+        return categoryFeature;
+    }
+
+    public String getCategoryDetail() {
+        return categoryDetail;
     }
 
     public String getUser() {
@@ -88,7 +104,7 @@ public class Complaint {
 
     public String toCSV() {
         return
-                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  + ',' + time + ',' + management;
+                 category + ',' + title + ',' + detail + ',' + voted + "," + user + ',' + status  + ',' + time + ',' + management+','+categoryFeature+','+categoryDetail;
     }
 
     @Override

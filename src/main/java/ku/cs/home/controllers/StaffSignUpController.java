@@ -35,11 +35,11 @@ public class StaffSignUpController {
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     public void initialize(){
-        organizationComboBox.getItems().add("หน่วย 1");
-        organizationComboBox.getItems().add("หน่วย 2");
-        organizationComboBox.getItems().add("หน่วย 3");
-        organizationComboBox.getItems().add("หน่วย 4");
-        organizationComboBox.getItems().add("หน่วย 5");
+        organizationComboBox.getItems().add("ความปลอดภัย");
+        organizationComboBox.getItems().add("ความสะอาด");
+        organizationComboBox.getItems().add("อาคารชำรุด");
+        organizationComboBox.getItems().add("ถนน ทางเท้า");
+        organizationComboBox.getItems().add("ยานพาหนะ");
         readData();
     }
     private void readData() {

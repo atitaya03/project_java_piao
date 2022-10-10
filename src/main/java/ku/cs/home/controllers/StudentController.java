@@ -1,5 +1,7 @@
 package ku.cs.home.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +25,7 @@ import ku.cs.services.DataSource;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class StudentController {
     private Account student;
@@ -51,17 +54,22 @@ public class StudentController {
     private TableColumn<Complaint, String> userTable;
 
     private ComplaintFileDataSource complaintFileDataSource;
+    private ArrayList<Object> dataList;
 
 
 
 
     public void initialize(){
         student = (Account) com.github.saacsos.FXRouter.getData();
+        dataList = new ArrayList<>();
         showUserData();
+        dataList.add(student);
 
         complaintFileDataSource = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
         ComplaintList list = complaintFileDataSource.readData();
+
         showTable(list);
+        handleSelectedTableView();
 
 
     }
@@ -76,6 +84,41 @@ public class StudentController {
 
 
         table.setItems(data);
+    }
+    private void handleSelectedTableView(){
+        table.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<Complaint>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Complaint> observableValue, Complaint oldValue, Complaint newValue) {
+                        System.out.println(newValue + " is selected");
+                        dataList.add(newValue);
+                        try {
+                            com.github.saacsos.FXRouter.goTo("studentdetail",dataList);
+                        } catch (IOException e) {
+                            System.err.println("ไปที่หน้า detail ไม่ได้");
+                            System.err.println("ให้ตรวจสอบการกําหนด route");
+                        }
+                    }
+                });
+
+    }
+    @FXML
+    public void handleStudentReportButton(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("studentreport",student);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า home ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
+
+    @FXML
+    public void handleStudentHomeButton(MouseEvent mouseEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("student",student);
+        } catch (IOException e) {
+            System.err.println("Cannot reach Dictionary");
+        }
     }
 
 
@@ -103,22 +146,8 @@ public class StudentController {
 
     }
 
-    public void handleStudentHomeButton(ActionEvent actionEvent) {
-        try {
-            com.github.saacsos.FXRouter.goTo("student");
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า student ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
-        }
-    }
-    public void handleStudentReportButton(ActionEvent actionEvent) {
-        try {
-            com.github.saacsos.FXRouter.goTo("studentreport",student);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า studentreport ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
-        }
-    }
+
+
 
 
 }
