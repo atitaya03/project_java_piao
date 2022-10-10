@@ -22,7 +22,7 @@ public class StudentDetailController {
     private Complaint complaint;
 
     @FXML
-    private Label nameLabel,statusLabel,ownerCompliantLabel,voteTotalLabel,dateLabel,detailInEachCategory,FeatureInEachCategoryPrompt,managementLabel;
+    private Label nameLabel,statusLabel,voteTotalLabel,dateLabel,detailInEachCategory,FeatureInEachCategoryPrompt,managementLabel;
     @FXML private Label titleLabel;
     @FXML private Label detailLabel;
     @FXML
@@ -51,7 +51,6 @@ public class StudentDetailController {
         statusLabel.setText(complaint.getStatus());
         voteTotalLabel.setText(complaint.getVoted()+"");
         managementLabel.setText(complaint.getManagement());
-        ownerCompliantLabel.setText(complaint.getUser());
         dateLabel.setText(complaint.getTime());
         FeatureInEachCategoryPrompt.setText(complaint.getCategoryFeature());
         detailInEachCategory.setText(complaint.getCategoryDetail());

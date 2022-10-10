@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -13,81 +14,83 @@
    <children>
       <Pane layoutX="147.0" prefHeight="600.0" prefWidth="654.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Button layoutX="531.0" layoutY="558.0" mnemonicParsing="false" onAction="#handleVoteButton" text="vote" />
-            <Button layoutX="581.0" layoutY="558.0" mnemonicParsing="false" onAction="#handleReportComplaintButton" text="report" />
-            <Label layoutX="198.0" layoutY="50.0" prefHeight="20.0" prefWidth="60.0" text="หัวเรื่อง" textFill="#4d4d4d">
+            <Button layoutX="21.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleVoteButton" text="vote" />
+            <Button layoutX="48.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleReportComplaintButton" text="รายงานความไม่เหมาะสม" />
+            <Label layoutX="263.0" layoutY="83.0" prefHeight="20.0" prefWidth="60.0" text="หัวเรื่อง" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="titleLabel" layoutX="252.0" layoutY="47.0" prefHeight="31.0" prefWidth="178.0" text="หัวเรื่อง" textFill="#01a57a">
+            <Label fx:id="titleLabel" layoutX="339.0" layoutY="78.0" prefHeight="31.0" prefWidth="178.0" text="หัวเรื่อง" textFill="#01a57a">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="39.0" layoutY="246.0" text="รายละเอียด" textFill="#4d4d4d">
+            <Label layoutX="260.0" layoutY="230.0" text="รายละเอียด" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="detailLabel" alignment="TOP_LEFT" layoutX="39.0" layoutY="274.0" prefHeight="84.0" prefWidth="280.0" text="detail" textFill="#01a57a">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="139.0" fitWidth="165.0" layoutX="210.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="385.0" layoutY="246.0" text="สถานะ" textFill="#4d4d4d">
+            <Label fx:id="detailLabel" alignment="TOP_LEFT" layoutX="260.0" layoutY="260.0" prefHeight="104.0" prefWidth="383.0" text="detail" textFill="#01a57a">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="statusLabel" layoutX="433.0" layoutY="249.0" prefHeight="17.0" prefWidth="165.0" text="status" textFill="#01a57a">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="39.0" layoutY="459.0" prefHeight="27.0" prefWidth="82.0" text="รายงานโดย">
+            <ImageView fitHeight="205.0" fitWidth="200.0" layoutX="21.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="263.0" layoutY="116.0" text="สถานะ" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="ownerCompliantLabel" layoutX="160.0" layoutY="459.0" prefHeight="27.0" prefWidth="158.0" text="user" textFill="#01a57a">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="483.0" layoutY="21.0" text="จำนวนโหวต" textFill="#4d4d4d" />
-            <Label fx:id="voteTotalLabel" layoutX="564.0" layoutY="16.0" prefHeight="27.0" prefWidth="67.0" text="0" textFill="#01a57a" />
-            <Label layoutX="39.0" layoutY="520.0" text="รายงานเมื่อวันที่">
+            <Label fx:id="statusLabel" layoutX="339.0" layoutY="111.0" prefHeight="31.0" prefWidth="141.0" text="status" textFill="#01a57a">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="FeatureInEachCategoryPrompt" layoutX="35.0" layoutY="358.0" prefHeight="27.0" prefWidth="141.0" text="รายละเอียดindetail" textFill="#4d4d4d">
+            <Label layoutX="21.0" layoutY="329.0" text="จำนวนโหวต" textFill="#4d4d4d">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="voteTotalLabel" layoutX="138.0" layoutY="325.0" prefHeight="27.0" prefWidth="67.0" text="0" textFill="#01a57a">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="21.0" layoutY="301.0" text="รายงานเมื่อวันที่">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="385.0" layoutY="288.0" text="รายละเอียดการจัดการ" textFill="#4d4d4d">
+            <Label fx:id="FeatureInEachCategoryPrompt" layoutX="263263.0" layoutY="189.0" prefHeight="27.0" prefWidth="120.0" text="รายละเอียด" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="detailInEachCategory" alignment="TOP_LEFT" layoutX="39.0" layoutY="390.0" prefHeight="73.0" prefWidth="200.0" text="dataildetail" textFill="#01a57a">
+            <Label layoutX="259.0" layoutY="367.0" text="รายละเอียดการจัดการ" textFill="#4d4d4d">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="dateLabel" layoutX="160.0" layoutY="519.0" prefHeight="27.0" prefWidth="165.0" text="date" textFill="#01a57a">
+            <Label fx:id="detailInEachCategory" alignment="TOP_LEFT" layoutX="404.0" layoutY="192.0" prefHeight="20.0" prefWidth="247.0" text="dataildetail" textFill="#01a57a">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="managementLabel" alignment="TOP_LEFT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="385.0" layoutY="316.0" prefHeight="221.0" prefWidth="227.0" text="management" textFill="#01a57a">
+            <Label fx:id="dateLabel" layoutX="138.0" layoutY="297.0" prefHeight="27.0" prefWidth="99.0" text="date" textFill="#01a57a">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
+            <Label fx:id="managementLabel" alignment="TOP_LEFT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="259.0" layoutY="398.0" prefHeight="89.0" prefWidth="383.0" text="management" textFill="#01a57a">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="263.0" layoutY="152.0" text="หมวดหมู่" textFill="#4d4d4d">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="239.0" layoutY="59.0" orientation="VERTICAL" prefHeight="505.0" prefWidth="0.0" />
          </children>
       </Pane>
       <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
