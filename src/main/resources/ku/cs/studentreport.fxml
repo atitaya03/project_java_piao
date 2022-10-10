@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentReportController">
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
     <children>
         <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a;">
             <children>
@@ -87,7 +87,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="detailFeatureTextField" layoutX="225.0" layoutY="164.0" promptText="รายละเอียดเพิ่มเติม" style="-fx-background-color: #ffffff;">
+            <TextField fx:id="detailFeatureTextField" layoutX="225.0" layoutY="161.0" prefHeight="30.0" prefWidth="225.0" promptText="รายละเอียดเพิ่มเติม" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="14.0" />
                </font>

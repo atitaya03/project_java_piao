@@ -8,17 +8,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
-import ku.cs.models.AccountList;
 import ku.cs.models.Complaint;
 import ku.cs.models.ComplaintList;
-import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
 import java.io.File;
 import java.io.IOException;
 
-public class StudentReportController {
+public class StudentComplaintController {
     private Account student;
     @FXML
     private ComboBox categoryComboBox = null;
@@ -51,7 +49,7 @@ public class StudentReportController {
         student = (Account) com.github.saacsos.FXRouter.getData();
         complaintsDataSource = new ComplaintFileDataSource();
         complaintList = complaintsDataSource.readData();
-
+        detailAddTextField.setWrapText(true);
         showUserData();
 
     }
@@ -128,8 +126,7 @@ public class StudentReportController {
             clear();
 
             }
-        else
-        {
+        else {
             aleartLabel.setText("โปรดกรอกรายละเอียดให้ครบ");
             aleartLabel.setStyle("-fx-text-fill: #f61e1e");
         }
