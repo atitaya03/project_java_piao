@@ -3,6 +3,7 @@ package ku.cs.home.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
@@ -18,15 +19,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class StudentDetailController {
+
+    @FXML private Label nameLabel,statusLabel,voteTotalLabel,dateLabel,detailInEachCategory,FeatureInEachCategoryPrompt;
+    @FXML private Label titleLabel;
+    @FXML private Label orgLabel;
+    @FXML private Circle studentImage;
+    @FXML private TextArea detailTextArea;
+    @FXML private TextArea managementTextArea;
+
     private Account student;
     private Complaint complaint;
-
-    @FXML
-    private Label nameLabel,statusLabel,ownerCompliantLabel,voteTotalLabel,dateLabel,detailInEachCategory,FeatureInEachCategoryPrompt,managementLabel;
-    @FXML private Label titleLabel;
-    @FXML private Label detailLabel;
-    @FXML
-    private Circle studentImage;
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintListDataSource;
     private ArrayList<Object> dataList;
@@ -47,18 +49,30 @@ public class StudentDetailController {
         File image = new File(student.getImagePath());
         studentImage.setFill(new ImagePattern(new Image(image.toURI().toString())));
         titleLabel.setText(complaint.getTitle());
-        detailLabel.setText(complaint.getDetail());
+        detailTextArea.setText(complaint.getDetail());
+        detailTextArea.setWrapText(true);
+        detailTextArea.setEditable(false);
         statusLabel.setText(complaint.getStatus());
+        if (complaint.getStatus().equals("ยังไม่ดำเนินการ")){
+            statusLabel.setStyle("-fx-text-fill: #f61e1e");
+        } else if (complaint.getStatus().equals("อยู่ระหว่างการดำเนินการ")){
+            statusLabel.setStyle("-fx-text-fill: #f5bd20");
+        } else {
+            statusLabel.setStyle("-fx-text-fill: #01a57a");
+        }
+
         voteTotalLabel.setText(complaint.getVoted()+"");
-        managementLabel.setText(complaint.getManagement());
-        ownerCompliantLabel.setText(complaint.getUser());
+        managementTextArea.setText(complaint.getManagement());
+        managementTextArea.setWrapText(true);
+        managementTextArea.setEditable(false);
         dateLabel.setText(complaint.getTime());
+        orgLabel.setText(complaint.getCategory());
         FeatureInEachCategoryPrompt.setText(complaint.getCategoryFeature());
         detailInEachCategory.setText(complaint.getCategoryDetail());
     }
 
 
-    @FXML public void handleStudentReportButton(ActionEvent actionEvent) {
+    @FXML public void handleStudentComplaintButton(ActionEvent actionEvent) {
         try {
             com.github.saacsos.FXRouter.goTo("studentreport",student);
         } catch (IOException e) {
@@ -86,17 +100,17 @@ public class StudentDetailController {
         }
     }
     @FXML
-    public void handleVoteButton(ActionEvent actionEvent) {
+    public void handleVote(MouseEvent mouseEvent) {
         complaint.vote();
         complaintListDataSource.writeData(complaintList, false);
         voteTotalLabel.setText(complaint.getVoted()+"");
     }
     @FXML
-    public void handleReportComplaintButton(ActionEvent actionEvent) {
+    public void handleReportInDetail(MouseEvent mouseEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("studentreport",student);
+            com.github.saacsos.FXRouter.goTo("reportindetail",student);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า home ไม่ได้");
+            System.err.println("ไปที่หน้า reportindetail ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
@@ -111,3 +125,4 @@ public class StudentDetailController {
     }
 
 }
+
