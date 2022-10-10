@@ -44,10 +44,22 @@ public class Account {
     }
     public void initialLoginTime() {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MM yyyy HH mm ss");
         this.loginTime = now.format(format);
     }
 
+    public LocalDateTime getTime() {
+        String[] time = loginTime.split(" ");
+        int year = Integer.parseInt(time[2]);
+        int month = Integer.parseInt(time[1]);
+        int day = Integer.parseInt(time[0]);
+
+        int hour = Integer.parseInt(time[3]);
+        int minute = Integer.parseInt(time[4]);
+        int sec = Integer.parseInt(time[5]);
+        return LocalDateTime.of(year, month, day, hour, minute, sec);
+
+    }
     public String getImagePath() {
         return imagePath;
     }
