@@ -29,7 +29,14 @@ public class StudentReportController {
     @FXML
     private TextArea detailAddTextField;
     @FXML
+    private TextField detailFeatureTextField;
+    @FXML
     private Label nameLabel;
+    @FXML
+    private Label categoryFeaturePrompt;
+    @FXML
+    private Label aleartLabel;
+    private String category;
 
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintsDataSource;
@@ -40,17 +47,18 @@ public class StudentReportController {
         categoryComboBox.getItems().add("อาคารชำรุด");
         categoryComboBox.getItems().add("ถนน ทางเท้า");
         categoryComboBox.getItems().add("ยานพาหนะ");
+
         student = (Account) com.github.saacsos.FXRouter.getData();
         complaintsDataSource = new ComplaintFileDataSource();
         complaintList = complaintsDataSource.readData();
 
         showUserData();
+
     }
     private void showUserData() {
         nameLabel.setText(student.getDisplayname());
         File image = new File(student.getImagePath());
         circle.setFill(new ImagePattern(new Image(image.toURI().toString())));
-
     }
 
     @FXML
@@ -88,24 +96,42 @@ public class StudentReportController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
+    public void handleChooseButton(){
+        category = (String) categoryComboBox.getValue();
+        if(category!=""){
+            aleartLabel.setText("เลือกหน่วยงาน "+category);
+            aleartLabel.setStyle("-fx-text-fill: #03bd00");
+            if(category.equals("ความสะอาด")||category.equals("ความปลอดภัย")||category.equals("ถนน ทางเท้า")) categoryFeaturePrompt.setText("สถานที่");
+            else if (category.equals("ยานพาหนะ")) categoryFeaturePrompt.setText("ประเภทรถ");
+            else if (category.equals("อาคารชำรุด")) categoryFeaturePrompt.setText("อาคาร");
+            else categoryFeaturePrompt.setText("อื่นๆ");}
+        else {aleartLabel.setText("โปรดเลือกหน่วยงาน");aleartLabel.setStyle("-fx-text-fill: #f61e1e");}
+    }
+    public void clear(){
+        titleAddTextField.clear();
+        detailAddTextField.clear();
+        categoryComboBox.valueProperty().set(null);
+        detailFeatureTextField.clear();
+        aleartLabel.setText("");
+    }
     public void handleSubmitButton(){
-        if(titleAddTextField.getText() != "" &&  detailAddTextField.getText() != "") {
-            String category = (String) categoryComboBox.getValue();
+        if(titleAddTextField.getText() != "" &&  detailAddTextField.getText() != ""&& category!= ""&&detailFeatureTextField.getText()!="") {
             String title = titleAddTextField.getText();
             String detail = detailAddTextField.getText();
-            Complaint c = new Complaint(category,title,detail,student.getUsername());
+            String detailFeature = detailFeatureTextField.getText();
+            Complaint c = new Complaint(category,title,detail,student.getUsername(),detailFeature);
             c.initialCreateTime();
             complaintList.addComplaint(c);
             complaintsDataSource.writeData(complaintList, false);
 
-            titleAddTextField.clear();
-            detailAddTextField.clear();
-            categoryComboBox.valueProperty().set(null);
+            clear();
 
             }
         else
         {
-            System.err.println("Error");
+            aleartLabel.setText("โปรดกรอกรายละเอียดให้ครบ");
+            aleartLabel.setStyle("-fx-text-fill: #f61e1e");
         }
 
     }

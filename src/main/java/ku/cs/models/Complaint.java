@@ -18,7 +18,7 @@ public class Complaint {
 
     private String time;
 //    private AccountList votedList;
-    public Complaint(String category, String title, String detail, String user) {
+    public Complaint(String category, String title, String detail, String user,String categoryDetail) {
         this.category = category;
         this.title = title;
         this.detail = detail;
@@ -29,7 +29,7 @@ public class Complaint {
         this.management = "-";
         if(this.category.equals("ความสะอาด")||this.category.equals("ความปลอดภัย")||this.category.equals("อาคารชำรุด")||this.category.equals("ถนน ทางเท้า"))  this.categoryFeature = "สถานที่";
         else if (this.category.equals("ยานพาหนะ")) this.categoryFeature = "ประเภท";
-        this.categoryDetail = "-";
+        this.categoryDetail = categoryDetail;
     }
 
     public Complaint(String category, String title, String detail, int voted, String user, String status, String time, String management,String categoryDetail) {
@@ -41,8 +41,9 @@ public class Complaint {
         this.status = status;
         this.time = time;
         this.management = management;
-        if(this.category.equals("ความสะอาด")||this.category.equals("ความปลอดภัย")||this.category.equals("อาคารชำรุด")||this.category.equals("ถนน ทางเท้า"))  this.categoryFeature = "สถานที่";
-        else if (this.category.equals("ยานพาหนะ")) this.categoryFeature = "ประเภท";
+        if(this.category.equals("ความสะอาด")||this.category.equals("ความปลอดภัย")||this.category.equals("ถนน ทางเท้า"))  this.categoryFeature = "สถานที่";
+        else if (this.category.equals("ยานพาหนะ")) this.categoryFeature = "ประเภทรถ";
+        else if (this.category.equals("อาคารชำรุด")) this.categoryFeature = "อาคาร";
         this.categoryDetail = categoryDetail;
            }
 
