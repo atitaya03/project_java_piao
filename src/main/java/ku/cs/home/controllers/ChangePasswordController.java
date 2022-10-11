@@ -16,6 +16,7 @@ import ku.cs.models.AccountList;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
 
 public class ChangePasswordController {
@@ -52,8 +53,8 @@ public class ChangePasswordController {
 
     private void showUserData() {
         nameLabel.setText(account.getDisplayname());
-        String url = getClass().getResource(account.getImagePath()).toExternalForm();
-        staffimage.setFill(new ImagePattern(new Image(url)));
+        File image = new File(account.getImagePath());
+        staffimage.setFill(new ImagePattern(new Image(image.toURI().toString())));
     }
 
     @FXML

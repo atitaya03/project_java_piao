@@ -44,7 +44,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Rectangle fx:id="profileImageRec" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="114.0" layoutX="41.0" layoutY="297.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
+            <Rectangle fx:id="previewImage" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="114.0" layoutX="41.0" layoutY="297.0" stroke="WHITE" strokeType="INSIDE" width="120.0" />
             <Label layoutX="28.0" layoutY="101.0" text="ชื่อที่แสดง" textFill="#4d4d4d" />
             <Label layoutX="28.0" layoutY="142.0" text="ชื่อบัญชี" textFill="#4d4d4d" />
             <Label layoutX="28.0" layoutY="185.0" text="รหัสผ่าน" textFill="#4d4d4d" />

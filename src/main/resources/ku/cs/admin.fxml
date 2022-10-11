@@ -5,77 +5,92 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
-      <Button layoutX="564.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
-      <ImageView fx:id="accountImageView" fitHeight="158.0" fitWidth="158.0" layoutX="525.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-      <ListView fx:id="showAccListView" layoutX="38.0" layoutY="114.0" prefHeight="460.0" prefWidth="351.0" />
-      <Label layoutX="430.0" layoutY="249.0" text="Username : " textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Label fx:id="attemptLoginPrompt" layoutX="432.0" layoutY="353.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Button layoutX="672.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
-      <Button layoutX="434.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleBanButton" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font></Button>
-      <Label layoutX="432.0" layoutY="283.0" text="ประเภทผู้ใช้ :" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="332.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="461.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleChangeProfile" style="-fx-background-color: #03bd77;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
-      <Label layoutX="432.0" layoutY="321.0" text="เข้าใช้งานล่าสุด :" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="userLabel" layoutX="547.0" layoutY="249.0" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="typeLabel" layoutX="558.0" layoutY="283.0" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="logintimeLabel" layoutX="584.0" layoutY="321.0" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="attemptLogin" layoutX="696.0" layoutY="353.0" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="banSucceeded" layoutX="629.0" layoutY="550.0" prefHeight="18.0" prefWidth="98.0" />
-      <Button layoutX="507.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleUnBanButton" style="-fx-background-color: #03bd00;" text="ปลดแบน" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label fx:id="detailRequestPrompt" layoutX="431.0" layoutY="389.0" text="คำขอการคืนสิทธิ์" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="detailRequest" layoutX="431.0" layoutY="423.0" prefHeight="90.0" prefWidth="292.0" text="Label" textFill="#4d4d4d">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="orgLabel" layoutX="650.0" layoutY="283.0" textFill="#4d4d4d">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="292.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleReport" style="-fx-background-color: #03bd77;" text="รายงานความไม่เหมาะสม" textFill="WHITE" />
+      <ListView fx:id="showAccListView" layoutX="38.0" layoutY="67.0" prefHeight="507.0" prefWidth="351.0" />
+      <Pane prefHeight="73.0" prefWidth="800.0">
+         <children>
+            <Button layoutX="308.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReport" style="-fx-background-color: #03bd77;" text="รายงานความไม่เหมาะสม" textFill="WHITE" />
+            <Button layoutX="573.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleChangeProfile" style="-fx-background-color: #03bd77;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+            <Button layoutX="670.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #03bd77;" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="468.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #03bd77;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
+            <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="407.0" layoutY="66.0" prefHeight="520.0" prefWidth="376.0">
+         <children>
+            <Label layoutX="24.0" layoutY="173.0" text="Username : " textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="attemptLoginPrompt" layoutX="24.0" layoutY="267.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="150.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleBanButton" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="24.0" layoutY="202.0" text="ประเภทผู้ใช้ :" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="237.0" text="เข้าใช้งานล่าสุด :" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="userLabel" layoutX="179.0" layoutY="173.0" text="username" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="typeLabel" layoutX="179.0" layoutY="202.0" text="ประเภท" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="logintimeLabel" layoutX="179.0" layoutY="237.0" text="เข้าใช้งาน" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="attemptLogin" layoutX="283.0" layoutY="267.0" text="จนครั้ง" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="banSucceeded" layoutX="236.0" layoutY="459.0" prefHeight="26.0" prefWidth="126.0" text="แบนสำเร็จ" />
+            <Button layoutX="45.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleUnBanButton" style="-fx-background-color: #03bd00;" text="ปลดแบน" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="detailRequestPrompt" layoutX="24.0" layoutY="299.0" text="คำขอการคืนสิทธิ์" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="detailRequest" layoutX="33.0" layoutY="336.0" prefHeight="47.0" prefWidth="292.0" text="Label" textFill="#4d4d4d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="orgLabel" layoutX="270.0" layoutY="202.0" text="หน่วยงาน" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="accountImageView" arcWidth="5.0" fill="WHITE" height="158.0" layoutX="24.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="158.0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

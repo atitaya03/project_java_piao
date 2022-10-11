@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
+<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
    <children>
       <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
          <children>
@@ -30,7 +30,7 @@
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="107.0" layoutX="33.0" layoutY="310.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="109.0" />
+            <Rectangle fx:id="newStaffImage" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="107.0" layoutX="33.0" layoutY="310.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="109.0" />
             <ComboBox fx:id="organizationComboBox" layoutX="31.0" layoutY="68.0" prefHeight="26.0" prefWidth="149.0" promptText="เลือกหน่วยงาน" style="-fx-background-color: #ffffff;" />
             <TextField fx:id="inputUsernameTextField" layoutX="124.0" layoutY="160.0" prefHeight="32.0" prefWidth="173.0" promptText="Username" style="-fx-background-color: #ffffff;">
                <font>

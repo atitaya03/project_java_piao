@@ -24,7 +24,7 @@ public class Account {
         this.username = username;
         this.password = password;
         this.organization = organization;
-        this.imagePath = "/ku/cs/profileUsers/defaultProfile.jpg";
+        this.imagePath = "executablefiles_csv/profileUsers/defaultProfile.jpg";
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime="00";
@@ -44,11 +44,22 @@ public class Account {
     }
     public void initialLoginTime() {
         LocalDateTime now = LocalDateTime.now();
-        System.out.println("Before Formatting: " + now);
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MM yyyy HH mm ss");
         this.loginTime = now.format(format);
     }
 
+    public LocalDateTime getTime() {
+        String[] time = loginTime.split(" ");
+        int year = Integer.parseInt(time[2]);
+        int month = Integer.parseInt(time[1]);
+        int day = Integer.parseInt(time[0]);
+
+        int hour = Integer.parseInt(time[3]);
+        int minute = Integer.parseInt(time[4]);
+        int sec = Integer.parseInt(time[5]);
+        return LocalDateTime.of(year, month, day, hour, minute, sec);
+
+    }
     public String getImagePath() {
         return imagePath;
     }
@@ -99,6 +110,7 @@ public class Account {
     public boolean loginSuccess(String username, String password) {
         if (this.username.equals(username) && this.password.equals(password)) {
             return true;
+
         }
         return false;
     }

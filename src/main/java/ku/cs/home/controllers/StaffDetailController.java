@@ -15,6 +15,7 @@ import ku.cs.models.ComplaintList;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -30,7 +31,8 @@ public class StaffDetailController {
     @FXML private Label statusLabel;
     @FXML private Label titleLabel;
     @FXML private Label detailLabel;
-    @FXML private Label timeLabel;
+//    @FXML private Label timeLabel;
+    @FXML private Label orgLabel;
     @FXML private TextArea managementTextArea;
     @FXML private ComboBox<String> statusComboBox;
 
@@ -56,15 +58,23 @@ public class StaffDetailController {
     }
     private void showUserData() {
         nameLabel.setText(staff.getDisplayname());
-        String url = getClass().getResource(staff.getImagePath()).toExternalForm();
-        staffimage.setFill(new ImagePattern(new Image(url)));
+        File image = new File(staff.getImagePath());
+        staffimage.setFill(new ImagePattern(new Image(image.toURI().toString())));
 
     }
     private void showComplaint(){
         titleLabel.setText(complaint.getTitle());
         detailLabel.setText(complaint.getDetail());
         statusLabel.setText(complaint.getStatus());
-        timeLabel.setText(complaint.getTime());
+        if (complaint.getStatus().equals("ยังไม่ดำเนินการ")){
+            statusLabel.setStyle("-fx-text-fill: #f61e1e");
+        } else if (complaint.getStatus().equals("อยู่ระหว่างการดำเนินการ")){
+            statusLabel.setStyle("-fx-text-fill: #f5bd20");
+        } else {
+            statusLabel.setStyle("-fx-text-fill: #01a57a");
+        }
+        orgLabel.setText(complaint.getCategory());
+//        timeLabel.setText(complaint.getTime());
     }
     @FXML
     public void handleStaffButton(ActionEvent actionEvent) {

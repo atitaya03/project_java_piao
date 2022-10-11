@@ -21,7 +21,7 @@ import ku.cs.services.Effect;
 import java.io.IOException;
 
 public class LoginController {
-    @FXML private ImageView logo;
+//    @FXML private ImageView logo;
     @FXML private ImageView image1;
     @FXML private TextField inputUsernameTextField;
 
@@ -43,9 +43,9 @@ public class LoginController {
     public void initialize(){
         effect = new Effect();
         effect.fadeInPage(root);
-        String url = getClass().getResource("/ku/cs/images/logo.png").toExternalForm();
-        logo.setImage(new Image(url));
-        String url1 = getClass().getResource("/ku/cs/images/imagehome1.jpg").toExternalForm();
+//        String url = getClass().getResource("/ku/cs/images/logo.png").toExternalForm();
+//        logo.setImage(new Image(url));
+        String url1 = getClass().getResource("/ku/cs/images/1.png").toExternalForm();
         image1.setImage(new Image(url1));
         initializeComboBox();
     }

@@ -24,6 +24,7 @@ import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -55,8 +56,8 @@ public class StaffController {
     }
     private void showUserData() {
         nameLabel.setText(staff.getDisplayname());
-        String url = getClass().getResource(staff.getImagePath()).toExternalForm();
-        staffimage.setFill(new ImagePattern(new Image(url)));
+        File image = new File(staff.getImagePath());
+        staffimage.setFill(new ImagePattern(new Image(image.toURI().toString())));
 
     }
     private ComplaintList sortCategory(){

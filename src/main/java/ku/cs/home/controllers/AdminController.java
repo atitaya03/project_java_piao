@@ -10,11 +10,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
@@ -45,7 +47,7 @@ public class AdminController {
     @FXML
     private Label detailRequest;
     @FXML
-    private ImageView accountImageView;
+    private Rectangle accountImageView;
     @FXML private Label orgLabel;
 
 
@@ -58,7 +60,7 @@ public class AdminController {
 
         dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
         accountList = dataSource.readData();
-
+        accountList.sortByTime();
         showAccListView();
         clearSelectedAccount();
         handleSelectedListView();
@@ -103,7 +105,9 @@ public class AdminController {
         typeLabel.setText(account.getRole());
         logintimeLabel.setText(account.getLoginTime());
         if (account.isStaff()) orgLabel.setText(account.getOrganization());
-//        accountImageView.setImage(new Image(account.getImagePath()));
+        File image = new File(account.getImagePath());
+        accountImageView.setFill(new ImagePattern(new Image(image.toURI().toString())));
+
 
     }
 
@@ -150,7 +154,7 @@ public class AdminController {
     @FXML
     public void handleReport(){
         try {
-            com.github.saacsos.FXRouter.goTo("staffsignup");
+            com.github.saacsos.FXRouter.goTo("reportinadmin");
         } catch (IOException e) {
             System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
@@ -164,7 +168,6 @@ public class AdminController {
         dataSource.writeData(accountList,false);
 
 
-
     }
     @FXML
     public void handleUnBanButton(ActionEvent actionEvent){
@@ -172,7 +175,6 @@ public class AdminController {
         banSucceeded.setText("คืนการใช้งานสำเร็จ");
         banSucceeded.setStyle("-fx-text-fill: #03bd00");
         dataSource.writeData(accountList,false);}
-
 
 
     }

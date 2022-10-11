@@ -1,20 +1,18 @@
 package ku.cs.services;
 
-import ku.cs.models.Account;
-import ku.cs.models.AccountList;
-import ku.cs.models.Complaint;
-import ku.cs.models.ComplaintList;
-
+import ku.cs.models.ReportAccount;
+import ku.cs.models.ReportAccList;
 import java.io.*;
+import java.time.LocalDateTime;
 
-public class ComplaintFileDataSource implements DataSource<ComplaintList> {
+public class ReportedAccountFileDataSource implements DataSource<ReportAccList> {
     private String directoryName;
     private String fileName;
 
-    public ComplaintFileDataSource(){
-        this("executablefiles_csv/csv/","complaintData.csv");
+    public ReportedAccountFileDataSource(){
+        this("executablefiles_csv/csv/","reportedAccount.csv");
     }
-    public ComplaintFileDataSource(String directoryName, String fileName) {
+    public ReportedAccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
@@ -38,8 +36,9 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
         }
     }
 
-    public ComplaintList readData(){
-        ComplaintList complaintList = new ComplaintList();
+    @Override
+    public ReportAccList readData(){
+        ReportAccList reportList = new ReportAccList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -52,10 +51,11 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
             String line = "";
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
-                Complaint c = new Complaint(
-                        data[0].trim(), data[1].trim(),(data[2].trim()),Integer.parseInt (data[3].trim()),data[4].trim(),data[5].trim(),data[6].trim(), data[7].trim(), data[9].trim()
+                ReportAccount report = new ReportAccount( //reportedAccountName, subject,detail, reporterAccount
+                        data[0].trim(),data[1].trim(),
+                        data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim()
                 );
-                complaintList.addComplaint(c);
+                reportList.addAccReport(report);
 
             }
 
@@ -72,12 +72,11 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
                 throw new RuntimeException(e);
             }
         }
-        return complaintList;
+        return reportList;
 
     }
 
-    @Override
-    public void writeData(ComplaintList complaintList,boolean a) {
+    public void writeData(ReportAccList repList, boolean a){
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -86,15 +85,19 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
 
         try {
             if (a == true) {
-            writer = new FileWriter(file,true);
-            buffer = new BufferedWriter(writer);
+                writer = new FileWriter(file, true);
+                buffer = new BufferedWriter(writer);
             } else {
                 writer = new FileWriter(file, false);
                 buffer = new BufferedWriter(writer);
-            }
 
-            for (Complaint c : complaintList.getAllComplaints()){
-                String line = c.toCSV();
+            }
+            for (ReportAccount report : repList.getAllReport()){
+                String line = report.getReportedAccountUsername()+","
+                        +report.getSubject()+","+report.getDetail()+","
+                        +report.getReporterAccount()+","+report.getReportTime() +","
+                        +report.getReportDate();
+//
                 buffer.append(line);
                 buffer.newLine();
             }
@@ -118,7 +121,5 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
 
 
     }
-    }
-
-
+}
 
