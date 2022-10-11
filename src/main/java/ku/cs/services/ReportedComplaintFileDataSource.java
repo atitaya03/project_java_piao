@@ -5,6 +5,7 @@ import ku.cs.models.ReportComplaint;
 import ku.cs.models.ReportComplaintList;
 
 import java.io.*;
+import java.time.LocalDateTime;
 
 public class ReportedComplaintFileDataSource implements DataSource<ReportComplaintList> {
     private String directoryName;
@@ -53,7 +54,9 @@ public class ReportedComplaintFileDataSource implements DataSource<ReportComplai
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
                 ReportComplaint report = new ReportComplaint( //reportedComplaintTitle, subject,detail, reporterAccount
-                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim()
+                        data[0].trim(),data[1].trim(),
+                        data[2].trim(),data[3].trim(),
+                        data[4].trim(),data[5].trim()
                 );
                 reportList.addComplaintReport(report);
 
@@ -94,7 +97,9 @@ public class ReportedComplaintFileDataSource implements DataSource<ReportComplai
 
             }
             for (ReportComplaint report : reportComplaint.getAllReport()){
-                String line = report.getReportedComplaintTitle()+","+report.getSubject()+","+report.getDetail()+","+report.getReporterAccount();
+                String line = report.getReportedComplaintTitle()
+                        +","+report.getSubject()+","+report.getDetail()
+                        +","+report.getReporterAccount()+","+report.getReportTime()+","+report.getReportDate();
 //
                 buffer.append(line);
                 buffer.newLine();

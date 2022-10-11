@@ -17,6 +17,7 @@ import ku.cs.services.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ReportInDetailController {
@@ -39,6 +40,8 @@ public class ReportInDetailController {
     private ReportComplaintList reportComplaintList;
     private ComplaintList complaintList;
     private AccountList accountList;
+    private String reportTime;
+    private String reportDate;
     private DataSource<ComplaintList> complaintListDataSource;
     private DataSource<AccountList> accountListDataSource;
     private DataSource<ReportAccList> reportAccListDataSource;
@@ -108,15 +111,19 @@ public class ReportInDetailController {
         else{
             if(type.equals("ผู้ใช้งาน")){
                 Account reported = accountList.searchAccountByUsername(complaint.getUser());
-                ReportAccount reportedAccount = new ReportAccount(reported.getUsername(), subject,detail,reporter.getUsername());
+                ReportAccount reportedAccount = new ReportAccount
+                        (reported.getUsername(), subject,detail,reporter.getUsername(),reportTime,reportDate);
                 reportedAccount.setReportedAccount(reported);
                 reportedAccList.addAccReport(reportedAccount);
+                reportedAccount.initializeReportTime();
                 reportAccListDataSource.writeData(reportedAccList,false);
             }
             else {
-                ReportComplaint reportedComplaint = new ReportComplaint(complaint.getTitle(),subject,detail,reporter.getUsername());
+                ReportComplaint reportedComplaint = new ReportComplaint
+                        (complaint.getTitle(),subject,detail,reporter.getUsername(),reportTime,reportDate);
                 reportedComplaint.setComplaint(complaint);
                 reportComplaintList.addComplaintReport(reportedComplaint);
+                reportedComplaint.initializeReportTime();
                 reportComplaintListDataSource.writeData(reportComplaintList,false);
             }
         }

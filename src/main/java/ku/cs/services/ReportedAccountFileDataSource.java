@@ -3,6 +3,7 @@ package ku.cs.services;
 import ku.cs.models.ReportAccount;
 import ku.cs.models.ReportAccList;
 import java.io.*;
+import java.time.LocalDateTime;
 
 public class ReportedAccountFileDataSource implements DataSource<ReportAccList> {
     private String directoryName;
@@ -51,7 +52,8 @@ public class ReportedAccountFileDataSource implements DataSource<ReportAccList> 
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
                 ReportAccount report = new ReportAccount( //reportedAccountName, subject,detail, reporterAccount
-                        data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim()
+                        data[0].trim(),data[1].trim(),
+                        data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim()
                 );
                 reportList.addAccReport(report);
 
@@ -91,7 +93,10 @@ public class ReportedAccountFileDataSource implements DataSource<ReportAccList> 
 
             }
             for (ReportAccount report : repList.getAllReport()){
-                String line = report.getReportedAccountUsername()+","+report.getSubject()+","+report.getDetail()+","+report.getReporterAccount();
+                String line = report.getReportedAccountUsername()+","
+                        +report.getSubject()+","+report.getDetail()+","
+                        +report.getReporterAccount()+","+report.getReportTime() +","
+                        +report.getReportDate();
 //
                 buffer.append(line);
                 buffer.newLine();
