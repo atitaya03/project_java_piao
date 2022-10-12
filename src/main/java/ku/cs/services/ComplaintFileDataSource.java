@@ -53,8 +53,8 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
             while((line = buffer.readLine()) != null){
                 String[] data = line.split(",");
                 Complaint c = new Complaint(
-                        data[0].trim(), data[1].trim(),(data[2].trim()),Integer.parseInt (data[3].trim()),data[4].trim(),data[5].trim(),data[6].trim(), data[7].trim(), data[9].trim()
-                );
+                        data[0].trim(), data[1].trim(),(data[2].trim()),Integer.parseInt (data[3].trim()),data[4].trim(),data[5].trim(),data[6].trim(), data[7].trim(), data[9].trim(),
+                        data[10].trim());
                 complaintList.addComplaint(c);
 
             }
