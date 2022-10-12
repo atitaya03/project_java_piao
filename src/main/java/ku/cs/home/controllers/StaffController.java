@@ -78,38 +78,38 @@ public class StaffController {
 
         complaintsTable.getColumns().clear();
         complaintsTable.setEditable(true);
-        TableColumn<Complaint, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Complaint, String> titleColumn = new TableColumn<>("หัวข้อ");
         titleColumn.setMinWidth(100);
         titleColumn.setCellValueFactory(
                 new PropertyValueFactory<>("title")
         );
-        TableColumn detailsColumn = new TableColumn("Details");
+        TableColumn detailsColumn = new TableColumn("รายละเอียด");
         detailsColumn.setMinWidth(150);
         detailsColumn.setCellValueFactory(
                 new PropertyValueFactory<Complaint,String>("detail")
         );
-        TableColumn voteColumn = new TableColumn("Votes");
-        voteColumn.setMinWidth(100);
+        TableColumn voteColumn = new TableColumn("โหวต");
+        voteColumn.setMinWidth(50);
         voteColumn.setCellValueFactory(
                 new PropertyValueFactory<Complaint,String>("voted")
         );
-        TableColumn userColumn = new TableColumn("User");
-        userColumn.setMinWidth(100);
-        userColumn.setCellValueFactory(
-                new PropertyValueFactory<Complaint,String>("user")
+        TableColumn detailColumn= new TableColumn("วิธีการจัดการ");
+        detailColumn.setMinWidth(150);
+        detailColumn.setCellValueFactory(
+                new PropertyValueFactory<Complaint,String>("management")
         );
-        TableColumn statusColumn = new TableColumn("Status");
+        TableColumn statusColumn = new TableColumn("สถานะ");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(
                 new PropertyValueFactory<Complaint,String>("status")
         );
-        TableColumn timeColumn = new TableColumn("CreateTime");
+        TableColumn timeColumn = new TableColumn("เวลาร้องเรียน");
         timeColumn.setMinWidth(150);
         timeColumn.setCellValueFactory(
                 new PropertyValueFactory<Complaint, String>("time")
         );
         complaintsTable.setItems(data);
-        complaintsTable.getColumns().addAll(titleColumn, detailsColumn, voteColumn, userColumn, statusColumn, timeColumn);
+        complaintsTable.getColumns().addAll(titleColumn, detailsColumn, voteColumn, detailColumn, statusColumn, timeColumn);
 
     }
     private void handleSelectedTableView(){

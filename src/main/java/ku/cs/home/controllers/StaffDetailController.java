@@ -35,6 +35,7 @@ public class StaffDetailController {
     @FXML private Label orgLabel;
     @FXML private TextArea managementTextArea;
     @FXML private ComboBox<String> statusComboBox;
+    @FXML private Label organizerLabel;
 
 
     private ArrayList<Object> dataList;
@@ -53,6 +54,10 @@ public class StaffDetailController {
         System.out.println(complaint);
         managementTextArea.setWrapText(true);
         statusComboBox.getItems().addAll("ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
+        if(!complaint.getOrganizer().equals("-")){
+            managementTextArea.setEditable(false);
+            managementTextArea.setText(complaint.getManagement());
+        }
         showComplaint();
         showUserData();
     }
@@ -74,6 +79,7 @@ public class StaffDetailController {
             statusLabel.setStyle("-fx-text-fill: #01a57a");
         }
         orgLabel.setText(complaint.getCategory());
+        organizerLabel.setText(complaint.getOrganizer());
 //        timeLabel.setText(complaint.getTime());
     }
     @FXML
@@ -117,6 +123,7 @@ public class StaffDetailController {
         }else{
         complaint.setManagement(management);}
 
+        complaint.setOrganizer(staff);
         complaint.setStatus(status);
         complaintListDataSource.writeData(complaintList, false);
 
