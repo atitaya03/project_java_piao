@@ -69,6 +69,12 @@ public class StudentSelfComplaintController {
 
 
     }
+    private void showUserData() {
+        nameLabel.setText(student.getDisplayname());
+        File image = new File(student.getImagePath());
+        circle.setFill(new ImagePattern(new Image(image.toURI().toString())));
+
+    }
     private ComplaintList userComplaints(){
         ComplaintList userComplaints = new ComplaintList();
         for(Complaint c : complaintList.getAllComplaints()){
@@ -133,12 +139,7 @@ public class StudentSelfComplaintController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
-    private void showUserData() {
-        nameLabel.setText(student.getDisplayname());
-        File image = new File(student.getImagePath());
-        circle.setFill(new ImagePattern(new Image(image.toURI().toString())));
 
-    }
     @FXML
     public void handleStudentHomeButton(ActionEvent actionEvent) {
         try {
