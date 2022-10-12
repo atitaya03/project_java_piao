@@ -30,7 +30,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutY="342.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="ดูเรื่องร้องเรียน" textFill="WHITE">
+            <Button layoutY="342.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="ดูเรื่องร้องเรียน" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
