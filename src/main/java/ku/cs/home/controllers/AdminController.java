@@ -13,6 +13,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
+import ku.cs.models.ReportAccount;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -26,28 +27,18 @@ public class AdminController {
     private Account account;
     private DataSource<AccountList> dataSource;
     private AccountList accountList;
-    @FXML
-    private ImageView adminicon;
-    @FXML
-    private ListView<Account> showAccListView;
-    @FXML
-    private Label userLabel;
-    @FXML
-    private Label attemptLogin;
-    @FXML
-    private Label typeLabel;
-    @FXML
-    private Label logintimeLabel;
-    @FXML
-    private Label banSucceeded;
-    @FXML
-    private Label attemptLoginPrompt;
-    @FXML
-    private Label detailRequestPrompt;
-    @FXML
-    private Label detailRequest;
-    @FXML
-    private Rectangle accountImageView;
+    private ReportAccount reportAccount;
+    @FXML private ImageView adminicon;
+    @FXML private ListView<Account> showAccListView;
+    @FXML private Label userLabel;
+    @FXML private Label attemptLogin;
+    @FXML private Label typeLabel;
+    @FXML private Label logintimeLabel;
+    @FXML private Label banSucceeded;
+    @FXML private Label attemptLoginPrompt;
+    @FXML private Label detailRequestPrompt;
+    @FXML private Label detailRequest;
+    @FXML private Rectangle accountImageView;
     @FXML private Label orgLabel;
 
 
@@ -154,9 +145,9 @@ public class AdminController {
     @FXML
     public void handleReport(){
         try {
-            com.github.saacsos.FXRouter.goTo("reportinadmin");
+            com.github.saacsos.FXRouter.goTo("reportinadmin",reportAccount);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
+            System.err.println("ไปที่หน้า report ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }

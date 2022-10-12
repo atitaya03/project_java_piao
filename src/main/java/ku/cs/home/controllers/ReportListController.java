@@ -4,56 +4,168 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
-import ku.cs.models.Account;
-import ku.cs.models.AccountList;
-import ku.cs.services.AccountFileDataSource;
+import javafx.scene.layout.Pane;
+import ku.cs.models.*;
 import ku.cs.services.DataSource;
+import ku.cs.services.ReportedAccountFileDataSource;
+import ku.cs.services.ReportedComplaintFileDataSource;
 
-import java.io.File;
 import java.io.IOException;
 
 public class ReportListController {
     private Account admin;
     private Account account;
-    private AccountList accountList; // ต้องทำ ReportList
     private DataSource<AccountList> dataSource;
-    @FXML private ListView showReportAccList;
+    private AccountList accountList;
+    private ReportAccount reportAccount;
+    private ReportAccList reportAccList;
+    private DataSource<ReportAccList> dataSourceAcc;
 
-    public void initialize() {
+    private ReportComplaint reportComplaint;
+    private ReportComplaintList reportComplaintList;
+    private DataSource<ReportComplaintList> dataSourceComplaint;
+
+    @FXML private ListView showReportList;
+    @FXML private Label reportedLabel;
+    @FXML private Label reporterLabel;
+    @FXML private Label attemptLogin;
+    @FXML private Label detailRequest;
+//    @FXML private Label banSucceeded;
+    @FXML private Label reportedComplaintLabel;
+    @FXML private Pane reportAccountPane;
+    @FXML private Pane reportComplaintPane;
+
+
+    public void initialize(){
         admin = (Account) com.github.saacsos.FXRouter.getData();
-        account = (Account) com.github.saacsos.FXRouter.getData();
+        reportAccount = (ReportAccount) com.github.saacsos.FXRouter.getData();
+        reportComplaint = (ReportComplaint ) com.github.saacsos.FXRouter.getData();
 
+        dataSourceAcc = new ReportedAccountFileDataSource("executablefiles_csv/csv/", "reportedAccount.csv");
+        dataSourceComplaint = new ReportedComplaintFileDataSource("executablefiles_csv/csv/", "reportedComplaint.csv");
+        reportAccList = dataSourceAcc.readData();
+        reportComplaintList = dataSourceComplaint.readData();
+
+        reportComplaintPane.setOpacity(0);
+        showAccListView();
+        clearSelectedAccount();
+        handleSelectedAccountListView();
+        handleSelectedComplaintListView();
     }
 
     private void showAccListView() {
-        showReportAccList.getItems().addAll(accountList.getAllAccount());
-        showReportAccList.refresh();
+        clearData();
+        showReportList.getItems().addAll(reportAccList.getAllReport());
+        showReportList.refresh();
     }
 
-    private void handleSelectedReportedListView() {
-        showReportAccList.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<Account>() {
+    private void showComplaintListView(){
+        clearData();
+        showReportList.getItems().addAll(reportComplaintList.getAllReport());
+        showReportList.refresh();
+    }
+
+    @FXML private void handleAccButton(){
+        showAccListView();
+        reportAccountPane.setOpacity(1);
+        reportComplaintPane.setOpacity(0);
+    }
+
+    @FXML private void handleComplaintButton(){
+        showComplaintListView();
+        reportAccountPane.setOpacity(0);
+        reportComplaintPane.setOpacity(1);
+    }
+    private void handleSelectedAccountListView() {
+        showReportList.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<ReportAccount>() {
                     @Override
-                    public void changed(ObservableValue<? extends Account> observableValue,
-                                        Account oldValue, Account newValue) {
+                    public void changed(ObservableValue<? extends ReportAccount> observableValue,
+                                        ReportAccount oldValue, ReportAccount newValue) {
                         System.out.println(newValue + " is selected");
                         showSelectedAccount(newValue);
-                        account = newValue;
+                        reportAccount = newValue;
                     }
                 });
 
     }
 
-    private void showSelectedAccount(Account account) {
+    private void handleSelectedComplaintListView() {
+        showReportList.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<ReportComplaint>() {
+                    @Override
+                    public void changed(ObservableValue<? extends ReportComplaint> observableValue,
+                                        ReportComplaint oldValue, ReportComplaint newValue) {
+                        System.out.println(newValue + " is selected");
+                        showSelectedComplaint(newValue);
+                        reportComplaint = newValue;
+                    }
+                });
+
+    }
+    private void showSelectedAccount(ReportAccount reportAccount){
         clearSelectedAccount();
-
+        reportedLabel.setText(reportAccount.getReportedAccountUsername());
+        reporterLabel.setText(reportAccount.getReporterAccount());
+        if(account.isBanned()){
+            attemptLogin.setText(account.getLoginAttempt()+"");
+            attemptLogin.setStyle("-fx-text-fill: #f61e1e");
+            detailRequest.setText(account.getUnbanRequest());
+            detailRequest.setStyle("-fx-text-fill: #f61e1e");
+        }
     }
 
+    private void showSelectedComplaint(ReportComplaint reportComplaint){
+        clearSelectedComplaint();
+        reportedComplaintLabel.setText(reportComplaint.getSubject());
+    }
     private void clearSelectedAccount() {
+        reportedLabel.setText("");
+        reporterLabel.setText("");
     }
+
+
+
+
+
+    private void clearSelectedComplaint(){
+        reportedComplaintLabel.setText("");
+    }
+
+    private void clearData(){
+        showReportList.getItems().clear();
+    }
+
+
+
+
+//    @FXML
+//    public void handleBanButton(ActionEvent actionEvent){
+//        admin.ban(account);
+//        banSucceeded.setText("ระงับการใช้งานสำเร็จ");
+//        banSucceeded.setStyle("-fx-text-fill: #f61e1e");
+//        dataSource.writeData(accountList,false);
+//
+//
+//    }
+//    @FXML
+//    public void handleUnBanButton(ActionEvent actionEvent){
+//        if(account.isBanned()){admin.unBan(account);
+//            banSucceeded.setText("คืนการใช้งานสำเร็จ");
+//            banSucceeded.setStyle("-fx-text-fill: #03bd00");
+//            dataSource.writeData(accountList,false);}
+//
+//
+//    }
+
+
+
+
+
+
 
     @FXML
     public void handleAccountList(ActionEvent actionEvent) {

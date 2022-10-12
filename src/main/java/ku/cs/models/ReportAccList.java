@@ -17,23 +17,22 @@ public class ReportAccList {
     public void addAccReport(ReportAccount report){
         reportAcctList.add(report);
     }
-
     public ArrayList<ReportAccount> getAllReport(){
         return reportAcctList;
     }
 
     /// อย่าลืมใช้นะโว้ย
-    public ArrayList<ReportAccount> sortByTime(){
-        ArrayList<ReportAccount> temp = reportAcctList;
-        temp.sort(new Comparator<ReportAccount>() {
-            @Override
-            public int compare(ReportAccount o1, ReportAccount o2) {
-                if (o1.getTime().isBefore(o2.getTime())) return 1;
-                if (o1.getTime().isAfter(o2.getTime())) return -1;
-                return 0;
-            }
-        });
-        return temp;
-    }
+//    public ArrayList<ReportAccount> sortByTime(){
+//        ArrayList<ReportAccount> temp = reportAcctList;
+//        temp.sort(new Comparator<ReportAccount>() {
+//            @Override
+//            public int compare(ReportAccount o1, ReportAccount o2) {
+//                if (o1.getTime().isBefore(o2.getTime())) return 1;
+//                if (o1.getTime().isAfter(o2.getTime())) return -1;
+//                return 0;
+//            }
+//        });
+//        return temp;
+//    }
 }
 

@@ -22,17 +22,17 @@ public class ReportComplaintList {
         return reportComplaints;
     }
 
-    public ArrayList<ReportComplaint> sortByTime(){
-        ArrayList<ReportComplaint> temp = reportComplaints;
-        temp.sort(new Comparator<ReportComplaint>() {
-            @Override
-            public int compare(ReportComplaint o1, ReportComplaint o2) {
-                if (o1.getTime().isBefore(o2.getTime())) return 1;
-                if (o1.getTime().isAfter(o2.getTime())) return -1;
-                return 0;
-            }
-        });
-        return temp;
-    }
+//    public ArrayList<ReportComplaint> sortByTime(){
+//        ArrayList<ReportComplaint> temp = reportComplaints;
+//        temp.sort(new Comparator<ReportComplaint>() {
+//            @Override
+//            public int compare(ReportComplaint o1, ReportComplaint o2) {
+//                if (o1.getTime().isBefore(o2.getTime())) return 1;
+//                if (o1.getTime().isAfter(o2.getTime())) return -1;
+//                return 0;
+//            }
+//        });
+//        return temp;
+//    }
 }
 

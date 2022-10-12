@@ -69,4 +69,10 @@ public class ReportComplaint {
     public String getReportDate() {
         return reportDate;
     }
+
+    @Override
+    public String toString() {
+        return "รายงานโดย: " + reporterAccount + " [หมวดหมู่: " + subject +"]\n" +
+                "วันที่รายงาน: " + reportDate;
+    }
 }
