@@ -34,6 +34,7 @@ public class StudentComplaintController {
     private Label categoryFeaturePrompt;
     @FXML
     private Label aleartLabel;
+
     private String category;
 
     private ComplaintList complaintList;
@@ -77,6 +78,10 @@ public class StudentComplaintController {
             System.err.println("Cannot reach Dictionary");
         }
     }
+
+
+
+    @FXML
 
     public void handleStudentHomeButton(ActionEvent actionEvent) {
         try {
@@ -133,6 +138,16 @@ public class StudentComplaintController {
 
     }
 
+    @FXML
+    public void handleUserComplaintButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("studentselfcomplaint",student);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า usercomplaint ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+
+    }
 
 }
 

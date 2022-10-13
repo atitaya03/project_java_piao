@@ -23,6 +23,7 @@ public class StudentDetailController {
     @FXML private Label nameLabel,statusLabel,voteTotalLabel,dateLabel,detailInEachCategory,FeatureInEachCategoryPrompt;
     @FXML private Label titleLabel;
     @FXML private Label orgLabel;
+    @FXML private Label vote;
     @FXML private Circle studentImage;
     @FXML private TextArea detailTextArea;
     @FXML private TextArea managementTextArea;
@@ -90,7 +91,13 @@ public class StudentDetailController {
         }
     }
 
+    public void in(MouseEvent mouseEvent){
+        vote.setStyle("-fx-text-fill: #f61e1e");
+    }
 
+    public void out(MouseEvent mouseEvent){
+        vote.setStyle("-fx-text-fill: #4d4d4d");
+    }
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
         try {
@@ -125,5 +132,15 @@ public class StudentDetailController {
         }
     }
 
+    @FXML
+    public void handleUserComplaintButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("studentselfcomplaint",student);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า usercomplaint ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+
+    }
 }
 

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class ReportInDetailController {
     private Account reporter;
+    private Account student;
     @FXML
     private Label nameLabel;
     @FXML
@@ -155,6 +156,17 @@ public class ReportInDetailController {
             System.err.println("ไปที่หน้าหลักไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+    }
+
+    @FXML
+    public void handleUserComplaintButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("studentselfcomplaint",student);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า usercomplaint ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+
     }
     public void clear(){
         reportTypeBox.setValue("");

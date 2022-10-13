@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportInDetailController">
+<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f1f3f6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportInDetailController">
     <children>
         <Pane prefHeight="607.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
             <children>
@@ -29,7 +29,7 @@
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button layoutY="342.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="ดูเรื่องร้องเรียน" textFill="WHITE">
+                <Button layoutY="342.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="ดูเรื่องร้องเรียน" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -49,36 +49,32 @@
                 </Button>
             </children>
         </Pane>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="729.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="51.0" text="ปิด">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="713.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" text="กลับ" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Button>
-      <Pane layoutX="199.0" layoutY="120.0" prefHeight="391.0" prefWidth="559.0" style="-fx-background-color: FFF0B0;">
+      <Pane layoutX="199.0" layoutY="120.0" prefHeight="391.0" prefWidth="565.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label fx:id="alertSubjectReport" layoutX="214.0" layoutY="169.0" prefHeight="20.0" prefWidth="165.0" text="alertsubject" textFill="#ff4040">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox fx:id="subjectBox" editable="true" layoutX="210.0" layoutY="136.0" prefHeight="14.0" prefWidth="140.0" />
-            <Label layoutX="39.0" layoutY="204.0" text="รายละเอียด" textFill="#4d4d4d">
+            <ComboBox fx:id="subjectBox" editable="true" layoutX="210.0" layoutY="136.0" prefHeight="26.0" prefWidth="156.0" />
+            <Label layoutX="52.0" layoutY="204.0" text="รายละเอียด" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <ComboBox fx:id="reportTypeBox" editable="true" layoutX="210.0" layoutY="54.0" prefHeight="25.0" prefWidth="140.0" />
-            <Label layoutX="72.0" layoutY="53.0" prefHeight="25.0" prefWidth="120.0" text="ประเภทการรายงาน" textFill="#4d4d4d">
+            <ComboBox fx:id="reportTypeBox" editable="true" layoutX="210.0" layoutY="54.0" prefHeight="26.0" prefWidth="156.0" />
+            <Label layoutX="55.0" layoutY="55.0" prefHeight="25.0" prefWidth="131.0" text="ประเภทการรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="71.0" layoutY="78.0" text="( เนื้อหา หรือ ผู้ใช้งาน )" textFill="#4d4d4d">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="alertDetailReport" layoutX="114.0" layoutY="207.0" prefHeight="18.0" prefWidth="156.0" text="alertdetail" textFill="#ff4040">
+            <Label layoutX="66.0" layoutY="80.0" text="(เนื้อหาหรือผู้ใช้งาน)" textFill="#4d4d4d" />
+            <Label fx:id="alertDetailReport" layoutX="141.0" layoutY="205.0" prefHeight="18.0" prefWidth="156.0" text="alertdetail" textFill="#ff4040">
                <font>
                   <Font size="14.0" />
                </font>
@@ -88,25 +84,25 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextArea fx:id="detailTextArea" layoutX="79.0" layoutY="241.0" prefHeight="87.0" prefWidth="417.0" promptText="กรอกรายละเอียด" />
-            <Label layoutX="115.0" layoutY="136.0" text="หัวข้อ" textFill="#4d4d4d">
+            <TextArea fx:id="detailTextArea" layoutX="52.0" layoutY="240.0" prefHeight="87.0" prefWidth="473.0" promptText="กรอกรายละเอียด" />
+            <Label layoutX="139.0" layoutY="139.0" text="หัวข้อ" textFill="#4d4d4d">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleReportButton" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #f1f3f6; -fx-background-radius: 15; -fx-border-color: #000000; -fx-border-radius: 15;" text="รายงาน" textFill="#4d4d4d">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleReportButton" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #01a57a; -fx-background-radius: 15; -fx-border-radius: 15;" text="รายงาน" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="374.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleSelectTypeButton" prefHeight="26.0" prefWidth="51.0" text="เลือก">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSelectTypeButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" text="เลือก" textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label alignment="CENTER" layoutX="384.0" layoutY="21.0" text="รายงานความไม่เหมาะสม" textAlignment="CENTER" textFill="#ff4040">
+      <Label alignment="CENTER" layoutX="376.0" layoutY="73.0" text="รายงานความไม่เหมาะสม" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
