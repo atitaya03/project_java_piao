@@ -62,11 +62,11 @@ public class ReportListController {
         reportComplaintList = dataSourceReportedComplaint.readData();
 
         reportComplaintPane.setOpacity(0);
-
         showAccListView();
         handleSelectedAccountListView();
         clearSelectedAccount();
         clearSelectedComplaint();
+        delComplaintButton.setVisible(false);
 
 
     }
@@ -85,7 +85,7 @@ public class ReportListController {
 
     @FXML private void handleAccButton(){
         showAccListView();
-        //delComplaintButton.setDisable(true);
+        delComplaintButton.setDisable(true);
         delComplaintButton.setVisible(false);
         banButton.setDisable(false);
         banButton.setVisible(true);
@@ -97,9 +97,8 @@ public class ReportListController {
 
     @FXML private void handleComplaintButton(){
         showComplaintListView();
-//        banButton.setDisable(true);
-//        banButton.setVisible(false);
-//        delComplaintButton.setDisable(false);
+        banButton.setVisible(false);
+        delComplaintButton.setDisable(false);
         delComplaintButton.setVisible(true);
         reportAccountPane.setOpacity(0);
         reportComplaintPane.setOpacity(1);
@@ -140,6 +139,8 @@ public class ReportListController {
         reporterLabel.setText(reportAccount.getReporterAccount());
         reportedTypeLabel.setText(reportAccount.getSubject());
         detailReportTextArea.setText(reportAccount.getDetail());
+        detailReportTextArea.setWrapText(true);
+        detailReportTextArea.setEditable(false);
 
     }
 
@@ -152,6 +153,9 @@ public class ReportListController {
         reporterComplaintLabel.setText(reportComplaint.getReporterAccount());
         ComplaintTypeReportLabel.setText(reportComplaint.getSubject());
         detailReportedTextAreaComplaint.setText(reportComplaint.getDetail());
+        detailReportedTextAreaComplaint.setWrapText(true);
+        detailReportedTextAreaComplaint.setEditable(false);
+
     }
     private void clearSelectedAccount() {
         reportedLabel.setText("");
@@ -183,14 +187,14 @@ public class ReportListController {
         reportAccList.delete(reportAccount);
             dataSource.writeData(accountList,false);
             dataSourceAcc.writeData(reportAccList,false);}
-        else banSucceeded.setText("ไม่สามารถระงับการใช้งานได้");
+        else banSucceeded.setText("ผู้ใช้งานถูกระงับการใช้งานอยู่แล้ว");
         clearSelectedAccount();
         showAccListView();
 
     }
     @FXML void handleDelComplaintButton(ActionEvent actionEvent){
         if(reportComplaint == null) deleteComplaintLabel.setText("โปรดเลือกหัวข้อการรายงาน");
-    else{complaintList.delete(reportComplaint.getComplaint());
+        else{ complaintList.delete(reportComplaint.getComplaint());
             reportComplaintList.delete(reportComplaint);
             dataSourceComplaint.writeData(complaintList,false);
             dataSourceReportedComplaint.writeData(reportComplaintList,false);
