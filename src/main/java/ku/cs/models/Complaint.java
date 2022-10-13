@@ -94,6 +94,7 @@ public class Complaint {
         return organizer;
     }
 
+
     public void setManagement(String management) {
         this.management = management;
     }

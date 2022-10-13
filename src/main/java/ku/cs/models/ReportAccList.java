@@ -20,6 +20,9 @@ public class ReportAccList {
     public ArrayList<ReportAccount> getAllReport(){
         return reportAcctList;
     }
+    public void delete(Object del){
+        reportAcctList.remove(del);
+    }
 
     /// อย่าลืมใช้นะโว้ย
 //    public ArrayList<ReportAccount> sortByTime(){

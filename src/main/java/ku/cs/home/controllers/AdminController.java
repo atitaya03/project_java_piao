@@ -141,24 +141,14 @@ public class AdminController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
-
     @FXML
     public void handleReport(){
         try {
-            com.github.saacsos.FXRouter.goTo("reportinadmin",reportAccount);
+            com.github.saacsos.FXRouter.goTo("reportinadmin",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า report ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
-    }
-    @FXML
-    public void handleBanButton(ActionEvent actionEvent){
-        admin.ban(account);
-        banSucceeded.setText("ระงับการใช้งานสำเร็จ");
-        banSucceeded.setStyle("-fx-text-fill: #f61e1e");
-        dataSource.writeData(accountList,false);
-
-
     }
     @FXML
     public void handleUnBanButton(ActionEvent actionEvent){

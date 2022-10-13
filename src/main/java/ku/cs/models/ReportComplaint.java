@@ -46,6 +46,10 @@ public class ReportComplaint {
         this.complaint = complaint;
     }
 
+    public Complaint getComplaint() {
+        return complaint;
+    }
+
     public String getReportedComplaintTitle() {
         return reportedComplaintTitle;
     }
@@ -72,7 +76,7 @@ public class ReportComplaint {
 
     @Override
     public String toString() {
-        return "รายงานโดย: " + reporterAccount + " [หมวดหมู่: " + subject +"]\n" +
+        return "เรื่อง: "+reportedComplaintTitle+" รายงานโดย: " + reporterAccount + " [หมวดหมู่: " + subject +"]\n" +
                 "วันที่รายงาน: " + reportDate;
     }
 }

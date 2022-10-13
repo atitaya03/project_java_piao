@@ -150,6 +150,7 @@ public class Account {
         if (isAdmin())
             student.isBaned = true ;
     }
+
     public void unBanRequest(String request) {
         unBannedRequest = request;
     }

@@ -3,11 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
+<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
    <children>
       <ListView fx:id="showReportList" layoutX="53.0" layoutY="99.0" prefHeight="282.0" prefWidth="334.0" />
       <Pane prefHeight="85.0" prefWidth="800.0">
@@ -20,41 +21,64 @@
             <Button fx:id="manageReportComplaintButton" layoutX="165.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleComplaintButton" text="รายงานผู้ร้องเรียน" />
          </children>
       </Pane>
-      <Pane fx:id="reportAccountPane" layoutX="406.0" layoutY="75.0" prefHeight="377.0" prefWidth="376.0">
+      <Pane fx:id="reportComplaintPane" layoutX="400.0" layoutY="85.0" prefHeight="390.0" prefWidth="362.0">
          <children>
-            <Label layoutX="25.0" layoutY="41.0" text="บัญชีที่ถูกรายงาน">
+            <Label fx:id="complaintTitleLabel" layoutX="200.0" layoutY="41.0" text="complaintTitleLabel" />
+            <Label layoutX="14.0" layoutY="36.0" text="เรื่องร้องเรียนที่ถูกรายงาน">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="110.0" text="จำนวนครั้งที่พยายามเข้าใช้">
+            <Label layoutX="15.0" layoutY="76.0" text="ผู้รายงาน">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="72.0" text="ผู้รายงาน">
+            <Label fx:id="reporterComplaintLabel" layoutX="110.0" layoutY="81.0" text="reporterLabel" />
+            <Label layoutX="16.0" layoutY="116.0" text="หัวข้อที่ถูกรายงาน">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="146.0" text="คำขอคืนสิทธิ์การใช้งาน">
+            <Label fx:id="ComplaintTypeReportLabel" layoutX="164.0" layoutY="121.0" text="reporterLabel" />
+            <Label layoutX="16.0" layoutY="152.0" text="รายละเอียดการรายงาน">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="reportedLabel" layoutX="181.0" layoutY="44.0" text="Label" />
-            <Label fx:id="reporterLabel" layoutX="127.0" layoutY="75.0" text="Label" />
-            <Label fx:id="attemptLogin" layoutX="251.0" layoutY="113.0" text="Label" />
-            <Label fx:id="detailRequest" layoutX="27.0" layoutY="180.0" text="Label" />
-            <Button layoutX="30.0" layoutY="232.0" mnemonicParsing="false" text="ban" />
-            <Button layoutX="100.0" layoutY="233.0" mnemonicParsing="false" text="unban" />
-            <Label fx:id="banSucceeded" layoutX="196.0" layoutY="238.0" text="Label" />
+            <TextArea fx:id="detailReportedTextAreaComplaint" layoutX="38.0" layoutY="187.0" prefHeight="95.0" prefWidth="324.0" />
+            <Button fx:id="delComplaintButton" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleDelComplaintButton" text="ลบเรื่องร้องเรียน" />
+            <Label fx:id="deleteComplaintLabel" layoutX="141.0" layoutY="307.0" prefHeight="18.0" prefWidth="183.0" text="Label" />
          </children>
       </Pane>
-      <Pane fx:id="reportComplaintPane" layoutX="427.0" layoutY="409.0" prefHeight="164.0" prefWidth="334.0">
+      <Pane fx:id="reportAccountPane" layoutX="401.0" layoutY="86.0" prefHeight="474.0" prefWidth="402.0">
          <children>
-            <Label fx:id="reportedComplaintLabel" layoutX="78.0" layoutY="54.0" text="complaint" />
-            <Label layoutX="42.0" layoutY="54.0" text="เทส" />
+            <Label layoutX="18.0" layoutY="39.0" text="บัญชีที่ถูกรายงาน" textFill="#4d4d4d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="149.0" text="รายละเอียดการรายงาน">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="111.0" text="หัวข้อที่ถูกรายงาน">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="76.0" text="ผู้รายงาน">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="reportedLabel" layoutX="198.0" layoutY="44.0" text="Label" />
+            <Label fx:id="reporterLabel" layoutX="111.0" layoutY="81.0" text="Label" />
+            <Button fx:id="banButton" layoutX="18.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleBanButton" text="ระงับการใช้งาน" />
+            <Label fx:id="banSucceeded" layoutX="135.0" layoutY="310.0" prefHeight="17.0" prefWidth="153.0" />
+            <Label fx:id="reportedTypeLabel" layoutX="167.0" layoutY="116.0" text="Label" />
+            <TextArea fx:id="detailReportTextArea" layoutX="39.0" layoutY="182.0" prefHeight="95.0" prefWidth="324.0" />
          </children>
       </Pane>
    </children>

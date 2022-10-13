@@ -21,6 +21,9 @@ public class ReportComplaintList {
     public ArrayList<ReportComplaint> getAllReport(){
         return reportComplaints;
     }
+    public void delete(Object del){
+        reportComplaints.remove(del);
+    }
 
 //    public ArrayList<ReportComplaint> sortByTime(){
 //        ArrayList<ReportComplaint> temp = reportComplaints;

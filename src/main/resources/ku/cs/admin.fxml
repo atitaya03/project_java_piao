@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
       <ListView fx:id="showAccListView" layoutX="38.0" layoutY="67.0" prefHeight="507.0" prefWidth="351.0" />
       <Pane prefHeight="73.0" prefWidth="800.0">
@@ -33,11 +33,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="150.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleBanButton" style="-fx-background-color: #ee6161#ee6161;" text="แบน" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
             <Label layoutX="24.0" layoutY="202.0" text="ประเภทผู้ใช้ :" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
@@ -68,7 +63,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="banSucceeded" layoutX="236.0" layoutY="459.0" prefHeight="26.0" prefWidth="126.0" text="แบนสำเร็จ" />
+            <Label fx:id="banSucceeded" layoutX="155.0" layoutY="456.0" prefHeight="26.0" prefWidth="126.0" text="แบนสำเร็จ" />
             <Button layoutX="45.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleUnBanButton" style="-fx-background-color: #03bd00;" text="ปลดแบน" textFill="WHITE">
                <font>
                   <Font size="18.0" />

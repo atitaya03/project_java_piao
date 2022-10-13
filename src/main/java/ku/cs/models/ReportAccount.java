@@ -53,6 +53,9 @@ public class ReportAccount {
         return getReportedAccountUsername;
     }
 
+    public Account getReportedAccount() {
+        return reportedAccount;
+    }
 
     public String getSubject() {
         return subject;
