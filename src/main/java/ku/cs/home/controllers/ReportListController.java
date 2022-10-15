@@ -91,6 +91,7 @@ public class ReportListController {
         banButton.setVisible(true);
         reportAccountPane.setOpacity(1);
         reportComplaintPane.setOpacity(0);
+        handleSelectedAccountListView();
 
 
     }

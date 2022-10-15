@@ -52,6 +52,7 @@ public class AdminController {
         dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
         accountList = dataSource.readData();
         accountList.sortByTime();
+
         showAccListView();
         clearSelectedAccount();
         handleSelectedListView();
