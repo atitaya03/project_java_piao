@@ -27,8 +27,8 @@ public class Account {
         this.imagePath = "executablefiles_csv/profileUsers/defaultProfile.jpg";
         this.isBaned = false;
         this.loginAttempt = 0;
-        this.loginTime="00";
-        this.unBannedRequest = "-"; }
+        this.unBannedRequest = "-";
+        initialLoginTime();}
     public Account(String displayname,String username, String password, String role,String organization,boolean isBaned,int loginAttempt , String imagePath, String loginTime,String unBannedRequest) {
         this.role = role;
         this.username = username;
@@ -44,19 +44,22 @@ public class Account {
     }
     public void initialLoginTime() {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MM yyyy HH mm ss");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         this.loginTime = now.format(format);
     }
 
     public LocalDateTime getTime() {
         String[] time = loginTime.split(" ");
-        int year = Integer.parseInt(time[2]);
-        int month = Integer.parseInt(time[1]);
-        int day = Integer.parseInt(time[0]);
 
-        int hour = Integer.parseInt(time[3]);
-        int minute = Integer.parseInt(time[4]);
-        int sec = Integer.parseInt(time[5]);
+        String[] splitDate = time[0].split("-");
+        int year = Integer.parseInt(splitDate[2]);
+        int month = Integer.parseInt(splitDate[1]);
+        int day = Integer.parseInt(splitDate[0]);
+
+        String[] splitTime = time[1].split(":");
+        int hour = Integer.parseInt(splitTime[3]);
+        int minute = Integer.parseInt(splitTime[4]);
+        int sec = Integer.parseInt(splitTime[5]);
         return LocalDateTime.of(year, month, day, hour, minute, sec);
 
     }

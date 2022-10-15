@@ -48,6 +48,7 @@ public class StudentSelfComplaintController {
 
     @FXML
     private TableColumn<Complaint, String> userTable;
+    @FXML TableColumn<Object, Object> timeTable;
     @FXML private Label displaynameLabel;
 
     private ComplaintFileDataSource complaintFileDataSource;
@@ -92,6 +93,8 @@ public class StudentSelfComplaintController {
         voteTable.setCellValueFactory(new PropertyValueFactory<>("voted"));
         statusTable.setCellValueFactory(new PropertyValueFactory<>("status"));
         userTable.setCellValueFactory(new PropertyValueFactory<>("user"));
+
+        timeTable.setCellValueFactory(new PropertyValueFactory<>("time"));
 
 
         table.setItems(data);

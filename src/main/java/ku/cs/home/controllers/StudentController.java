@@ -52,6 +52,8 @@ public class StudentController {
 
     @FXML
     private TableColumn<Complaint, String> userTable;
+    @FXML
+    private TableColumn<Complaint, String> timeTable;
 
     private ComplaintFileDataSource complaintFileDataSource;
     private ArrayList<Object> dataList;
@@ -81,7 +83,7 @@ public class StudentController {
         voteTable.setCellValueFactory(new PropertyValueFactory<>("voted"));
         statusTable.setCellValueFactory(new PropertyValueFactory<>("status"));
         userTable.setCellValueFactory(new PropertyValueFactory<>("user"));
-
+        timeTable.setCellValueFactory(new PropertyValueFactory<>("time"));
 
         table.setItems(data);
     }
