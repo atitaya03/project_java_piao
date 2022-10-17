@@ -47,6 +47,7 @@ public class Account {
     }
     public void initialLoginTime() {
         LocalDateTime now = LocalDateTime.now();
+        System.out.println("Before Formatting: " + now);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         this.loginTime = now.format(format);
     }

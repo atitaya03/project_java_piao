@@ -1,6 +1,12 @@
 package ku.cs.models;
 
+import javafx.scene.control.Label;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ComplaintList {
     private ArrayList<Complaint> complaints;
@@ -42,5 +48,27 @@ public class ComplaintList {
             }
         }
         return filtered;
+    }
+    public ComplaintList sortByVotes(int n){
+        ComplaintList sort = new ComplaintList();
+        Collections.sort(complaints, new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return (o1.getVoted() - o2.getVoted())*n ;
+            }
+        });
+        return sort;
+    }
+    public ComplaintList sortByTime(int n){
+        ComplaintList sort = new ComplaintList();
+        Collections.sort(complaints, new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                LocalDateTime t1 = LocalDateTime.parse(o1.getTime());
+                LocalDateTime t2 = LocalDateTime.parse(o2.getTime());
+                return t1.compareTo(t2)*n;
+            }
+        });
+        return  sort;
     }
 }

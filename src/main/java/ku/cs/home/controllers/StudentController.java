@@ -27,6 +27,9 @@ import ku.cs.services.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentController {
     private Account student;
@@ -37,6 +40,7 @@ public class StudentController {
     private Circle circle;
     @FXML private ComboBox sortByCategoryBox;
     @FXML private ComboBox sortByStatusBox;
+    @FXML private ComboBox<String> sortByTimeAndVotes;
     @FXML private TextField minTextField;
     @FXML private TextField maxTextField;
 
@@ -65,10 +69,12 @@ public class StudentController {
 
     private ComplaintFileDataSource complaintFileDataSource;
     private ComplaintList list;
+    private ComplaintList filtered;
     private ArrayList<Object> dataList;
     private ComplaintFilterer filterer;
     private final ObservableList<String> sortByCategoryBoxList = FXCollections.observableArrayList("ALL","ความปลอดภัย", "ความสะอาด","อาคารชำรุด","ถนน ทางเท้า","ยานพาหนะ");
     private final ObservableList<String> sortByStatusList = FXCollections.observableArrayList("ALL","ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
+    private final ObservableList<String> sortByTimeAndVotesList= FXCollections.observableArrayList("คะแนนโหวตจากมากที่สุด","คะแนนโหวตจากน้อยที่สุด", "เวลาแจ้งล่าสุด","เวลาแจ้งเก่าที่สุด");
 
     private boolean isLightMode = true;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
@@ -88,11 +94,13 @@ public class StudentController {
          list = complaintFileDataSource.readData();
         sortByCategoryBox.setItems(sortByCategoryBoxList);
         sortByStatusBox.setItems(sortByStatusList);
+        sortByTimeAndVotes.setItems(sortByTimeAndVotesList);
         showTable(list);
         handleSelectedTableView();
         detectTheme();
         handleSortByCategory();
         handleSortByStatus();
+        handleSortByTimeandVotes();
         
 
 
@@ -111,7 +119,7 @@ public class StudentController {
                     filterer.setCategory((String) sortByCategoryBox.getValue());
                 }
                 else {filterer.setCategory(null);}
-                ComplaintList filtered = list.filterBy(filterer);
+                filtered = list.filterBy(filterer);
                 showTable(filtered);
             }
 
@@ -127,7 +135,7 @@ public class StudentController {
                     filterer.setStatus((String) sortByStatusBox.getValue());
                 }
                 else {filterer.setStatus(null);}
-                ComplaintList filtered = list.filterBy(filterer);
+                filtered = list.filterBy(filterer);
                 showTable(filtered);
             }
         });
@@ -135,7 +143,30 @@ public class StudentController {
 
 
 
+    public void handleSortByTimeandVotes(){
+        sortByTimeAndVotes.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if(filtered == null){
+                    filtered = list;
+                }
+                System.out.println(sortByTimeAndVotes.getValue());
+                if(sortByTimeAndVotes.getValue().equals("คะแนนโหวตจากมากที่สุด")){
+                    filtered.sortByVotes(-1);
+                }else if(sortByTimeAndVotes.getValue().equals("คะแนนโหวตจากน้อยที่สุด")){
+                    filtered.sortByVotes(1);
+                } else if (sortByTimeAndVotes.getValue().equals("เวลาแจ้งล่าสุด")) {
+                    filtered.sortByTime(-1);
+                } else if (sortByTimeAndVotes.getValue().equals("เวลาแจ้งเก่าที่สุด")) {
+                    filtered.sortByTime(1);
 
+                } else{
+                    System.out.println("Hello world");
+                }
+                showTable(filtered);
+            }
+        });
+    }
     private void detectTheme() {
         if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
             isLightMode = true;
