@@ -33,4 +33,14 @@ public class ComplaintList {
         }
         return comp;
     }
+    public ComplaintList filterBy(Filterer filterer){
+        ComplaintList filtered = new ComplaintList();
+        for(Complaint c : complaints){
+            Complaint found  = c;
+            if(filterer.filter(c)){
+                filtered.addComplaint(c);
+            }
+        }
+        return filtered;
+    }
 }

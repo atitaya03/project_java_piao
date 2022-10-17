@@ -5,11 +5,9 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +19,7 @@ import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.models.Complaint;
 import ku.cs.models.ComplaintList;
+import ku.cs.models.*;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
@@ -36,6 +35,11 @@ public class StudentController {
     @FXML private Label editLabel;
     @FXML
     private Circle circle;
+    @FXML private ComboBox sortByCategoryBox;
+    @FXML private ComboBox sortByStatusBox;
+    @FXML private TextField minTextField;
+    @FXML private TextField maxTextField;
+
 
     @FXML
     private TableView<Complaint> table;
@@ -60,9 +64,11 @@ public class StudentController {
     private AnchorPane parent;
 
     private ComplaintFileDataSource complaintFileDataSource;
+    private ComplaintList list;
     private ArrayList<Object> dataList;
-
-
+    private ComplaintFilterer filterer;
+    private final ObservableList<String> sortByCategoryBoxList = FXCollections.observableArrayList("ALL","ความปลอดภัย", "ความสะอาด","อาคารชำรุด","ถนน ทางเท้า","ยานพาหนะ");
+    private final ObservableList<String> sortByStatusList = FXCollections.observableArrayList("ALL","ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
 
     private boolean isLightMode = true;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
@@ -77,16 +83,58 @@ public class StudentController {
         dataList = new ArrayList<>();
         showUserData();
         dataList.add(student);
-
+        filterer = new ComplaintFilterer();
         complaintFileDataSource = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
-        ComplaintList list = complaintFileDataSource.readData();
-
+         list = complaintFileDataSource.readData();
+        sortByCategoryBox.setItems(sortByCategoryBoxList);
+        sortByStatusBox.setItems(sortByStatusList);
         showTable(list);
         handleSelectedTableView();
         detectTheme();
+        handleSortByCategory();
+        handleSortByStatus();
+        
 
 
     }
+    @FXML private void handleSortByVoteButton(){
+        //
+    }
+
+    private void handleSortByCategory(){
+        sortByCategoryBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println(sortByCategoryBox.getValue());
+                if(((String)(sortByCategoryBox.getValue())).equals("ALL")){filterer.setCategory(null);}
+                else if(sortByCategoryBox.getValue()!=null){
+                    filterer.setCategory((String) sortByCategoryBox.getValue());
+                }
+                else {filterer.setCategory(null);}
+                ComplaintList filtered = list.filterBy(filterer);
+                showTable(filtered);
+            }
+
+        });
+    }
+    private void handleSortByStatus(){
+        sortByStatusBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println(sortByStatusBox.getValue());
+                if(((String)(sortByStatusBox.getValue())).equals("ALL")){filterer.setStatus(null);}
+                else if(sortByStatusBox.getValue()!=null){
+                    filterer.setStatus((String) sortByStatusBox.getValue());
+                }
+                else {filterer.setStatus(null);}
+                ComplaintList filtered = list.filterBy(filterer);
+                showTable(filtered);
+            }
+        });
+    }
+
+
+
 
     private void detectTheme() {
         if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
