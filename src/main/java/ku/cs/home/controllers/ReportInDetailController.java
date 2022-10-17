@@ -31,7 +31,6 @@ public class ReportInDetailController {
     @FXML private ComboBox reportTypeBox;
     @FXML private ComboBox subjectBox;
     @FXML private TextArea detailTextArea;
-    @FXML private Button submitButton;
 
 
     private String type;
