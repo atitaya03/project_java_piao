@@ -13,7 +13,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Pane prefHeight="59.0" prefWidth="800.0" style="-fx-background-color: #01a57a #01a57a;">
+            <Pane prefHeight="59.0" prefWidth="800.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
                <children>
                   <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
                   <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="696.0" layoutY="11.0" textAlignment="CENTER" textFill="WHITE">

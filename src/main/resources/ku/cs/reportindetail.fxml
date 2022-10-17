@@ -10,9 +10,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f1f3f6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportInDetailController">
+<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f1f3f6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportInDetailController">
     <children>
-        <Pane prefHeight="607.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
+        <Pane prefHeight="607.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
             <children>
                 <Button layoutX="24.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a #01a57a;" text="ออกจากระบบ" textFill="WHITE">
                     <font>
@@ -49,7 +49,7 @@
                 </Button>
             </children>
         </Pane>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="713.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" text="กลับ" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="713.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="กลับ" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -90,12 +90,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleReportButton" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #01a57a; -fx-background-radius: 15; -fx-border-radius: 15;" text="รายงาน" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleReportButton" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #01a57a; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="fill-color" stylesheets="@Themes/light.css" text="รายงาน" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSelectTypeButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" text="เลือก" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSelectTypeButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="เลือก" textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>

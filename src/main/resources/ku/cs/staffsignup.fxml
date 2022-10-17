@@ -10,11 +10,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
+<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
    <children>
       <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
          <children>
-            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" style="-fx-background-color: #01a57a;" text="ลงทะเบียน" textFill="WHITE">
+            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" style="-fx-background-color: #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="ลงทะเบียน" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

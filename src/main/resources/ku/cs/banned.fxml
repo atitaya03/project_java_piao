@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #aeaeae#aeaeae;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.BannedController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #aeaeae#aeaeae;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.BannedController">
    <children>
       <Pane layoutX="250.0" layoutY="94.0" prefHeight="412.0" prefWidth="362.0" style="-fx-background-color: #f1f3f6;">
          <children>
@@ -31,7 +31,7 @@
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <Button layoutX="157.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleConfirmButton" style="-fx-background-color: #03bd77 #03bd77;" text="ยืนยัน" textFill="WHITE" />
+            <Button layoutX="157.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleConfirmButton" style="-fx-background-color: #03bd77 #03bd77;" styleClass="fill-color" stylesheets="@Themes/light.css" text="ยืนยัน" textFill="WHITE" />
             <Label layoutX="30.0" layoutY="143.0" text="กรอกบัญชีผู้ใช้" textFill="#4d4d4d" />
             <Label layoutX="30.0" layoutY="189.0" text="กรอกคำขอสิทธิ์การใช้งาน" textFill="#4d4d4d" />
          </children>

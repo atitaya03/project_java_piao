@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f1f3f6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffController">
    <children>
-      <Pane prefHeight="59.0" prefWidth="809.0" style="-fx-background-color: #01a57a;">
+      <Pane prefHeight="59.0" prefWidth="809.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
          <children>
             <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="666.0" layoutY="30.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Label fx:id="nameLabel" layoutX="696.0" layoutY="11.0" textFill="WHITE">

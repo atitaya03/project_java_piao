@@ -27,7 +27,7 @@ public final class FXRouter {
     private static AbstractMap<String, RouteScene> routes = new HashMap();
     private static RouteScene currentRoute;
 
-    private static String cssStylePath = "/ku/cs/styles/default.css";
+    private static String cssStylePath = "/ku/cs/styles/dark.css";
 
     public static void setCssStylePath(String filename) {
         cssStylePath = "/ku/cs/styles/" + filename;

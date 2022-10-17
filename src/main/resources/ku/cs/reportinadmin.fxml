@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
+<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #ffffff;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
    <children>
       <ListView fx:id="showReportList" layoutX="29.0" layoutY="100.0" prefHeight="472.0" prefWidth="344.0" />
       <Pane prefHeight="85.0" prefWidth="800.0">
          <children>
-            <Button layoutX="367.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAccountList" style="-fx-background-color: #01a57a;" text="ข้อมูลผู้ใช้งาน" textFill="WHITE" />
-            <Button layoutX="467.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #01a57a;" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
-            <Button layoutX="672.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
-            <Button layoutX="569.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleChangeProfile" style="-fx-background-color: #01a57a;" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+            <Button layoutX="367.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAccountList" style="-fx-background-color: #01a57a;" styleClass="fill-button-color" stylesheets="@Themes/light.css" text="ข้อมูลผู้ใช้งาน" textFill="WHITE" />
+            <Button layoutX="467.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" style="-fx-background-color: #01a57a;" styleClass="fill-button-color" stylesheets="@Themes/light.css" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
+            <Button layoutX="672.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #01a57a;" styleClass="fill-button-color" stylesheets="@Themes/light.css" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="569.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleChangeProfile" style="-fx-background-color: #01a57a;" styleClass="fill-button-color" stylesheets="@Themes/light.css" text="แก้ไขโปรไฟล์" textFill="WHITE" />
             <Button fx:id="manageReportAccButton" layoutX="29.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleAccButton" style="-fx-background-radius: 15; -fx-background-color: #f1f3f6;" text="รายงานผู้ใช้" textFill="#01a57a">
                <font>
                   <Font size="14.0" />

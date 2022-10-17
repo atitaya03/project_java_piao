@@ -13,8 +13,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import ku.cs.ProjectApplication;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.models.Complaint;
@@ -54,9 +56,18 @@ public class StudentController {
     private TableColumn<Complaint, String> userTable;
     @FXML
     private TableColumn<Complaint, String> timeTable;
+    @FXML
+    private AnchorPane parent;
 
     private ComplaintFileDataSource complaintFileDataSource;
     private ArrayList<Object> dataList;
+
+
+
+    private boolean isLightMode = true;
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
+
 
 
 
@@ -72,9 +83,42 @@ public class StudentController {
 
         showTable(list);
         handleSelectedTableView();
+        detectTheme();
 
 
     }
+
+    private void detectTheme() {
+        if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
+            isLightMode = true;
+            setLightMode();
+        } else {
+            isLightMode = false;
+            setDarkMode();
+        }
+    }
+
+    public void changeMode(ActionEvent actionevent) {
+        if (isLightMode) {
+            setDarkMode();
+        } else {
+            setLightMode();
+        }
+        isLightMode = !isLightMode;
+    }
+
+    private void setLightMode(){
+//        System.out.println(parent.getStylesheets());
+        parent.getStylesheets().add(lightModePath);
+        parent.getStylesheets().remove(darkModePath);
+    }
+
+    private void setDarkMode(){
+        parent.getStylesheets().add(darkModePath);
+        parent.getStylesheets().remove(lightModePath);
+    }
+
+
 
     public void showTable(ComplaintList complaintList){
         ObservableList<Complaint> data = FXCollections.observableArrayList(complaintList.getAllComplaints());

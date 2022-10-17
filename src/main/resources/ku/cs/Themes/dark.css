@@ -1,0 +1,23 @@
+.fill-color {
+    -fx-fill: #ffffff;
+}
+
+.fill-text-color {
+    -fx-text-fill: #4F4F4F;
+}
+
+.bg {
+    -fx-background-color: #363636;
+}
+
+.fill-button-color {
+    -fx-fill: #EEE9E9;
+    -fx-text-fill: black;
+}
+
+.button-mode {
+    -fx-border-color: white;
+    -fx-background-color: #00c5cd;
+    -fx-text-fill: white;
+    -fx-color-label-visible: white;
+}

@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.EditController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;">
+      <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
          <children>
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="98.0" prefHeight="18.0" prefWidth="131.0" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -48,7 +48,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: #01a57a #01a57a;" text="แก้ไขข้อมูล" textFill="WHITE">
+            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: #01a57a #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="แก้ไขข้อมูล" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
