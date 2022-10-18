@@ -1,0 +1,11 @@
+@font-face {
+    -fx-font-family: "Cloud";
+    src: url("../CloudSans-LightBold/Cloud-Bold.ttf");
+}
+@font-face {
+    -fx-font-family: "Cloud";
+    src: url("../CloudSans-LightBold/Cloud-Light.ttf");
+}
+* {
+    -fx-font-family: "Cloud";
+}
