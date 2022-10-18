@@ -95,6 +95,7 @@ public class StudentController {
         sortByCategoryBox.setItems(sortByCategoryBoxList);
         sortByStatusBox.setItems(sortByStatusList);
         sortByTimeAndVotes.setItems(sortByTimeAndVotesList);
+        filtered = list;
         showTable(list);
         handleSelectedTableView();
         detectTheme();
@@ -106,7 +107,33 @@ public class StudentController {
 
     }
     @FXML private void handleSortByVoteButton(){
-        //
+        int min ;
+        int max ;
+        if(minTextField.getText().equals("")&&maxTextField.getText().equals("")){
+            filterer.setMin(-1);
+            filterer.setMax(-1);
+        }
+        else if(!minTextField.getText().equals("")&&!maxTextField.getText().equals("")) {
+            System.out.println("case1");
+            min  = Integer.parseInt((minTextField.getText()));
+            max = Integer.parseInt((maxTextField.getText()));
+            filterer.setMin(min);
+            filterer.setMax(max);}
+        else if (!minTextField.getText().equals("")) {
+            System.out.println("case2");
+            min  = Integer.parseInt((minTextField.getText()));
+            filterer.setMin(min);
+            filterer.setMax(-1);
+        }
+        else {
+            System.out.println("case3");
+            max = Integer.parseInt((maxTextField.getText()));
+            filterer.setMin(-1);
+            filterer.setMax(max);
+        }
+        filtered = list.filterBy(filterer);
+        showTable(filtered);
+
     }
 
     private void handleSortByCategory(){
