@@ -257,5 +257,14 @@ public class StudentSelfComplaintController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+    @FXML
+    public void handleHowToUseButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("howtostudent",student);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า howtostudent ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
 
 }

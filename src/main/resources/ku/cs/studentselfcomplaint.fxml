@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentSelfComplaintController">
+<AnchorPane prefHeight="600.0" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentSelfComplaintController">
     <children>
         <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
             <children>
@@ -37,9 +37,9 @@
                     </font>
                 </Button>
                 <Circle fx:id="circle" fill="DODGERBLUE" layoutX="74.0" layoutY="52.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                <Label fx:id="editLabel" layoutX="35.0" layoutY="135.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE">
+                <Label fx:id="editLabel" alignment="CENTER" layoutX="1.0" layoutY="403.0" onMouseClicked="#handleedit" prefHeight="23.0" prefWidth="147.0" text="แก้ไขโปรไฟล์" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="10.0" />
                     </font>
                 </Label>
                 <Line endX="-3.5" layoutX="130.0" layoutY="234.0" startX="-107.5" stroke="WHITE" />
@@ -49,39 +49,44 @@
                         <Font size="14.0" />
                     </font>
                 </Button>
+            <Button layoutX="1.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="26.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
 
             </children>
         </Pane>
         <Pane layoutX="146.0" prefHeight="600.0" prefWidth="654.0" style="-fx-background-color: #f1f3f6;">
             <children>
-                <Label layoutX="23.0" layoutY="12.0" text="เรื่องร้องเรียนของ">
+                <Label layoutX="28.0" layoutY="45.0" text="เรื่องร้องเรียนของ">
                     <font>
-                        <Font size="16.0" />
+                        <Font size="25.0" />
                     </font>
                 </Label>
-                <Label layoutX="578.0" layoutY="19.0" text="จัดเรียงโดย" />
-            <Label fx:id="displaynameLabel" layoutX="133.0" layoutY="12.0" text="displayname" textFill="#01a57a">
+            <Label fx:id="displaynameLabel" layoutX="231.0" layoutY="50.0" text="displayname" textFill="#01a57a">
                <font>
-                  <Font size="16.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
-            <TableView fx:id="table" layoutX="40.0" layoutY="134.0" prefHeight="440.0" prefWidth="574.0">
+            <ComboBox fx:id="sortByTimeAndVotes" layoutX="513.0" layoutY="135.0" prefHeight="32.0" prefWidth="119.0" promptText="จัดเรียงตาม" />
+            <ComboBox fx:id="sortByCategoryBox" layoutX="266.0" layoutY="135.0" prefHeight="32.0" prefWidth="118.0" promptText="หมวดหมู่" />
+            <ComboBox fx:id="sortByStatusBox" layoutX="389.0" layoutY="135.0" prefHeight="26.0" prefWidth="118.0" promptText="สถานะ" />
+            <TextField fx:id="maxTextField" layoutX="519.0" layoutY="95.0" prefHeight="32.0" prefWidth="41.0" promptText="max" />
+            <TextField fx:id="minTextField" layoutX="447.0" layoutY="95.0" prefHeight="32.0" prefWidth="41.0" promptText="min" />
+            <Label layoutX="368.0" layoutY="100.0" text="เรียงตามโหวต" />
+            <Button layoutX="568.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleSortByVoteButton" prefHeight="32.0" prefWidth="64.0" text="เลือก" />
+            <Label layoutX="494.0" layoutY="100.0" text="ถึง" />
+            <TableView fx:id="table" layoutX="28.0" layoutY="183.0" prefHeight="388.0" prefWidth="605.0">
                <columns>
                   <TableColumn fx:id="categoryTable" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="หมวดหมู่" />
                   <TableColumn fx:id="topicTable" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="หัวข้อ" />
                   <TableColumn fx:id="voteTable" editable="false" prefWidth="60.0" resizable="false" sortable="false" text="โหวต" />
                   <TableColumn fx:id="statusTable" editable="false" prefWidth="117.60000610351562" resizable="false" sortable="false" text="สถานะ" />
-                  <TableColumn fx:id="timeTable" editable="false" prefWidth="117.0" resizable="false" sortable="false" text="เวลา" />
-                  <TableColumn fx:id="userTable" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="ผู้ใช้งาน" />
+                  <TableColumn fx:id="timeTable" editable="false" prefWidth="142.0" resizable="false" sortable="false" text="เวลา" />
+                  <TableColumn fx:id="userTable" editable="false" prefWidth="99.0" resizable="false" sortable="false" text="ผู้ใช้งาน" />
                </columns>
             </TableView>
-            <ComboBox fx:id="sortByTimeAndVotes" layoutX="511.0" layoutY="95.0" prefHeight="26.0" prefWidth="129.0" promptText="จัดเรียงตาม" />
-            <ComboBox fx:id="sortByCategoryBox" layoutX="56.0" layoutY="94.0" prefHeight="26.0" prefWidth="105.0" promptText="หมวดหมู่" />
-            <ComboBox fx:id="sortByStatusBox" layoutX="187.0" layoutY="94.0" prefHeight="26.0" prefWidth="118.0" promptText="สถานะ" />
-            <TextField fx:id="maxTextField" layoutX="397.0" layoutY="94.0" prefHeight="26.0" prefWidth="30.0" />
-            <TextField fx:id="minTextField" layoutX="357.0" layoutY="94.0" prefHeight="26.0" prefWidth="30.0" />
-            <Label layoutX="327.0" layoutY="100.0" text="โหวต" />
-            <Button layoutX="439.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleSortByVoteButton" prefHeight="26.0" prefWidth="60.0" text="Button" />
             </children>
         </Pane>
     </children>

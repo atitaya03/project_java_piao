@@ -23,6 +23,7 @@
             <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
             <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
             <Label fx:id="editLabel" layoutX="695.0" layoutY="34.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+            <Button layoutX="197.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="31.0" prefWidth="108.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd" />
          </children>
       </Pane>
       <MenuButton layoutX="651.0" layoutY="77.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #ffffff;" text="Sort By ..." textFill="#01a57a">

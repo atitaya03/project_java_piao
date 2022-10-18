@@ -135,6 +135,11 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button layoutX="-2.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="26.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
