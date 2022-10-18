@@ -35,7 +35,6 @@ public class StudentController {
     private Account student;
     @FXML
     private Label nameLabel;
-    @FXML private Label editLabel;
     @FXML
     private Circle circle;
     @FXML private ComboBox sortByCategoryBox;
@@ -275,11 +274,11 @@ public class StudentController {
 
 
     @FXML
-    public void handleedit(MouseEvent mouseEvent){
+    public void handleedit(ActionEvent actionEvent) {
         try {
             com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
-            System.err.println("Cannot reach Dictionary");
+            System.err.println("ไปหน้าแก้ไขโปรไฟล์ไม่ได้");
         }
     }
     @FXML

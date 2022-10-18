@@ -11,8 +11,13 @@
     -fx-background-color: #01a57a;
 }
 
-.fill-button-color {
-    -fx-fill: #01a57a;
+.button {
+    -fx-background-color: #01a57a;
+    -fx-text-fill: white;
+}
+.button:hover{
+    -fx-background-color: #0ac292; /* Green */
+    -fx-text-fill: white;
 }
 
 .button-mode {
