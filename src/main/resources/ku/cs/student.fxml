@@ -57,12 +57,12 @@
          <children>
             <TableView fx:id="table" layoutX="40.0" layoutY="134.0" prefHeight="440.0" prefWidth="574.0">
               <columns>
-                <TableColumn fx:id="categoryTable" prefWidth="85.0" text="หมวดหมู่" />
-                <TableColumn fx:id="topicTable" prefWidth="100.0" text="หัวข้อ" />
-                  <TableColumn fx:id="voteTable" prefWidth="60.0" text="โหวต" />
-                  <TableColumn fx:id="statusTable" prefWidth="117.60000610351562" text="สถานะ" />
-                  <TableColumn fx:id="timeTable" prefWidth="117.0" text="เวลา" />
-                  <TableColumn fx:id="userTable" prefWidth="100.0" text="ผู้ใช้งาน" />
+                <TableColumn fx:id="categoryTable" prefWidth="85.0" resizable="false" sortable="false" text="หมวดหมู่" />
+                <TableColumn fx:id="topicTable" prefWidth="100.0" resizable="false" sortable="false" text="หัวข้อ" />
+                  <TableColumn fx:id="voteTable" prefWidth="60.0" resizable="false" sortable="false" text="โหวต" />
+                  <TableColumn fx:id="statusTable" prefWidth="117.60000610351562" resizable="false" sortable="false" text="สถานะ" />
+                  <TableColumn fx:id="timeTable" prefWidth="117.0" resizable="false" sortable="false" text="เวลา" />
+                  <TableColumn fx:id="userTable" prefWidth="100.0" resizable="false" sortable="false" text="ผู้ใช้งาน" />
               </columns>
             </TableView>
             <Label layoutX="40.0" layoutY="31.0" text="รวมเรื่องร้องเรียนทั้งหมด">

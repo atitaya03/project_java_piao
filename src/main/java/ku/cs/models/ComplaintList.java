@@ -3,6 +3,7 @@ package ku.cs.models;
 import javafx.scene.control.Label;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -64,8 +65,9 @@ public class ComplaintList {
         Collections.sort(complaints, new Comparator<Complaint>() {
             @Override
             public int compare(Complaint o1, Complaint o2) {
-                LocalDateTime t1 = LocalDateTime.parse(o1.getTime());
-                LocalDateTime t2 = LocalDateTime.parse(o2.getTime());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                LocalDateTime t1 = LocalDateTime.parse(o1.getTime(), formatter);
+                LocalDateTime t2 = LocalDateTime.parse(o2.getTime(), formatter);
                 return t1.compareTo(t2)*n;
             }
         });
