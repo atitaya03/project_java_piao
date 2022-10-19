@@ -7,11 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
 import ku.cs.models.Complaint;
 import ku.cs.models.ComplaintList;
+import ku.cs.models.DetectTheme;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -33,6 +35,7 @@ public class StaffDetailController {
     @FXML private Label detailLabel;
 //    @FXML private Label timeLabel;
     @FXML private Label orgLabel;
+    @FXML private AnchorPane parent;
     @FXML private TextArea managementTextArea;
     @FXML private ComboBox<String> statusComboBox;
     @FXML private Label organizerLabel;
@@ -60,6 +63,7 @@ public class StaffDetailController {
         }
         showComplaint();
         showUserData();
+        DetectTheme detectTheme = new DetectTheme(parent,staff);
     }
     private void showUserData() {
         nameLabel.setText(staff.getDisplayname());
@@ -105,7 +109,7 @@ public class StaffDetailController {
     @FXML
     public void handleedit(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("staffedit",staff);
+            com.github.saacsos.FXRouter.goTo("edit",staff);
         } catch (IOException e) {
             System.err.println("ไปหน้าแก้ไขโปรไฟล์ไม่ได้");
         }

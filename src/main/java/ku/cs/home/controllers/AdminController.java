@@ -47,12 +47,8 @@ public class AdminController {
     private boolean isLightMode = true;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
     private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
-
-    @FXML
-    private AnchorPane parent;
-
-    @FXML
-    private ImageView imgMode;
+    @FXML private AnchorPane parent;
+    @FXML private ImageView imgMode;
 
     public void initialize() {
         admin = (Account) com.github.saacsos.FXRouter.getData();
@@ -73,22 +69,22 @@ public class AdminController {
     }
 
     private void detectTheme() {
-        if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
-            isLightMode = true;
+        if (admin.getTheme().isLightMode()) {
             setLightMode();
         } else {
-            isLightMode = false;
             setDarkMode();
         }
     }
 
     public void changeMode(ActionEvent actionevent) {
-        if (isLightMode) {
+        if (admin.getTheme().isLightMode()) {
             setDarkMode();
         } else {
             setLightMode();
         }
-        isLightMode = !isLightMode;
+
+        admin.getTheme().setLightMode(!admin.getTheme().isLightMode());
+
     }
 
     private void setLightMode(){
@@ -187,7 +183,7 @@ public class AdminController {
     @FXML
     public void handleStaffSignUpButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("staffsignup");
+            com.github.saacsos.FXRouter.goTo("staffsignup",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

@@ -7,12 +7,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
+import ku.cs.models.DetectTheme;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -32,15 +34,19 @@ public class StaffSignUpController {
     @FXML private ComboBox organizationComboBox;
     @FXML private Label failed;
     private File imageFile;
+    @FXML private AnchorPane parent;
+    private Account admin;
     private AccountList accountList;
     private DataSource<AccountList> dataSource;
     public void initialize(){
+        admin = (Account) com.github.saacsos.FXRouter.getData();
         organizationComboBox.getItems().add("ความปลอดภัย");
         organizationComboBox.getItems().add("ความสะอาด");
         organizationComboBox.getItems().add("อาคารชำรุด");
         organizationComboBox.getItems().add("ถนน ทางเท้า");
         organizationComboBox.getItems().add("ยานพาหนะ");
         readData();
+        DetectTheme detectTheme = new DetectTheme(parent,admin);
     }
     private void readData() {
         dataSource = new AccountFileDataSource();

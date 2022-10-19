@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import ku.cs.models.*;
 import ku.cs.services.*;
@@ -46,6 +47,8 @@ public class ReportListController {
     @FXML private Pane reportComplaintPane;
     @FXML private Button delComplaintButton;
     @FXML private Button banButton;
+    @FXML
+    private AnchorPane parent;
 
 
     public void initialize(){
@@ -67,6 +70,7 @@ public class ReportListController {
         clearSelectedAccount();
         clearSelectedComplaint();
         delComplaintButton.setVisible(false);
+        DetectTheme detectTheme = new DetectTheme(parent,admin);
 
 
     }
@@ -235,7 +239,7 @@ public class ReportListController {
     @FXML
     public void handleStaffSignUpButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("staffsignup");
+            com.github.saacsos.FXRouter.goTo("staffsignup",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้าสร้างบัญชีของสตาฟไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

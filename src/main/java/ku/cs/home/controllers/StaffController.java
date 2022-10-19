@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.control.*;
 import ku.cs.models.Complaint;
 import ku.cs.models.ComplaintList;
+import ku.cs.models.DetectTheme;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -61,7 +62,7 @@ public class StaffController {
         dataList.add(staff);
         complaintListDataSource = new ComplaintFileDataSource();
         complaintList = complaintListDataSource.readData();
-
+//        DetectTheme detectTheme = new DetectTheme(parent,staff);
         showUserData();
         showComplaintsData();
         handleSelectedTableView();
@@ -69,22 +70,22 @@ public class StaffController {
     }
 
     private void detectTheme() {
-        if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
-            isLightMode = true;
+        if (staff.getTheme().isLightMode()) {
             setLightMode();
         } else {
-            isLightMode = false;
             setDarkMode();
         }
     }
 
     public void changeMode(ActionEvent actionevent) {
-        if (isLightMode) {
+        if (staff.getTheme().isLightMode()) {
             setDarkMode();
         } else {
             setLightMode();
         }
-        isLightMode = !isLightMode;
+
+        staff.getTheme().setLightMode(!staff.getTheme().isLightMode());
+
     }
 
     private void setLightMode(){

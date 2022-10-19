@@ -23,6 +23,7 @@
 
 .bg-back {
     -fx-background-color:  #f1f3f6;
+    -fx-text-fill: white;
 }
 
 .bg-ban {

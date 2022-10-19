@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
    <children>
       <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" styleClass="bg-back">
          <children>

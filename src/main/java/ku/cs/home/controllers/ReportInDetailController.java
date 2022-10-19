@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.*;
@@ -43,6 +44,7 @@ public class ReportInDetailController {
     private AccountList accountList;
     private String reportTime;
     private String reportDate;
+    @FXML private AnchorPane parent;
     private DataSource<ComplaintList> complaintListDataSource;
     private DataSource<AccountList> accountListDataSource;
     private DataSource<ReportAccList> reportAccListDataSource;
@@ -61,6 +63,7 @@ public class ReportInDetailController {
         reportTypeBox.setItems(reportTypeBoxList);
         readData();
         handleSelectType();
+        DetectTheme detectTheme = new DetectTheme(parent,reporter);
     }
     public void readData(){
         accountListDataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
