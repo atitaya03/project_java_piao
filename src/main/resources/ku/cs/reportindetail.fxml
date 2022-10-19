@@ -56,11 +56,6 @@
       </Button>
       <Pane layoutX="199.0" layoutY="120.0" prefHeight="391.0" prefWidth="565.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label fx:id="alertSubjectReport" layoutX="214.0" layoutY="169.0" prefHeight="20.0" prefWidth="165.0" text="alertsubject" textFill="#ff4040">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
             <ComboBox fx:id="subjectBox" editable="true" layoutX="210.0" layoutY="136.0" prefHeight="26.0" prefWidth="156.0" />
             <Label layoutX="52.0" layoutY="204.0" text="รายละเอียด" textFill="#4d4d4d">
                <font>
@@ -93,11 +88,6 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleReportButton" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #01a57a; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="fill-color" stylesheets="@Themes/light.css" text="รายงาน" textFill="WHITE">
                <font>
                   <Font size="15.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSelectTypeButton" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="เลือก" textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
                </font>
             </Button>
          </children>

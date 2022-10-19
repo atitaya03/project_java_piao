@@ -1,6 +1,7 @@
 package ku.cs.home.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -52,6 +53,7 @@ public class StudentComplaintController {
         complaintList = complaintsDataSource.readData();
         detailAddTextField.setWrapText(true);
         showUserData();
+        handleChoose();
 
     }
     private void showUserData() {
@@ -100,17 +102,21 @@ public class StudentComplaintController {
         }
     }
 
-    public void handleChooseButton(){
-        category = (String) categoryComboBox.getValue();
-        if(category!=""){
-            aleartLabel.setText("เลือกหมวดหมู่ "+category);
-            aleartLabel.setStyle("-fx-text-fill: #03bd00");
-            if(category.equals("ความสะอาด")||category.equals("ความปลอดภัย")||category.equals("ถนน ทางเท้า")) categoryFeaturePrompt.setText("สถานที่");
-            else if (category.equals("ยานพาหนะ")) categoryFeaturePrompt.setText("ประเภทรถ");
-            else if (category.equals("อาคารชำรุด")) categoryFeaturePrompt.setText("อาคาร");
-            else categoryFeaturePrompt.setText("อื่นๆ");}
-        else {aleartLabel.setText("โปรดเลือกหมวดหมู่");aleartLabel.setStyle("-fx-text-fill: #f61e1e");}
-    }
+    public void handleChoose(){
+        categoryComboBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category = (String) categoryComboBox.getValue();
+                if(category!=""){
+                    aleartLabel.setText("เลือกหมวดหมู่ "+category);
+                    aleartLabel.setStyle("-fx-text-fill: #03bd00");
+                    if(category.equals("ความสะอาด")||category.equals("ความปลอดภัย")||category.equals("ถนน ทางเท้า")) categoryFeaturePrompt.setText("สถานที่");
+                    else if (category.equals("ยานพาหนะ")) categoryFeaturePrompt.setText("ประเภทรถ");
+                    else if (category.equals("อาคารชำรุด")) categoryFeaturePrompt.setText("อาคาร");
+                    else categoryFeaturePrompt.setText("อื่นๆ");}
+                else {aleartLabel.setText("โปรดเลือกหมวดหมู่");aleartLabel.setStyle("-fx-text-fill: #f61e1e");}
+
+            }});}
     public void clear(){
         titleAddTextField.clear();
         detailAddTextField.clear();

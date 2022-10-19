@@ -3,6 +3,7 @@ package ku.cs.home.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -26,7 +27,7 @@ public class ReportInDetailController {
     @FXML
     private Label nameLabel;
     @FXML
-    private Label alertTypeReport,alertSubjectReport,alertDetailReport;
+    private Label alertTypeReport,alertDetailReport;
     @FXML private Circle studentImage;
     @FXML private ComboBox reportTypeBox;
     @FXML private ComboBox subjectBox;
@@ -59,6 +60,7 @@ public class ReportInDetailController {
         showData();
         reportTypeBox.setItems(reportTypeBoxList);
         readData();
+        handleSelectType();
     }
     public void readData(){
         accountListDataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
@@ -94,20 +96,24 @@ public class ReportInDetailController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
-    @FXML public void handleSelectTypeButton(ActionEvent actionEvent) {
-        type = (String) reportTypeBox.getValue();
-        if(type!=""){
-            alertTypeReport.setText("รายงาน "+type);
-            alertTypeReport.setStyle("-fx-text-fill: #03bd00");
-            if(type.equals("ผู้ใช้งาน")) subjectBox.setItems(reportSubjectUserBoxList);
-            else subjectBox.setItems(reportSubjectContentBoxList);}
-        else {alertTypeReport.setText("โปรดเลือกประเภทการรายงาน");alertTypeReport.setStyle("-fx-text-fill: #f61e1e");}
-    }
+     public void handleSelectType() {
+         reportTypeBox.setOnAction(new EventHandler<ActionEvent>() {
+             @Override
+             public void handle(ActionEvent actionEvent) {
+                 type = (String) reportTypeBox.getValue();
+                 if(!type.equals("")){
+                     alertTypeReport.setText("รายงาน "+type);
+                     alertTypeReport.setStyle("-fx-text-fill: #03bd00");
+                     if(type.equals("ผู้ใช้งาน")) subjectBox.setItems(reportSubjectUserBoxList);
+                     else subjectBox.setItems(reportSubjectContentBoxList);}
+                 else {alertTypeReport.setText("โปรดเลือกประเภทการรายงาน");alertTypeReport.setStyle("-fx-text-fill: #f61e1e");}
+                                       };
+                                   });}
+
     @FXML public void handleReportButton(ActionEvent actionEvent) {
         String detail = detailTextArea.getText();
         String subject = (String)subjectBox.getValue();
-        if(detail == "") {alertDetailReport.setText("โปรดเลือกประเภทการรายงาน");alertDetailReport.setStyle("-fx-text-fill: #f61e1e");}
-        if(subject==""){alertSubjectReport.setText("โปรดเลือกประเภทการรายงาน");alertSubjectReport.setStyle("-fx-text-fill: #f61e1e");}
+        if(subject.equals("")||detail.equals("")) {alertDetailReport.setText("โปรดกรอกข้อมูลให้ครบ");alertDetailReport.setStyle("-fx-text-fill: #f61e1e");}
         else{
             if(type.equals("ผู้ใช้งาน")){
                 Account reported = accountList.searchAccountByUsername(complaint.getUser());
@@ -126,8 +132,9 @@ public class ReportInDetailController {
                 reportedComplaint.initializeReportTime();
                 reportComplaintListDataSource.writeData(reportComplaintList,false);
             }
+            clear();
         }
-        clear();
+
     }
 
     @FXML
@@ -172,7 +179,6 @@ public class ReportInDetailController {
         subjectBox.setValue("");
         detailTextArea.setText("");
         alertTypeReport.setText("");
-        alertSubjectReport.setText("");
         alertDetailReport.setText("");
     }
 }
