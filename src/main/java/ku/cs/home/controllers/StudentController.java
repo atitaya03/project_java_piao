@@ -276,14 +276,6 @@ public class StudentController {
         }
     }
 
-    @FXML
-    public void handleStudentHomeButton(MouseEvent mouseEvent){
-        try {
-            com.github.saacsos.FXRouter.goTo("student",student);
-        } catch (IOException e) {
-            System.err.println("Cannot reach Dictionary");
-        }
-    }
 
 
     @FXML

@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
@@ -36,6 +37,8 @@ public class StudentDetailController {
 
 
 
+
+
     public void initialize(){
         dataList = (ArrayList<Object>) com.github.saacsos.FXRouter.getData();
         student = (Account) dataList.get(0);
@@ -45,7 +48,10 @@ public class StudentDetailController {
         complaint = complaintList.getComplaint(complaint);
         showData();
 
+
     }
+
+
     private void showData() {
         nameLabel.setText(student.getDisplayname());
         File image = new File(student.getImagePath());
