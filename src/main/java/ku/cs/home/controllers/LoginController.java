@@ -50,12 +50,12 @@ public class LoginController {
         if (FXRouter.getData() != null) {
             isLightMode = (boolean) FXRouter.getData();
         }
+        detectTheme();
 
         String url1 = getClass().getResource("/ku/cs/images/1.png").toExternalForm();
         image1.setImage(new Image(url1));
 //        String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
 //        ProjectApplication.setUserAgentStylesheet(lightModePath);
-        detectTheme();
 
 
     }

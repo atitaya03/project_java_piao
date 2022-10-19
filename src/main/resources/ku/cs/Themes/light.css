@@ -1,6 +1,6 @@
-@import "cloud.css";
 .fill-color {
     -fx-fill: #03bd77;
+
 }
 
 .fill-text-color {
@@ -15,6 +15,12 @@
     -fx-background-color: #01a57a;
     -fx-text-fill: white;
 }
+
+.button-admin {
+    -fx-background-color: #01a57a;
+    -fx-text-fill: white;
+}
+
 .button:hover{
     -fx-background-color: #0ac292; /* Green */
     -fx-text-fill: white;
@@ -47,5 +53,9 @@
     -fx-border-radius: 15px;
 }
 
+.button-login {
+    -fx-background-color: #01a57a;
+    -fx-text-fill: white;
+}
 
 

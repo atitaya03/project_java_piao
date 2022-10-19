@@ -20,12 +20,12 @@
                         <Font name="Eras Light ITC" size="12.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="48.0" layoutY="301.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="200.0" styleClass="fill-text-color" text="ลงช่ือเข้าใช้" textFill="#fff9f9">
+                  <Button layoutX="48.0" layoutY="301.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="200.0" styleClass="button-login" text="ลงช่ือเข้าใช้" textFill="#fff9f9">
                      <font>
                         <Font name="Eras Demi ITC" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="140.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="107.0" text="สมัครบัญชี" textFill="WHITE">
+                  <Button layoutX="140.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="107.0" styleClass="button-login" text="สมัครบัญชี" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="12.0" />
                      </font>
@@ -62,7 +62,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <Button layoutX="570.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: #01a57a;" text="ผู้จัดทำ" textFill="WHITE">
+      <Button layoutX="670.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleCreditsButton" prefHeight="26.0" prefWidth="45.0" styleClass="button-login" text="ผู้จัดทำ" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>

@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import ku.cs.models.Account;
@@ -42,6 +43,7 @@ public class AdminController {
     @FXML private Label orgLabel;
 
 
+
     public void initialize() {
         admin = (Account) com.github.saacsos.FXRouter.getData();
         account = (Account) com.github.saacsos.FXRouter.getData();
@@ -57,7 +59,11 @@ public class AdminController {
         clearSelectedAccount();
         handleSelectedListView();
 
+
     }
+
+
+
 
     private void showAccListView() {
         showAccListView.getItems().addAll(accountList.getAllAccount());
