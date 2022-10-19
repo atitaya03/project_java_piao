@@ -44,7 +44,7 @@ public class StudentController {
     @FXML private TextField minTextField;
     @FXML private TextField maxTextField;
 
-    @FXML private Button modeBtn;
+
 
 
     @FXML
@@ -81,6 +81,7 @@ public class StudentController {
     private final ObservableList<String> sortByStatusList = FXCollections.observableArrayList("ALL","ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
     private final ObservableList<String> sortByTimeAndVotesList= FXCollections.observableArrayList("คะแนนโหวตจากมากที่สุด","คะแนนโหวตจากน้อยที่สุด", "เวลาแจ้งล่าสุด","เวลาแจ้งเก่าที่สุด");
 
+    @FXML private Button modeBtn;
     private boolean isLightMode = true;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
     private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();

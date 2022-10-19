@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg-back" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
       <ListView fx:id="showAccListView" layoutX="38.0" layoutY="88.0" prefHeight="486.0" prefWidth="351.0" />
       <Pane prefHeight="73.0" prefWidth="800.0" styleClass="bg">
@@ -23,59 +23,59 @@
       </Pane>
       <Pane layoutX="407.0" layoutY="66.0" prefHeight="520.0" prefWidth="376.0">
          <children>
-            <Label layoutX="24.0" layoutY="193.0" text="Username : " textFill="#4d4d4d">
+            <Label layoutX="24.0" layoutY="193.0" styleClass="fill-text-color-blue" text="Username : " textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="attemptLoginPrompt" layoutX="24.0" layoutY="287.0" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" textFill="#4d4d4d">
+            <Label fx:id="attemptLoginPrompt" layoutX="24.0" layoutY="287.0" styleClass="fill-text-color-blue" text="จำนวนครั้งที่พยายามเข้าสู่ระบบ :" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="222.0" text="ประเภทผู้ใช้ :" textFill="#4d4d4d">
+            <Label layoutX="24.0" layoutY="222.0" styleClass="fill-text-color-blue" text="ประเภทผู้ใช้ :" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="257.0" text="เข้าใช้งานล่าสุด :" textFill="#4d4d4d">
+            <Label layoutX="24.0" layoutY="257.0" styleClass="fill-text-color-blue" text="เข้าใช้งานล่าสุด :" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="userLabel" layoutX="179.0" layoutY="193.0" text="username" textFill="#4d4d4d">
+            <Label fx:id="userLabel" layoutX="179.0" layoutY="193.0" styleClass="fill-text-color-blue" text="username" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="typeLabel" layoutX="179.0" layoutY="222.0" text="ประเภท" textFill="#4d4d4d">
+            <Label fx:id="typeLabel" layoutX="179.0" layoutY="222.0" styleClass="fill-text-color-blue" text="ประเภท" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="logintimeLabel" layoutX="179.0" layoutY="257.0" text="เข้าใช้งาน" textFill="#4d4d4d">
+            <Label fx:id="logintimeLabel" layoutX="179.0" layoutY="257.0" styleClass="fill-text-color-blue" text="เข้าใช้งาน" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="attemptLogin" layoutX="292.0" layoutY="287.0" text="จนครั้ง" textFill="#4d4d4d">
+            <Label fx:id="attemptLogin" layoutX="292.0" layoutY="287.0" styleClass="fill-text-color-blue" text="จนครั้ง" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="banSucceeded" layoutX="155.0" layoutY="476.0" prefHeight="26.0" prefWidth="126.0" text="แบนสำเร็จ" />
+            <Label fx:id="banSucceeded" layoutX="155.0" layoutY="476.0" prefHeight="26.0" prefWidth="126.0" styleClass="fill-text-color-blue" text="แบนสำเร็จ" />
             <Button layoutX="45.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleUnBanButton" style="-fx-background-color: #03bd00;" styleClass="fill-button-color" stylesheets="@Themes/light.css" text="ปลดแบน" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="detailRequestPrompt" layoutX="24.0" layoutY="317.0" text="คำขอการคืนสิทธิ์" textFill="#4d4d4d">
+            <Label fx:id="detailRequestPrompt" layoutX="24.0" layoutY="317.0" styleClass="fill-text-color-blue" text="คำขอการคืนสิทธิ์" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="detailRequest" layoutX="33.0" layoutY="356.0" prefHeight="47.0" prefWidth="292.0" text="Label" textFill="#4d4d4d" wrapText="true" />
-            <Label fx:id="orgLabel" layoutX="270.0" layoutY="222.0" text="หน่วยงาน" textFill="#4d4d4d">
+            <Label fx:id="detailRequest" layoutX="33.0" layoutY="356.0" prefHeight="47.0" prefWidth="292.0" styleClass="fill-text-color-blue" text="Label" textFill="#4d4d4d" wrapText="true" />
+            <Label fx:id="orgLabel" layoutX="270.0" layoutY="222.0" styleClass="fill-text-color-blue" text="หน่วยงาน" textFill="#4d4d4d">
                <font>
                   <Font size="18.0" />
                </font>
@@ -83,5 +83,7 @@
             <Rectangle fx:id="accountImageView" arcWidth="5.0" fill="WHITE" height="158.0" layoutX="24.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="158.0" />
          </children>
       </Pane>
+      <Button fx:id="modeBtn" layoutX="67.0" layoutY="27.0" mnemonicParsing="false" onAction="#changeMode" styleClass="button-mode" text="Light Mode" />
+      <ImageView fx:id="imgMode" fitHeight="30.0" fitWidth="30.0" layoutX="30.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

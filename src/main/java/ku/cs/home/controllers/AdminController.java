@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import ku.cs.ProjectApplication;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
 import ku.cs.models.ReportAccount;
@@ -42,7 +43,16 @@ public class AdminController {
     @FXML private Rectangle accountImageView;
     @FXML private Label orgLabel;
 
+    @FXML private Button modeBtn;
+    private boolean isLightMode = true;
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
+    @FXML
+    private AnchorPane parent;
+
+    @FXML
+    private ImageView imgMode;
 
     public void initialize() {
         admin = (Account) com.github.saacsos.FXRouter.getData();
@@ -58,11 +68,46 @@ public class AdminController {
         showAccListView();
         clearSelectedAccount();
         handleSelectedListView();
-
+        detectTheme();
 
     }
 
+    private void detectTheme() {
+        if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
+            isLightMode = true;
+            setLightMode();
+        } else {
+            isLightMode = false;
+            setDarkMode();
+        }
+    }
 
+    public void changeMode(ActionEvent actionevent) {
+        if (isLightMode) {
+            setDarkMode();
+        } else {
+            setLightMode();
+        }
+        isLightMode = !isLightMode;
+    }
+
+    private void setLightMode(){
+//        System.out.println(parent.getStylesheets());
+        modeBtn.setText("Dark Mode");
+        String path = getClass().getResource("/ku/cs/images/darkMode.png").toExternalForm();
+        imgMode.setImage(new Image(path));
+        parent.getStylesheets().add(lightModePath);
+        parent.getStylesheets().remove(darkModePath);
+    }
+
+    private void setDarkMode(){
+
+        modeBtn.setText("Light Mode");
+        String path = getClass().getResource("/ku/cs/images/lightMode.png").toExternalForm();
+        imgMode.setImage(new Image(path));
+        parent.getStylesheets().add(darkModePath);
+        parent.getStylesheets().remove(lightModePath);
+    }
 
 
     private void showAccListView() {

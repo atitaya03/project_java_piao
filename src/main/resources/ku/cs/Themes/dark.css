@@ -19,6 +19,10 @@
     -fx-background-color: black;
 }
 
+.bg-ban {
+    -fx-background-color: #161b21;
+}
+
 .button {
     -fx-background-color: #161b21;
     -fx-text-fill: white;
@@ -61,6 +65,11 @@
 }
 
 .button-login {
+    -fx-background-color: #00c5cd;
+    -fx-text-fill: white;
+}
+
+.button-back {
     -fx-background-color: #00c5cd;
     -fx-text-fill: white;
 }
