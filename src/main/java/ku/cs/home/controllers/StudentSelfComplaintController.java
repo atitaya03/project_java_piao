@@ -232,7 +232,7 @@ public class StudentSelfComplaintController {
         }
     }
     @FXML
-    public void handleedit(MouseEvent mouseEvent){
+    public void handleedit(ActionEvent actionEvent){
         try {
             com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
@@ -258,6 +258,16 @@ public class StudentSelfComplaintController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
+    @FXML
+    public void handleUserComplaintButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("studentselfcomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า studenthome ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+        }
+    }
     @FXML
     public void handleHowToUseButton(ActionEvent actionEvent){
         try {
@@ -267,6 +277,7 @@ public class StudentSelfComplaintController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
 
 
 }

@@ -25,7 +25,6 @@ public class DetectTheme {
     }
 
     private void setLightMode(){
-
         parent.getStylesheets().add(lightModePath);
         parent.getStylesheets().remove(darkModePath);
     }
