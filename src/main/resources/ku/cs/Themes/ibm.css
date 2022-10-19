@@ -1,0 +1,31 @@
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-Bold.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-ExtraLight.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-Light.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-Medium.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-Regular.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-SemiBold.ttf");
+}
+@font-face {
+    -fx-font-family: "IBM PLex Sans Thai";
+    src: url("../IBM_Plex_Sans_Thai/IBMPlexSansThai-Thin.ttf");
+}
+* {
+    -fx-font-family: "IBM PLex Sans Thai";
+}
