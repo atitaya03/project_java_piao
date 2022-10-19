@@ -24,6 +24,7 @@ import ku.cs.models.*;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
+import ku.cs.services.Parse;
 
 import java.io.File;
 import java.io.IOException;
@@ -82,7 +83,8 @@ public class StudentController {
     private final ObservableList<String> sortByTimeAndVotesList= FXCollections.observableArrayList("คะแนนโหวตจากมากที่สุด","คะแนนโหวตจากน้อยที่สุด", "เวลาแจ้งล่าสุด","เวลาแจ้งเก่าที่สุด");
 
     @FXML private Button modeBtn;
-    private boolean isLightMode = true;
+    private Parse parse;
+    private Theme theme;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
     private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
@@ -91,6 +93,9 @@ public class StudentController {
 
 
     public void initialize(){
+
+        parse = new Parse();
+        theme = new Theme();
         student = (Account) com.github.saacsos.FXRouter.getData();
         dataList = new ArrayList<>();
         showUserData();
@@ -202,21 +207,22 @@ public class StudentController {
     }
     private void detectTheme() {
         if (ProjectApplication.getUserAgentStylesheet() == null || ProjectApplication.getUserAgentStylesheet().equals(lightModePath)) {
-            isLightMode = true;
+            theme.setLightMode(true);
             setLightMode();
         } else {
-            isLightMode = false;
+            theme.setLightMode(false);
             setDarkMode();
         }
     }
 
     public void changeMode(ActionEvent actionevent) {
-        if (isLightMode) {
+        if (theme.isLightMode()) {
             setDarkMode();
         } else {
             setLightMode();
         }
-        isLightMode = !isLightMode;
+        boolean isLightMode = theme.isLightMode();
+        theme.setLightMode(!isLightMode);
     }
 
     private void setLightMode(){
@@ -269,11 +275,15 @@ public class StudentController {
     }
     @FXML
     public void handleStudentReportButton(ActionEvent actionEvent) {
+        parse.add("theme",theme);
+        parse.add("student",student);
+        parse.showAllObject();
         try {
-            com.github.saacsos.FXRouter.goTo("studentreport",student);
+            com.github.saacsos.FXRouter.goTo("studentreport",parse);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า home ไม่ได้");
+            System.err.println("ไปที่หน้าเขียนร้องเรียน ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
+            throw new RuntimeException();
         }
     }
 
@@ -290,7 +300,7 @@ public class StudentController {
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("login",isLightMode);
+            com.github.saacsos.FXRouter.goTo("login",theme);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

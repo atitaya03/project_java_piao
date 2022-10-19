@@ -6,13 +6,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
 import ku.cs.models.Complaint;
 import ku.cs.models.ComplaintList;
+import ku.cs.models.Theme;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
+import ku.cs.services.Parse;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,24 +40,56 @@ public class StudentComplaintController {
     private Label aleartLabel;
 
     private String category;
+    private Parse parse;
+    private Theme theme;
+    @FXML
+    private AnchorPane parent;
 
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintsDataSource;
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
     public void initialize(){
+        parse = (Parse) com.github.saacsos.FXRouter.getData();
+        parse.showAllObject();
+        theme = (Theme) parse.getObject("theme");
+        student = (Account) parse.getObject("student");
+
+
         categoryComboBox.getItems().add("ความปลอดภัย");
         categoryComboBox.getItems().add("ความสะอาด");
         categoryComboBox.getItems().add("อาคารชำรุด");
         categoryComboBox.getItems().add("ถนน ทางเท้า");
         categoryComboBox.getItems().add("ยานพาหนะ");
 
-        student = (Account) com.github.saacsos.FXRouter.getData();
         complaintsDataSource = new ComplaintFileDataSource();
         complaintList = complaintsDataSource.readData();
         detailAddTextField.setWrapText(true);
         showUserData();
         handleChoose();
+        detectTheme();
 
+
+    }
+    private void detectTheme() {
+        if (theme.isLightMode()) {
+            setLightMode();
+        } else {
+            setDarkMode();
+        }
+    }
+
+
+    private void setLightMode(){
+//        System.out.println(parent.getStylesheets());
+        parent.getStylesheets().add(lightModePath);
+        parent.getStylesheets().remove(darkModePath);
+    }
+
+    private void setDarkMode(){
+        parent.getStylesheets().add(darkModePath);
+        parent.getStylesheets().remove(lightModePath);
     }
     private void showUserData() {
         nameLabel.setText(student.getDisplayname());
