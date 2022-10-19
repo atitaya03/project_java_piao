@@ -5,7 +5,7 @@ public class Theme {
 
 
     public Theme() {
-        this.isLightMode = isLightMode;
+        this.isLightMode = true;
     }
 
     public boolean isLightMode() {

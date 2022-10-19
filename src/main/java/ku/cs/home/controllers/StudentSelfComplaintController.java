@@ -11,12 +11,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import ku.cs.models.Account;
-import ku.cs.models.Complaint;
-import ku.cs.models.ComplaintFilterer;
-import ku.cs.models.ComplaintList;
+import ku.cs.models.*;
 import ku.cs.services.ComplaintFileDataSource;
 
 import java.io.File;
@@ -55,6 +53,8 @@ public class StudentSelfComplaintController {
     private TableColumn<Complaint, String> userTable;
     @FXML TableColumn<Object, Object> timeTable;
     @FXML private Label displaynameLabel;
+    @FXML
+    private AnchorPane parent;
 
     private ComplaintFileDataSource complaintFileDataSource;
     private ArrayList<Object> dataList;
@@ -86,6 +86,7 @@ public class StudentSelfComplaintController {
         handleSortByCategory();
         handleSortByStatus();
         handleSortByTimeandVotes();
+        DetectTheme detectTheme = new DetectTheme(parent,student);
 
 
     }
@@ -266,5 +267,6 @@ public class StudentSelfComplaintController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
 
 }

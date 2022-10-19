@@ -80,8 +80,8 @@ public class StudentController {
     private final ObservableList<String> sortByTimeAndVotesList= FXCollections.observableArrayList("คะแนนโหวตจากมากที่สุด","คะแนนโหวตจากน้อยที่สุด", "เวลาแจ้งล่าสุด","เวลาแจ้งเก่าที่สุด");
 
     @FXML private Button modeBtn;
-    private Parse parse;
-    private boolean theme;
+   // private Parse parse;
+    //private boolean theme;
     private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
     private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
@@ -91,11 +91,11 @@ public class StudentController {
 
     public void initialize(){
 
-        parse = (Parse) com.github.saacsos.FXRouter.getData();
-        student = (Account) parse.getObject("user");
-        theme = (Boolean) parse.getObject("theme");
-
-        parse.add("student",student);
+        student = (Account) com.github.saacsos.FXRouter.getData();
+//        student = (Account) parse.getObject("user");
+//        theme = (Boolean) parse.getObject("theme");
+//
+//        parse.add("student",student);
 
         dataList = new ArrayList<>();
         showUserData();
@@ -207,7 +207,7 @@ public class StudentController {
         });
     }
     private void detectTheme() {
-        if (theme) {
+        if (student.getTheme().isLightMode()) {
             setLightMode();
         } else {
             setDarkMode();
@@ -215,13 +215,13 @@ public class StudentController {
     }
 
     public void changeMode(ActionEvent actionevent) {
-        if (theme) {
+        if (student.getTheme().isLightMode()) {
             setDarkMode();
         } else {
             setLightMode();
         }
-        theme = !theme;
-        parse.add("theme", theme);
+
+        student.getTheme().setLightMode(!student.getTheme().isLightMode());
 
     }
 
@@ -277,8 +277,8 @@ public class StudentController {
     public void handleStudentReportButton(ActionEvent actionEvent) {
 
         try {
-            com.github.saacsos.FXRouter.goTo("studentreport",parse);
-            parse.showAllObject();
+            com.github.saacsos.FXRouter.goTo("studentreport",student);
+            //parse.showAllObject();
         } catch (IOException e) {
             System.err.println("ไปที่หน้าเขียนร้องเรียน ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
@@ -291,7 +291,7 @@ public class StudentController {
     @FXML
     public void handleedit(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("edit",parse);
+            com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
             System.err.println("ไปหน้าแก้ไขโปรไฟล์ไม่ได้");
         }

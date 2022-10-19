@@ -9,10 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import ku.cs.models.Account;
-import ku.cs.models.Complaint;
-import ku.cs.models.ComplaintList;
-import ku.cs.models.Theme;
+import ku.cs.models.*;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 import ku.cs.services.Parse;
@@ -47,15 +44,13 @@ public class StudentComplaintController {
 
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintsDataSource;
-    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
-    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
     public void initialize(){
-        parse = (Parse) com.github.saacsos.FXRouter.getData();
-        parse.showAllObject();
-        theme = (Boolean) parse.getObject("theme");
-        student = (Account) parse.getObject("student");
-        parse.add("theme", theme);
+        student = (Account) com.github.saacsos.FXRouter.getData();
+       // parse.showAllObject();
+//        theme = (Boolean) parse.getObject("theme");
+//        student = (Account) parse.getObject("student");
+//        parse.add("theme", theme);
 
 
         categoryComboBox.getItems().add("ความปลอดภัย");
@@ -69,29 +64,12 @@ public class StudentComplaintController {
         detailAddTextField.setWrapText(true);
         showUserData();
         handleChoose();
-        detectTheme();
+        DetectTheme detectTheme = new DetectTheme(parent,student);
 
 
     }
-    private void detectTheme() {
-        if (theme) {
-            setLightMode();
-        } else {
-            setDarkMode();
-        }
-    }
 
 
-    private void setLightMode(){
-//        System.out.println(parent.getStylesheets());
-        parent.getStylesheets().add(lightModePath);
-        parent.getStylesheets().remove(darkModePath);
-    }
-
-    private void setDarkMode(){
-        parent.getStylesheets().add(darkModePath);
-        parent.getStylesheets().remove(lightModePath);
-    }
     private void showUserData() {
         nameLabel.setText(student.getDisplayname());
         File image = new File(student.getImagePath());
@@ -111,7 +89,7 @@ public class StudentComplaintController {
     @FXML
     public void handleedit(MouseEvent mouseEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("studentedit",student);
+            com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
             System.err.println("Cannot reach Dictionary");
         }
@@ -123,8 +101,8 @@ public class StudentComplaintController {
 
     public void handleStudentHomeButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("student",parse);
-            parse.showAllObject();
+            com.github.saacsos.FXRouter.goTo("student",student);
+            //parse.showAllObject();
         } catch (IOException e) {
             System.err.println("ไปที่หน้า studenthome ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

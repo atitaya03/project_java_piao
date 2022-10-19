@@ -30,7 +30,7 @@ public class LoginController {
 
     private DataSource<AccountList> dataSource = new AccountFileDataSource();
     private AccountList accountList = dataSource.readData();
-    private Parse parse;
+    //private Parse parse;
 
 
 
@@ -44,8 +44,8 @@ public class LoginController {
 
         String url1 = getClass().getResource("/ku/cs/images/1.png").toExternalForm();
         image1.setImage(new Image(url1));
-        parse = new Parse();
-        parse.add("theme", Boolean.TRUE);
+        //parse = new Parse();
+        //parse.add("theme", Boolean.TRUE);
 //        String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
 //        ProjectApplication.setUserAgentStylesheet(lightModePath);
 
@@ -93,14 +93,14 @@ public class LoginController {
 
         } else {
             try {
-                parse.add("user",user);
+                //parse.add("user",user);
                 user.initialLoginTime();
                 if (user.isStudent())
-                    com.github.saacsos.FXRouter.goTo("student", parse);
+                    com.github.saacsos.FXRouter.goTo("student", user);
                 else if (user.isStaff())
-                    com.github.saacsos.FXRouter.goTo("staff", parse);
+                    com.github.saacsos.FXRouter.goTo("staff", user);
                 else if (user.isAdmin())
-                    com.github.saacsos.FXRouter.goTo("admin", parse);
+                    com.github.saacsos.FXRouter.goTo("admin", user);
                 dataSource.writeData(accountList, false);
 
             } catch (IOException e) {

@@ -16,6 +16,7 @@ public class Account {
 
     private String loginTime;
     private String unBannedRequest;
+    private  Theme theme = new Theme();
 
 
     public Account(String displaynamename,String username, String password, String role,String organization) {
@@ -67,6 +68,11 @@ public class Account {
         return LocalDateTime.of(year, month, day, hour, minute, sec);
 
     }
+
+    public Theme getTheme() {
+        return theme;
+    }
+
     public String getImagePath() {
         return imagePath;
     }

@@ -11,6 +11,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import ku.cs.models.Account;
+import ku.cs.models.DetectTheme;
 import ku.cs.models.Theme;
 import ku.cs.services.Parse;
 
@@ -38,14 +39,11 @@ public class EditController {
     @FXML
     private AnchorPane parent;
 
-    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
-    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
+
 
 
     public void initialize(){
-        parse = (Parse) com.github.saacsos.FXRouter.getData();
-        theme = (Theme) parse.getObject("theme");
-        account = (Account) parse.getObject("student");
+        account = (Account) com.github.saacsos.FXRouter.getData();
 
 //        account = (Account) com.github.saacsos.FXRouter.getData();
 
@@ -53,30 +51,11 @@ public class EditController {
         homeicon.setImage(new Image(url));
 
         showUserData();
-        detectTheme();
-
+        DetectTheme detectTheme = new DetectTheme(parent,account);
 
     }
 
-    private void detectTheme() {
-        if (theme.isLightMode()) {
-            setLightMode();
-        } else {
-            setDarkMode();
-        }
-    }
 
-
-    private void setLightMode(){
-//        System.out.println(parent.getStylesheets());
-        parent.getStylesheets().add(lightModePath);
-        parent.getStylesheets().remove(darkModePath);
-    }
-
-    private void setDarkMode(){
-        parent.getStylesheets().add(darkModePath);
-        parent.getStylesheets().remove(lightModePath);
-    }
     private void showUserData() {
         nameLabel.setText(account.getDisplayname());
         File image = new File(account.getImagePath());

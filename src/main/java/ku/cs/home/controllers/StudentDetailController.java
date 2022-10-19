@@ -9,10 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import ku.cs.models.Account;
-import ku.cs.models.Complaint;
-import ku.cs.models.ComplaintList;
-import ku.cs.models.Theme;
+import ku.cs.models.*;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 import ku.cs.services.Parse;
@@ -30,12 +27,16 @@ public class StudentDetailController {
     @FXML private Circle studentImage;
     @FXML private TextArea detailTextArea;
     @FXML private TextArea managementTextArea;
+    @FXML
+    private AnchorPane parent;
 
     private Account student;
     private Complaint complaint;
     private ComplaintList complaintList;
     private DataSource<ComplaintList> complaintListDataSource;
     private ArrayList<Object> dataList;
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
 
 
 
@@ -47,7 +48,9 @@ public class StudentDetailController {
         complaintListDataSource = new ComplaintFileDataSource();
         complaintList = complaintListDataSource.readData();
         complaint = complaintList.getComplaint(complaint);
+        DetectTheme detectTheme = new DetectTheme(parent,student);
         showData();
+
 
 
     }
@@ -138,6 +141,18 @@ public class StudentDetailController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+    @FXML
+    public void handleStudentReportButton(ActionEvent actionEvent) {
+
+        try {
+            com.github.saacsos.FXRouter.goTo("studentreport",student);
+            //parse.showAllObject();
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้าเขียนร้องเรียน ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกําหนด route");
+            throw new RuntimeException();
+        }
+    }
 
     @FXML
     public void handleUserComplaintButton(ActionEvent actionEvent){
@@ -158,5 +173,7 @@ public class StudentDetailController {
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
     }
+
+
 }
 

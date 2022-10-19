@@ -14,13 +14,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentController">
    <children>
       <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
          <children>
             <Button layoutX="-8.0" layoutY="145.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="156.0" text="หน้าหลัก" />
             <Button layoutX="-4.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="179.0" text="ดูเรื่องร้องเรียน" />
-            <Button layoutX="-6.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="54.0" prefWidth="194.0" text="แจ้งเรื่องร้องเรียน" />
+            <Button layoutX="-6.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="54.0" prefWidth="179.0" text="แจ้งเรื่องร้องเรียน" />
             <Button layoutX="-5.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="32.0" prefWidth="185.0" text="คู่มือการใช้งาน" textAlignment="CENTER" textFill="WHITE" />
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="88.0" prefHeight="26.0" prefWidth="122.0" text="test" textFill="WHITE">
                <font>

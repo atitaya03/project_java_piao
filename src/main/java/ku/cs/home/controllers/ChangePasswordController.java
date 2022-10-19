@@ -9,10 +9,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
+import ku.cs.models.DetectTheme;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -31,6 +33,9 @@ public class ChangePasswordController {
     @FXML private ImageView homeicon;
     @FXML private Circle staffimage;
     @FXML private Label nameLabel;
+    @FXML
+    private AnchorPane parent;
+
 
 
 
@@ -41,6 +46,7 @@ public class ChangePasswordController {
 
         String url1 = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
         homeicon.setImage(new Image(url1));
+        DetectTheme detectTheme = new DetectTheme(parent,account);
 
 
     }
