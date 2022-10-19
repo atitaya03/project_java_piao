@@ -5,10 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -34,6 +31,14 @@ public class LoginController {
     private DataSource<AccountList> dataSource = new AccountFileDataSource();
     private AccountList accountList = dataSource.readData();
 
+    private boolean isLightMode;
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
+
+    @FXML
+    private AnchorPane parent;
+
+
 
 
 
@@ -41,9 +46,37 @@ public class LoginController {
     public void initialize(){
 //        String url = getClass().getResource("/ku/cs/images/logo.png").toExternalForm();
 //        logo.setImage(new Image(url));
+        isLightMode = true;
+        if (FXRouter.getData() != null) {
+            isLightMode = (boolean) FXRouter.getData();
+        }
+
         String url1 = getClass().getResource("/ku/cs/images/1.png").toExternalForm();
         image1.setImage(new Image(url1));
+//        String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+//        ProjectApplication.setUserAgentStylesheet(lightModePath);
+        detectTheme();
 
+
+    }
+    private void detectTheme() {
+            if (isLightMode) {
+                setLightMode();
+            } else {
+                setDarkMode();
+            }
+        }
+
+
+    private void setLightMode(){
+//        System.out.println(parent.getStylesheets());
+        parent.getStylesheets().add(lightModePath);
+        parent.getStylesheets().remove(darkModePath);
+    }
+
+    private void setDarkMode(){
+        parent.getStylesheets().add(darkModePath);
+        parent.getStylesheets().remove(lightModePath);
     }
 
 

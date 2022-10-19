@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
@@ -43,6 +44,8 @@ public class StudentController {
     @FXML private TextField minTextField;
     @FXML private TextField maxTextField;
 
+    @FXML private Button modeBtn;
+
 
     @FXML
     private TableView<Complaint> table;
@@ -65,6 +68,9 @@ public class StudentController {
     private TableColumn<Complaint, String> timeTable;
     @FXML
     private AnchorPane parent;
+
+    @FXML
+    private ImageView imgMode;
 
     private ComplaintFileDataSource complaintFileDataSource;
     private ComplaintList list;
@@ -214,11 +220,18 @@ public class StudentController {
 
     private void setLightMode(){
 //        System.out.println(parent.getStylesheets());
+        modeBtn.setText("Dark Mode");
+        String path = getClass().getResource("/ku/cs/images/darkMode.png").toExternalForm();
+        imgMode.setImage(new Image(path));
         parent.getStylesheets().add(lightModePath);
         parent.getStylesheets().remove(darkModePath);
     }
 
     private void setDarkMode(){
+
+        modeBtn.setText("Light Mode");
+        String path = getClass().getResource("/ku/cs/images/lightMode.png").toExternalForm();
+        imgMode.setImage(new Image(path));
         parent.getStylesheets().add(darkModePath);
         parent.getStylesheets().remove(lightModePath);
     }
@@ -284,11 +297,12 @@ public class StudentController {
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("login");
+            com.github.saacsos.FXRouter.goTo("login",isLightMode);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");
         }
+
     }
     private void showUserData() {
         nameLabel.setText(student.getDisplayname());

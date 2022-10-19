@@ -15,6 +15,7 @@
     -fx-background-color: #363636;
     -fx-text-fill: white;
 }
+
 .button:hover{
     -fx-background-color: #00c5cd;
     -fx-text-fill: white;
@@ -25,4 +26,23 @@
     -fx-background-color: #00c5cd;
     -fx-text-fill: white;
     -fx-color-label-visible: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.button-combo {
+    -fx-background-color: #00c5cd;
+    -fx-text-fill: white;
+}
+
+.button-vote {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.button-choose {
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
 }

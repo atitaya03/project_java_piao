@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.LoginController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.LoginController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="bg">
          <children>
@@ -20,12 +20,12 @@
                         <Font name="Eras Light ITC" size="12.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="48.0" layoutY="301.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: #03bd77#03bd77;" styleClass="fill-text-color" stylesheets="@Themes/light.css" text="ลงช่ือเข้าใช้" textFill="#fff9f9">
+                  <Button layoutX="48.0" layoutY="301.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="26.0" prefWidth="200.0" styleClass="fill-text-color" text="ลงช่ือเข้าใช้" textFill="#fff9f9">
                      <font>
                         <Font name="Eras Demi ITC" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="140.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ADE9B9;" styleClass="fill-color" stylesheets="@Themes/light.css" text="สมัครบัญชี" textFill="WHITE">
+                  <Button layoutX="140.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="26.0" prefWidth="107.0" text="สมัครบัญชี" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="12.0" />
                      </font>

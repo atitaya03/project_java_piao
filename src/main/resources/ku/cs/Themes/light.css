@@ -21,8 +21,31 @@
 }
 
 .button-mode {
-    -fx-border-color: black;
-    -fx-background-color: white;
-    -fx-text-fill: black;
+    -fx-border-color: white;
+    -fx-background-color: black;
+    -fx-text-fill: white;
     -fx-color-label-visible: white;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
 }
+
+.button-combo {
+    -fx-background-color: #01a57a;
+    -fx-text-fill: white;
+
+}
+
+.button-vote {
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+}
+
+.button-choose {
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+
+
