@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HowToUseStaffController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.HowToUseStaffController">
    <children>
       <TabPane layoutX="32.0" layoutY="64.0" prefHeight="472.0" prefWidth="737.0" rotateGraphic="true" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -65,11 +65,11 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="326.0" layoutY="14.0" text="คู่มือการใช้งาน" textFill="WHITE">
+      <Label layoutX="326.0" layoutY="14.0" styleClass="fill-color" text="คู่มือการใช้งาน" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="702.0" layoutY="554.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="32.0" prefWidth="64.0" text="กลับ" />
+      <Button layoutX="702.0" layoutY="554.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="32.0" prefWidth="64.0" styleClass="button-login" text="กลับ" />
    </children>
 </Pane>

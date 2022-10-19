@@ -10,16 +10,16 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
+<AnchorPane fx:id="profileImageRec" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffSignUpController">
    <children>
-      <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
+      <Pane layoutX="239.0" layoutY="54.0" prefHeight="494.0" prefWidth="319.0" styleClass="bg-back">
          <children>
-            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" style="-fx-background-color: #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="ลงทะเบียน" textFill="WHITE">
+            <Button layoutX="73.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSignUpButton" prefHeight="32.0" prefWidth="173.0" styleClass="button-login" text="ลงทะเบียน" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="32.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" text="ลงทะเบียน" textFill="#4d4d4d" textOverrun="CLIP">
+            <Label layoutX="32.0" layoutY="14.0" prefHeight="48.0" prefWidth="173.0" styleClass="fill-color" text="ลงทะเบียน" textFill="#4d4d4d" textOverrun="CLIP">
                <font>
                   <Font name="Eras Bold ITC" size="30.0" />
                </font>
@@ -52,17 +52,17 @@
                   <Font name="Eras Light ITC" size="12.0" />
                </font>
             </TextField>
-            <Label layoutX="35.0" layoutY="130.0" text="ชื่อที่แสดง" textFill="#4d4d4d" />
-            <Label layoutX="35.0" layoutY="171.0" text="ชื่อบัญชี" textFill="#4d4d4d" />
-            <Label layoutX="35.0" layoutY="214.0" text="รหัสผ่าน" textFill="#4d4d4d" />
-            <Label layoutX="35.0" layoutY="256.0" text="ยืนยันรหัสผ่าน" textFill="#4d4d4d" />
-            <Label layoutX="167.0" layoutY="371.0" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
+            <Label layoutX="35.0" layoutY="130.0" styleClass="fill-color" text="ชื่อที่แสดง" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="171.0" styleClass="fill-color" text="ชื่อบัญชี" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="214.0" styleClass="fill-color" text="รหัสผ่าน" textFill="#4d4d4d" />
+            <Label layoutX="35.0" layoutY="256.0" styleClass="fill-color" text="ยืนยันรหัสผ่าน" textFill="#4d4d4d" />
+            <Label layoutX="167.0" layoutY="371.0" styleClass="fill-color" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #f1f3f6;" text="กลับ" textFill="#01a57a" />
+      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="26.0" prefWidth="56.0" styleClass="button-login" text="กลับ" textFill="#01a57a" />
    </children>
 </AnchorPane>

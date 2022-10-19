@@ -16,6 +16,11 @@
     -fx-background-color: #01a57a;
 }
 
+
+.bg-manager {
+    -fx-background-color:  #f1f3f6;
+}
+
 .bg-back {
     -fx-background-color:  #f1f3f6;
 }
@@ -77,5 +82,4 @@
     -fx-background-color:  #f1f3f6;
     -fx-text-fill: black;
 }
-
 

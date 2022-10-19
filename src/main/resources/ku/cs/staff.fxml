@@ -5,14 +5,15 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f1f3f6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" styleClass="bg-back" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffController">
    <children>
-      <Pane prefHeight="59.0" prefWidth="809.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
+      <Pane prefHeight="59.0" prefWidth="809.0" styleClass="bg" stylesheets="@Themes/light.css">
          <children>
             <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="666.0" layoutY="30.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Label fx:id="nameLabel" layoutX="696.0" layoutY="11.0" textFill="WHITE">
@@ -20,13 +21,13 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
-            <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="74.0" text="หน้าหลัก" textFill="WHITE" />
+            <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ออกจากระบบ" textFill="WHITE" />
             <Label fx:id="editLabel" layoutX="695.0" layoutY="34.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE" />
-            <Button layoutX="197.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="31.0" prefWidth="108.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd" />
+            <Button layoutX="197.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="31.0" prefWidth="108.0" text="คู่มือการใช้งาน" textFill="#fffdfd" />
          </children>
       </Pane>
-      <MenuButton layoutX="651.0" layoutY="77.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #ffffff;" text="Sort By ..." textFill="#01a57a">
+      <MenuButton layoutX="561.0" layoutY="77.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: #ffffff;" text="Sort By ..." textFill="#01a57a">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -36,5 +37,7 @@
          </font>
       </MenuButton>
       <TableView fx:id="complaintsTable" layoutX="50.0" layoutY="133.0" prefHeight="435.0" prefWidth="700.0" />
+      <Button fx:id="modeBtn" layoutX="707.0" layoutY="77.0" mnemonicParsing="false" onAction="#changeMode" styleClass="button-mode" text="Light Mode" />
+      <ImageView fx:id="imgMode" fitHeight="30.0" fitWidth="30.0" layoutX="670.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

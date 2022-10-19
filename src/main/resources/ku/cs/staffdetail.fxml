@@ -9,79 +9,79 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffDetailController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffDetailController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f1f3f6;">
+      <Pane prefHeight="600.0" prefWidth="800.0" styleClass="bg-back">
          <children>
-            <Pane prefHeight="59.0" prefWidth="800.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
+            <Pane prefHeight="59.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css">
                <children>
-                  <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="19.0" prefWidth="74.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE" />
+                  <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleStaffButton" prefHeight="19.0" prefWidth="74.0" text="หน้าหลัก" textFill="WHITE" />
                   <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="696.0" layoutY="11.0" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                   <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="666.0" layoutY="30.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE" />
+                  <Button layoutX="113.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ออกจากระบบ" textFill="WHITE" />
                   <Label fx:id="editLabel" layoutX="695.0" layoutY="32.0" onMouseClicked="#handleedit" text="แก้ไขโปรไฟล์" textFill="WHITE" />
-                  <Button layoutX="197.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="31.0" prefWidth="108.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd" />
+                  <Button layoutX="197.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="31.0" prefWidth="108.0" text="คู่มือการใช้งาน" textFill="#fffdfd" />
                </children>
             </Pane>
             <Pane layoutX="57.0" layoutY="84.0" prefHeight="480.0" prefWidth="687.0">
                <children>
-                  <Label layoutX="44.0" layoutY="263.0" text="รายละเอียดการจัดการ" textFill="#4d4d4d">
+                  <Label layoutX="44.0" layoutY="263.0" styleClass="fill-color" text="รายละเอียดการจัดการ" textFill="#4d4d4d">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statusLabel" layoutX="471.0" layoutY="38.0" prefHeight="20.0" prefWidth="185.0" text="status" textFill="#01a57a">
+                  <Label fx:id="statusLabel" layoutX="471.0" layoutY="38.0" prefHeight="20.0" prefWidth="185.0" styleClass="fill-text-color-blue" text="status" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
                   <TextArea fx:id="managementTextArea" layoutX="44.0" layoutY="298.0" prefHeight="141.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
-                  <Label fx:id="titleLabel" layoutX="155.0" layoutY="38.0" text="Header" textFill="#01a57a">
+                  <Label fx:id="titleLabel" layoutX="155.0" layoutY="38.0" styleClass="fill-text-color-blue" text="Header" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="582.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleManagementButton" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #ffffff;" text="ยืนยัน" textFill="#01a57a">
+                  <Button layoutX="582.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleManagementButton" prefHeight="25.0" prefWidth="68.0" styleClass="button-login" text="ยืนยัน" textFill="#01a57a">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="detailLabel" layoutX="44.0" layoutY="141.0" prefHeight="106.0" prefWidth="549.0" text="details" textFill="#01a57a">
+                  <Label fx:id="detailLabel" layoutX="44.0" layoutY="141.0" prefHeight="106.0" prefWidth="549.0" styleClass="fill-text-color-blue" text="details" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="statusComboBox" layoutX="509.0" layoutY="298.0" prefHeight="34.0" prefWidth="145.0" promptText="จัดการสถานะ" style="-fx-background-color: #ffffff;" />
-                  <Label layoutX="44.0" layoutY="38.0" text="หัวเรื่อง" textFill="#4d4d4d">
+                  <Label layoutX="44.0" layoutY="38.0" styleClass="fill-color" text="หัวเรื่อง" textFill="#4d4d4d">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="113.0" text="รายละเอียด" textFill="#4d4d4d">
+                  <Label layoutX="44.0" layoutY="113.0" styleClass="fill-color" text="รายละเอียด" textFill="#4d4d4d">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="410.0" layoutY="38.0" text="สถานะ" textFill="#4d4d4d">
+                  <Label layoutX="410.0" layoutY="38.0" styleClass="fill-color" text="สถานะ" textFill="#4d4d4d">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="orgLabel" layoutX="204.0" layoutY="263.0" text="หน่วยงาน" textFill="#01a57a">
+                  <Label fx:id="orgLabel" layoutX="204.0" layoutY="263.0" styleClass="fill-text-color-blue" text="หน่วยงาน" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="449.0" text="ผู้จัดการ">
+                  <Label layoutX="44.0" layoutY="449.0" styleClass="fill-color" text="ผู้จัดการ">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="organizerLabel" layoutX="111.0" layoutY="449.0" text="organizer" textFill="#01a57a">
+                  <Label fx:id="organizerLabel" layoutX="111.0" layoutY="449.0" styleClass="fill-text-color-blue" text="organizer" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
                      </font>

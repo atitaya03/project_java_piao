@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f1f3f6;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.CreditsController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg-manager" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.CreditsController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="168.0" layoutX="207.0" layoutY="46.0" stroke="WHITE" strokeType="INSIDE" width="168.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="168.0" layoutX="423.0" layoutY="322.0" stroke="WHITE" strokeType="INSIDE" width="168.0" />
@@ -17,46 +17,46 @@
       <ImageView fx:id="atitayaImage" fitHeight="150.0" fitWidth="150.0" layoutX="429.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="lemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="219.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chanittaImage" fitHeight="150.0" fitWidth="150.0" layoutX="432.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="465.0" layoutY="501.0" text="6410401035" textFill="#4d4d4d">
+      <Label layoutX="465.0" layoutY="501.0" styleClass="fill-color" text="6410401035" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="424.0" layoutY="521.0" text="Chanitta Leewongcharoen" textFill="#4d4d4d">
+      <Label layoutX="424.0" layoutY="521.0" styleClass="fill-color" text="Chanitta Leewongcharoen" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="248.0" layoutY="229.0" text="6410406771" textFill="#4d4d4d">
+      <Label layoutX="248.0" layoutY="229.0" styleClass="fill-color" text="6410406771" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="226.0" layoutY="249.0" text="Punnatud Duengkae" textFill="#4d4d4d">
+      <Label layoutX="226.0" layoutY="249.0" styleClass="fill-color" text="Punnatud Duengkae" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="461.0" layoutY="229.0" text="6410406924" textFill="#4d4d4d">
+      <Label layoutX="461.0" layoutY="229.0" styleClass="fill-color" text="6410406924" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="454.0" layoutY="249.0" text="Atitaya Promlers" textFill="#4d4d4d">
+      <Label layoutX="454.0" layoutY="249.0" styleClass="fill-color" text="Atitaya Promlers" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="251.0" layoutY="501.0" text="6410406703" textFill="#4d4d4d">
+      <Label layoutX="251.0" layoutY="501.0" styleClass="fill-color" text="6410406703" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="218.0" layoutY="521.0" text="Napasamon Siribanjong" textFill="#4d4d4d">
+      <Label layoutX="218.0" layoutY="521.0" styleClass="fill-color" text="Napasamon Siribanjong" textFill="#4d4d4d">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="handleHomeButton" layoutX="710.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #52CF9E;" text="home" textFill="#fffefe">
+      <Button fx:id="handleHomeButton" layoutX="710.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" styleClass="button-login" text="home" textFill="#fffefe">
          <font>
             <Font name="Eras Demi ITC" size="12.0" />
          </font></Button>

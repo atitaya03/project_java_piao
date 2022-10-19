@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="528.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.EditController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="528.0" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.EditController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" styleClass="bg" stylesheets="@Themes/light.css">
+      <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg" stylesheets="@Themes/light.css">
          <children>
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="98.0" prefHeight="18.0" prefWidth="131.0" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -18,12 +18,12 @@
                </font>
             </Label>
             <Circle fx:id="staffimage" fill="DODGERBLUE" layoutX="74.0" layoutY="52.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button layoutX="25.0" layoutY="551.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a #01a57a;" text="ออกจากระบบ" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="551.0" mnemonicParsing="false" onAction="#handleLogoutButton" styleClass="button-login" text="ออกจากระบบ" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: #01a57a #01a57a;" text="home" textFill="WHITE">
+            <Button layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="46.0" prefWidth="75.0" text="home" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -41,45 +41,45 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="147.0" prefHeight="600.0" prefWidth="653.0" style="-fx-background-color: #f1f3f6;">
+      <Pane layoutX="147.0" prefHeight="600.0" prefWidth="653.0" styleClass="bg-back">
          <children>
-            <Button layoutX="81.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleUploadImageButton" style="-fx-background-color: #ffffff;" text="อัพโหลดรูปภาพ" textFill="#01a57a">
+            <Button layoutX="81.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleUploadImageButton" styleClass="button-login" text="อัพโหลดรูปภาพ" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: #01a57a #01a57a;" styleClass="fill-color" stylesheets="@Themes/light.css" text="แก้ไขข้อมูล" textFill="WHITE">
+            <Button layoutX="496.0" layoutY="528.0" mnemonicParsing="false" styleClass="button-login" text="แก้ไขข้อมูล" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
             <Circle fx:id="newStaffImage" fill="DODGERBLUE" layoutX="137.0" layoutY="288.0" radius="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Label layoutX="257.0" layoutY="225.0" text="ชื่อบัญชีผู้ใช้" textFill="#4d4d4d">
+            <Label layoutX="257.0" layoutY="225.0" styleClass="fill-color" text="ชื่อบัญชีผู้ใช้" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="257.0" layoutY="269.0" text="ชื่อที่แสดง" textFill="#4d4d4d">
+            <Label layoutX="257.0" layoutY="269.0" styleClass="fill-color" text="ชื่อที่แสดง" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="257.0" layoutY="311.0" text="ประเภทบัญชี" textFill="#4d4d4d">
+            <Label layoutX="257.0" layoutY="311.0" styleClass="fill-color" text="ประเภทบัญชี" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="usernameLabel" layoutX="389.0" layoutY="227.0" text="1" textFill="#01a57a">
+            <Label fx:id="usernameLabel" layoutX="389.0" layoutY="227.0" styleClass="fill-text-color-blue" text="1" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="displayLabel" layoutX="389.0" layoutY="269.0" text="2" textFill="#01a57a">
+            <Label fx:id="displayLabel" layoutX="389.0" layoutY="269.0" styleClass="fill-text-color-blue" text="2" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="roleLabel" layoutX="389.0" layoutY="311.0" text="3" textFill="#01a57a">
+            <Label fx:id="roleLabel" layoutX="389.0" layoutY="311.0" styleClass="fill-text-color-blue" text="3" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
                </font>
@@ -91,7 +91,7 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="216.0" layoutY="141.0" text="ข้อมูลทั่วไป" textFill="#4d4d4d">
+      <Label layoutX="216.0" layoutY="141.0" styleClass="fill-color" text="ข้อมูลทั่วไป" textFill="#4d4d4d">
          <font>
             <Font size="24.0" />
          </font>

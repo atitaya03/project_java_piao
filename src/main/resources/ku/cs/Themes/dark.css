@@ -73,3 +73,9 @@
     -fx-background-color: #00c5cd;
     -fx-text-fill: white;
 }
+
+
+
+.bg-manager {
+    -fx-background-color:  black;
+}
