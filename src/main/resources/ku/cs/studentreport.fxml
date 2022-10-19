@@ -13,13 +13,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
     <children>
       <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
          <children>
-            <Button layoutX="-8.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleStudentHomeButton" prefHeight="54.0" prefWidth="156.0" text="หน้าหลัก" />
-            <Button layoutX="-4.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="179.0" text="ดูเรื่องร้องเรียน" />
-            <Button layoutX="-6.0" layoutY="197.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="179.0" text="แจ้งเรื่องร้องเรียน" />
+            <Button layoutX="-8.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleStudentHomeButton" prefHeight="47.0" prefWidth="164.0" text="หน้าหลัก" />
+            <Button layoutX="-12.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="47.0" prefWidth="185.0" text="ดูเรื่องร้องเรียน" />
+            <Button layoutX="-24.0" layoutY="195.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="193.0" text="แจ้งเรื่อง" />
             <Button layoutX="-5.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="32.0" prefWidth="185.0" text="คู่มือการใช้งาน" textAlignment="CENTER" textFill="WHITE" />
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="88.0" prefHeight="26.0" prefWidth="122.0" text="test" textFill="WHITE">
                <font>
@@ -50,58 +50,58 @@
                   <Image url="@images/home.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/pencil.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="19.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="16.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/megaphone.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-        <Pane layoutX="146.0" prefHeight="600.0" prefWidth="654.0" style="-fx-background-color: #f1f3f6;">
+        <Pane layoutX="146.0" prefHeight="600.0" prefWidth="654.0" styleClass="bg-back">
             <children>
-            <TextField fx:id="titleAddTextField" alignment="TOP_LEFT" layoutX="225.0" layoutY="106.0" prefHeight="30.0" prefWidth="225.0" promptText="หัวข้อเรื่องร้องเรียน" style="-fx-background-color: #ffffff;">
+            <TextField fx:id="titleAddTextField" alignment="TOP_LEFT" layoutX="254.0" layoutY="109.0" prefHeight="30.0" prefWidth="225.0" promptText="หัวข้อเรื่องร้องเรียน" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="540.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefWidth="68.0" style="-fx-background-color: #01a57a;" text="แจ้งเรื่อง" textFill="WHITE">
+            <Button layoutX="520.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #01a57a;" text="แจ้งเรื่อง" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <ComboBox fx:id="categoryComboBox" editable="true" layoutX="224.0" layoutY="62.0" prefHeight="20.0" prefWidth="150.0" promptText="หมวดหมู่" style="-fx-background-color: #01a57a;" visibleRowCount="5" />
-            <Label layoutX="89.0" layoutY="111.0" text="หัวข้อเรื่องร้องเรียน" textFill="#4d4d4d">
+            <ComboBox fx:id="categoryComboBox" editable="true" layoutX="253.0" layoutY="65.0" prefHeight="20.0" prefWidth="150.0" promptText="หมวดหมู่" style="-fx-background-color: #01a57a;" visibleRowCount="5" />
+            <Label layoutX="89.0" layoutY="111.0" styleClass="fill-color" text="หัวข้อเรื่องร้องเรียน" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TextArea fx:id="detailAddTextField" layoutX="87.0" layoutY="266.0" prefHeight="164.0" prefWidth="519.0" style="-fx-background-color: #ffffff;" />
-            <Label layoutX="89.0" layoutY="221.0" text="รายละเอียดเรื่อง" textFill="#4d4d4d">
+            <Label layoutX="89.0" layoutY="221.0" styleClass="fill-color" text="รายละเอียดเรื่อง" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="89.0" layoutY="65.0" text="หมวดหมู่" textFill="#4d4d4d">
+            <Label layoutX="89.0" layoutY="65.0" styleClass="fill-color" text="หมวดหมู่" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="97.0" layoutY="457.0" text="อัพโหลดรูปภาพ" textFill="#4d4d4d">
+            <Label layoutX="97.0" layoutY="457.0" styleClass="fill-color" text="อัพโหลดรูปภาพ" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="categoryFeaturePrompt" layoutX="89.0" layoutY="167.0" prefHeight="20.0" prefWidth="129.0" text="รายละเอียดเรื่องเพิ่มเติม" textFill="#4d4d4d">
+            <Label fx:id="categoryFeaturePrompt" layoutX="89.0" layoutY="167.0" prefHeight="26.0" prefWidth="147.0" styleClass="fill-color" text="รายละเอียดเรื่องเพิ่มเติม" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="detailFeatureTextField" layoutX="225.0" layoutY="161.0" prefHeight="30.0" prefWidth="225.0" promptText="รายละเอียดเพิ่มเติม" style="-fx-background-color: #ffffff;">
+            <TextField fx:id="detailFeatureTextField" layoutX="254.0" layoutY="164.0" prefHeight="30.0" prefWidth="225.0" promptText="รายละเอียดเพิ่มเติม" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="14.0" />
                </font>

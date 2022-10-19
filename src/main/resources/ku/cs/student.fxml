@@ -14,53 +14,58 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentController">
    <children>
       <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
          <children>
-            <Button layoutX="-8.0" layoutY="145.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="156.0" text="หน้าหลัก" />
-            <Button layoutX="-4.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="179.0" text="ดูเรื่องร้องเรียน" />
-            <Button layoutX="-6.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="54.0" prefWidth="179.0" text="แจ้งเรื่องร้องเรียน" />
-            <Button layoutX="-5.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="32.0" prefWidth="185.0" text="คู่มือการใช้งาน" textAlignment="CENTER" textFill="WHITE" />
+            <Button layoutX="-6.0" layoutY="179.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" text="หน้าหลัก" />
+            <Button layoutX="-11.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="47.0" prefWidth="185.0" text="ดูเรื่องร้องเรียน" />
+            <Button layoutX="-15.0" layoutY="227.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="47.0" prefWidth="193.0" text="แจ้งเรื่อง" />
+            <Button layoutX="-5.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="32.0" prefWidth="185.0" text="คู่มือการใช้งาน" textAlignment="CENTER" textFill="WHITE" />
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="88.0" prefHeight="26.0" prefWidth="122.0" text="test" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Line endX="8.42529296875" layoutX="117.0" layoutY="128.0" startX="-100.0" stroke="WHITE" />
-            <Button layoutX="-3.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="32.0" prefWidth="182.0" text="ออกจากระบบ" textFill="WHITE" />
+            <Line endX="8.42529296875" layoutX="118.0" layoutY="170.0" startX="-100.0" stroke="WHITE" />
+            <Button layoutX="-4.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="32.0" prefWidth="182.0" text="ออกจากระบบ" textFill="WHITE" />
             <Circle fx:id="circle" fill="DODGERBLUE" layoutX="73.0" layoutY="46.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button layoutX="-18.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleedit" prefHeight="32.0" prefWidth="174.0" text="ตั้งค่า" textAlignment="CENTER" textFill="WHITE" />
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+            <Button alignment="CENTER" layoutX="-9.0" layoutY="471.0" mnemonicParsing="false" onAction="#handleedit" prefHeight="32.0" prefWidth="174.0" text="ตั้งค่าบัญชี" textAlignment="CENTER" textFill="WHITE" />
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/settings.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/interrogation.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="20.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/exit.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/home.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/pencil.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="19.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/megaphone.png" />
                </image>
             </ImageView>
+            <Button fx:id="modeBtn" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="120.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="33.0" prefWidth="104.0" styleClass="button-mode" text="Light Mode" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font></Button>
+            <ImageView fx:id="imgMode" fitHeight="15.0" fitWidth="15.0" layoutX="32.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
 
          </children>
       </Pane>
@@ -76,21 +81,19 @@
                   <TableColumn fx:id="userTable" editable="false" prefWidth="99.0" resizable="false" sortable="false" text="ผู้ใช้งาน" />
               </columns>
             </TableView>
-            <Label layoutX="40.0" layoutY="31.0" prefHeight="40.0" prefWidth="276.0" styleClass="fill-color" text="รวมเรื่องร้องเรียนทั้งหมด">
+            <Label layoutX="25.0" layoutY="31.0" prefHeight="40.0" prefWidth="276.0" styleClass="fill-color" text="รวมเรื่องร้องเรียนทั้งหมด">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <ComboBox fx:id="sortByTimeAndVotes" layoutX="513.0" layoutY="135.0" prefHeight="32.0" prefWidth="119.0" promptText="จัดเรียงตาม" styleClass="button-combo" />
-            <ComboBox fx:id="sortByCategoryBox" layoutX="266.0" layoutY="135.0" prefHeight="32.0" prefWidth="118.0" promptText="หมวดหมู่" styleClass="button-combo" />
-            <ComboBox fx:id="sortByStatusBox" layoutX="389.0" layoutY="135.0" prefHeight="26.0" prefWidth="118.0" promptText="สถานะ" styleClass="button-combo" />
-            <TextField fx:id="maxTextField" layoutX="519.0" layoutY="95.0" prefHeight="32.0" prefWidth="41.0" promptText="max" styleClass="button-vote" />
-            <TextField fx:id="minTextField" layoutX="447.0" layoutY="95.0" prefHeight="32.0" prefWidth="41.0" promptText="min" styleClass="button-vote" />
-            <Label layoutX="368.0" layoutY="100.0" styleClass="fill-color" text="เรียงตามโหวต" />
-            <Button layoutX="568.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleSortByVoteButton" prefHeight="32.0" prefWidth="64.0" styleClass="bg" text="เลือก" />
-            <Label layoutX="494.0" layoutY="100.0" styleClass="fill-color" text="ถึง" />
-            <Button fx:id="modeBtn" layoutX="547.0" layoutY="37.0" mnemonicParsing="false" onAction="#changeMode" styleClass="button-mode" text="Light Mode" />
-            <ImageView fx:id="imgMode" fitHeight="30.0" fitWidth="30.0" layoutX="510.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+            <ComboBox fx:id="sortByTimeAndVotes" layoutX="534.0" layoutY="135.0" prefHeight="32.0" prefWidth="96.0" promptText="เรียงตาม" styleClass="combobox" />
+            <ComboBox fx:id="sortByCategoryBox" layoutX="324.0" layoutY="135.0" prefHeight="32.0" prefWidth="96.0" promptText="หมวดหมู่" styleClass="combobox" />
+            <ComboBox fx:id="sortByStatusBox" layoutX="429.0" layoutY="135.0" prefHeight="32.0" prefWidth="96.0" promptText="สถานะ" styleClass="combobox" />
+            <TextField fx:id="maxTextField" layoutX="191.0" layoutY="135.0" prefHeight="32.0" prefWidth="41.0" promptText="max" styleClass="button-vote" />
+            <TextField fx:id="minTextField" layoutX="119.0" layoutY="135.0" prefHeight="32.0" prefWidth="41.0" promptText="min" styleClass="button-vote" />
+            <Label layoutX="29.0" layoutY="140.0" styleClass="fill-color" text="เรียงตามโหวต" />
+            <Button layoutX="250.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleSortByVoteButton" prefHeight="32.0" prefWidth="64.0" styleClass="button-choose" text="เลือก" textFill="WHITE" />
+            <Label layoutX="166.0" layoutY="140.0" styleClass="fill-color" text="ถึง" />
          </children>
       </Pane>
    </children>

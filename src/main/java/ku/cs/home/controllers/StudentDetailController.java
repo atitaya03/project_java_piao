@@ -101,13 +101,7 @@ public class StudentDetailController {
         }
     }
 
-    public void in(MouseEvent mouseEvent){
-        vote.setStyle("-fx-text-fill: #f61e1e");
-    }
 
-    public void out(MouseEvent mouseEvent){
-        vote.setStyle("-fx-text-fill: #4d4d4d");
-    }
     @FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
         try {

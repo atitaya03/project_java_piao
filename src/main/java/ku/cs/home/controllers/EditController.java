@@ -28,7 +28,7 @@ public class EditController {
     @FXML private Circle newStaffImage;
 
     @FXML private Label nameLabel;
-    @FXML private ImageView homeicon;
+
     @FXML private Label usernameLabel;
     @FXML private Label displayLabel;
     @FXML private Label roleLabel;
@@ -47,8 +47,6 @@ public class EditController {
 
 //        account = (Account) com.github.saacsos.FXRouter.getData();
 
-        String url = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
-        homeicon.setImage(new Image(url));
 
         showUserData();
         DetectTheme detectTheme = new DetectTheme(parent,account);

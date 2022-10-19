@@ -30,7 +30,7 @@ public class ChangePasswordController {
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmPasswordField;
     @FXML private Label successLabel;
-    @FXML private ImageView homeicon;
+
     @FXML private Circle staffimage;
     @FXML private Label nameLabel;
     @FXML
@@ -43,11 +43,7 @@ public class ChangePasswordController {
         account = (Account) com.github.saacsos.FXRouter.getData();
         readData();
         showUserData();
-
-        String url1 = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
-        homeicon.setImage(new Image(url1));
         DetectTheme detectTheme = new DetectTheme(parent,account);
-
 
     }
 

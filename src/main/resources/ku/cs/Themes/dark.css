@@ -2,7 +2,23 @@
 .fill-color {
     -fx-text-fill: white;
 }
+.vote{
+    -fx-text-fill: white;
+}
+.vote:hover{
+    -fx-text-fill: #00c5cd;
+}
+.sortvote{
+    -fx-background-color: #00c5cd;
+    -fx-text-fill: white;
 
+}
+.edit{
+    -fx-text-fill: white;
+}
+.edit:hover{
+    -fx-underline: true;
+}
 .fill-text-color {
     -fx-text-fill: #4F4F4F;
 }
@@ -40,18 +56,17 @@
 
 .button-mode {
     -fx-border-color: white;
-    -fx-background-color: #00c5cd;
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-color-label-visible: white;
     -fx-background-radius: 15px;
     -fx-border-radius: 15px;
 }
 
-.button-combo {
+.combobox {
+    color: white;
     -fx-background-color: #00c5cd;
-    -fx-text-fill: white;
 }
-
 .button-vote {
     -fx-background-radius: 15px;
     -fx-border-radius: 15px;
