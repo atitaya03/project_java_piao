@@ -1,18 +1,26 @@
 @import "ibm.css";
 .fill-color {
-    -fx-fill: #ffffff;
+    -fx-text-fill: white;
 }
 
 .fill-text-color {
     -fx-text-fill: #4F4F4F;
 }
 
+.fill-text-color-blue {
+    -fx-text-fill: #00c5cd;
+}
+
 .bg {
-    -fx-background-color: #363636;
+    -fx-background-color: #161b21;
+}
+
+.bg-back {
+    -fx-background-color: black;
 }
 
 .button {
-    -fx-background-color: #363636;
+    -fx-background-color: #161b21;
     -fx-text-fill: white;
 }
 
