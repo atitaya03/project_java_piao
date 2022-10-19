@@ -6,10 +6,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import ku.cs.models.Account;
+import ku.cs.models.Theme;
+import ku.cs.services.Parse;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,17 +33,50 @@ public class EditController {
     @FXML private Label roleLabel;
     @FXML private Label orgLabel;
 
+    private Parse parse;
+    private Theme theme;
+    @FXML
+    private AnchorPane parent;
+
+    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
+    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
+
 
     public void initialize(){
-        account = (Account) com.github.saacsos.FXRouter.getData();
+        parse = (Parse) com.github.saacsos.FXRouter.getData();
+        theme = (Theme) parse.getObject("theme");
+        account = (Account) parse.getObject("student");
+
+//        account = (Account) com.github.saacsos.FXRouter.getData();
 
         String url = getClass().getResource("/ku/cs/images/home.png").toExternalForm();
         homeicon.setImage(new Image(url));
 
         showUserData();
+        detectTheme();
+
 
     }
 
+    private void detectTheme() {
+        if (theme.isLightMode()) {
+            setLightMode();
+        } else {
+            setDarkMode();
+        }
+    }
+
+
+    private void setLightMode(){
+//        System.out.println(parent.getStylesheets());
+        parent.getStylesheets().add(lightModePath);
+        parent.getStylesheets().remove(darkModePath);
+    }
+
+    private void setDarkMode(){
+        parent.getStylesheets().add(darkModePath);
+        parent.getStylesheets().remove(lightModePath);
+    }
     private void showUserData() {
         nameLabel.setText(account.getDisplayname());
         File image = new File(account.getImagePath());
@@ -55,7 +91,10 @@ public class EditController {
 
         if (account.isStaff()) orgLabel.setText(account.getOrganization());
 
+
     }
+
+
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
         try {

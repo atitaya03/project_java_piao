@@ -15,7 +15,7 @@
     <children>
         <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
             <children>
-                <Button layoutX="24.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #01a57a;" text="ออกจากระบบ" textFill="WHITE">
+                <Button layoutX="24.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ออกจากระบบ" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -25,12 +25,12 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Button layoutY="288.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="แจ้งเรื่องร้องเรียน" textFill="WHITE">
+                <Button layoutY="288.0" mnemonicParsing="false" onAction="#handleStudentReportButton" prefHeight="54.0" prefWidth="147.0" text="แจ้งเรื่องร้องเรียน" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button layoutY="342.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="ดูเรื่องร้องเรียน" textFill="WHITE">
+                <Button layoutY="342.0" mnemonicParsing="false" onAction="#handleUserComplaintButton" prefHeight="54.0" prefWidth="147.0" text="ดูเรื่องร้องเรียน" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -41,12 +41,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
-                <Button layoutY="234.0" mnemonicParsing="false" onAction="#handleStudentHomeButton" prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #01a57a;" text="หน้าหลัก" textFill="WHITE">
+                <Button layoutY="234.0" mnemonicParsing="false" onAction="#handleStudentHomeButton" prefHeight="54.0" prefWidth="147.0" text="หน้าหลัก" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-            <Button layoutX="1.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="38.0" prefWidth="147.0" style="-fx-background-color: #01a57a #01a57a;" text="คู่มือการใช้งาน" textFill="#fffdfd">
+            <Button layoutX="1.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleHowToUseButton" prefHeight="38.0" prefWidth="147.0" text="คู่มือการใช้งาน" textFill="#fffdfd">
                <font>
                   <Font size="10.0" />
                </font>

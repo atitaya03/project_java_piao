@@ -41,7 +41,7 @@ public class StudentComplaintController {
 
     private String category;
     private Parse parse;
-    private Theme theme;
+    private boolean theme;
     @FXML
     private AnchorPane parent;
 
@@ -53,8 +53,9 @@ public class StudentComplaintController {
     public void initialize(){
         parse = (Parse) com.github.saacsos.FXRouter.getData();
         parse.showAllObject();
-        theme = (Theme) parse.getObject("theme");
+        theme = (Boolean) parse.getObject("theme");
         student = (Account) parse.getObject("student");
+        parse.add("theme", theme);
 
 
         categoryComboBox.getItems().add("ความปลอดภัย");
@@ -73,7 +74,7 @@ public class StudentComplaintController {
 
     }
     private void detectTheme() {
-        if (theme.isLightMode()) {
+        if (theme) {
             setLightMode();
         } else {
             setDarkMode();
@@ -122,7 +123,8 @@ public class StudentComplaintController {
 
     public void handleStudentHomeButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("student");
+            com.github.saacsos.FXRouter.goTo("student",parse);
+            parse.showAllObject();
         } catch (IOException e) {
             System.err.println("ไปที่หน้า studenthome ไม่ได้");
             System.err.println("ให้ตรวจสอบการกําหนด route");

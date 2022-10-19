@@ -13,9 +13,11 @@ import javafx.scene.paint.Color;
 import ku.cs.ProjectApplication;
 import ku.cs.models.Account;
 import ku.cs.models.AccountList;
+import ku.cs.models.Theme;
 import ku.cs.services.AccountFileDataSource;
 import ku.cs.services.DataSource;
 import ku.cs.services.Effect;
+import ku.cs.services.Parse;
 
 import java.io.IOException;
 
@@ -23,20 +25,13 @@ public class LoginController {
 //    @FXML private ImageView logo;
     @FXML private ImageView image1;
     @FXML private TextField inputUsernameTextField;
-
-
     @FXML private PasswordField inputPasswordTextField;
     @FXML private Label failedLabel;
 
     private DataSource<AccountList> dataSource = new AccountFileDataSource();
     private AccountList accountList = dataSource.readData();
+    private Parse parse;
 
-    private boolean isLightMode;
-    private final String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
-    private final String darkModePath = getClass().getResource("/ku/cs/Themes/dark.css").toExternalForm();
-
-    @FXML
-    private AnchorPane parent;
 
 
 
@@ -46,39 +41,15 @@ public class LoginController {
     public void initialize(){
 //        String url = getClass().getResource("/ku/cs/images/logo.png").toExternalForm();
 //        logo.setImage(new Image(url));
-        isLightMode = true;
-        if (FXRouter.getData() != null) {
-            isLightMode = (boolean) FXRouter.getData();
-        }
-        detectTheme();
 
         String url1 = getClass().getResource("/ku/cs/images/1.png").toExternalForm();
         image1.setImage(new Image(url1));
+        parse = new Parse();
+        parse.add("theme", Boolean.TRUE);
 //        String lightModePath = getClass().getResource("/ku/cs/Themes/light.css").toExternalForm();
 //        ProjectApplication.setUserAgentStylesheet(lightModePath);
 
-
     }
-    private void detectTheme() {
-            if (isLightMode) {
-                setLightMode();
-            } else {
-                setDarkMode();
-            }
-        }
-
-
-    private void setLightMode(){
-//        System.out.println(parent.getStylesheets());
-        parent.getStylesheets().add(lightModePath);
-        parent.getStylesheets().remove(darkModePath);
-    }
-
-    private void setDarkMode(){
-        parent.getStylesheets().add(darkModePath);
-        parent.getStylesheets().remove(lightModePath);
-    }
-
 
 
     @FXML
@@ -122,13 +93,14 @@ public class LoginController {
 
         } else {
             try {
+                parse.add("user",user);
                 user.initialLoginTime();
                 if (user.isStudent())
-                    com.github.saacsos.FXRouter.goTo("student", user);
+                    com.github.saacsos.FXRouter.goTo("student", parse);
                 else if (user.isStaff())
-                    com.github.saacsos.FXRouter.goTo("staff", user);
+                    com.github.saacsos.FXRouter.goTo("staff", parse);
                 else if (user.isAdmin())
-                    com.github.saacsos.FXRouter.goTo("admin", user);
+                    com.github.saacsos.FXRouter.goTo("admin", parse);
                 dataSource.writeData(accountList, false);
 
             } catch (IOException e) {
@@ -138,9 +110,6 @@ public class LoginController {
             }
         }
 
-
-
     }
-
 
 }

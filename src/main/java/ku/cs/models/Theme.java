@@ -1,10 +1,11 @@
 package ku.cs.models;
 
 public class Theme {
-    private boolean isLightMode;
+    private boolean isLightMode = true;
+
 
     public Theme() {
-        isLightMode = true;
+        this.isLightMode = isLightMode;
     }
 
     public boolean isLightMode() {

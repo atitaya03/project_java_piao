@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.LoginController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.LoginController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="bg">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <Pane layoutX="435.0" layoutY="52.0" prefHeight="494.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;">
                <children>
