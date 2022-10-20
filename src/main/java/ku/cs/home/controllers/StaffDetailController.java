@@ -58,8 +58,12 @@ public class StaffDetailController {
         managementTextArea.setWrapText(true);
         statusComboBox.getItems().addAll("ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
         if(!complaint.getOrganizer().equals("-")){
+            managementTextArea.setText(complaint.getManagement());
+        }
+        if(complaint.getStatus().equals("ดำเนินการเสร็จสิ้น")){
             managementTextArea.setEditable(false);
             managementTextArea.setText(complaint.getManagement());
+
         }
         showComplaint();
         showUserData();
@@ -81,6 +85,8 @@ public class StaffDetailController {
             statusLabel.setStyle("-fx-text-fill: #f5bd20");
         } else {
             statusLabel.setStyle("-fx-text-fill: #01a57a");
+            statusComboBox.getItems().clear();
+            statusComboBox.setPromptText("ดำเนินการเสร็จสิ้น");
         }
         orgLabel.setText(complaint.getCategory());
         organizerLabel.setText(complaint.getOrganizer());
@@ -118,8 +124,11 @@ public class StaffDetailController {
     public void handleManagementButton(ActionEvent actionEvent){
         String management = managementTextArea.getText();
         String status = statusComboBox.getValue();
-        if(status == null){
+        if(status == null ){
             System.out.println("please select status first");
+            status = complaint.getStatus();
+        }
+        if(complaint.getStatus().equals("ดำเนินการเสร็จสิ้น")){
             status = complaint.getStatus();
         }
         if(management == ""){

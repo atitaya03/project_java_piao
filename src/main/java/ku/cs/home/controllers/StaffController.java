@@ -16,13 +16,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import ku.cs.ProjectApplication;
-import ku.cs.models.Account;
+import ku.cs.models.*;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.*;
-import ku.cs.models.Complaint;
-import ku.cs.models.ComplaintList;
-import ku.cs.models.DetectTheme;
 import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
@@ -30,16 +27,19 @@ import ku.cs.services.DataSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.SplittableRandom;
 
 public class StaffController {
     private Account staff;
     @FXML
     private Circle staffimage;
     @FXML private Label nameLabel;
-    @FXML private Label editLabel;
-    @FXML private Button test;
+    @FXML private ComboBox <String> selectStatusCombobox;
     @FXML private TableView<Complaint> complaintsTable;
     private ComplaintList complaintList;
+    private  ComplaintList filtered;
+    private ComplaintList sorted;
+    private ComplaintFilterer filterer;
     private DataSource<ComplaintList> complaintListDataSource;
     private ArrayList<Object> dataList;
 
@@ -62,11 +62,31 @@ public class StaffController {
         dataList.add(staff);
         complaintListDataSource = new ComplaintFileDataSource();
         complaintList = complaintListDataSource.readData();
+        filterer = new ComplaintFilterer();
+        filtered = new ComplaintList();
+        sorted = sortCategory();
+        selectStatusCombobox.getItems().addAll("ALL","ยังไม่ดำเนินการ","อยู่ระหว่างการดำเนินการ","ดำเนินการเสร็จสิ้น");
 //        DetectTheme detectTheme = new DetectTheme(parent,staff);
         showUserData();
-        showComplaintsData();
+        showComplaintsData(sorted);
         handleSelectedTableView();
         detectTheme();
+        handleSortByStatus();
+    }
+    private void handleSortByStatus(){
+        selectStatusCombobox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println(selectStatusCombobox.getValue());
+                if(((String)(selectStatusCombobox.getValue())).equals("ALL")){filterer.setStatus(null);}
+                else if(selectStatusCombobox.getValue()!=null){
+                    filterer.setStatus((String) selectStatusCombobox.getValue());
+                }
+                else {filterer.setStatus(null);}
+                filtered = sorted.filterBy(filterer);
+                showComplaintsData(filtered);
+            }
+        });
     }
 
     private void detectTheme() {
@@ -125,8 +145,7 @@ public class StaffController {
 
         return sorted;
     }
-    private void showComplaintsData(){
-        ComplaintList sorted = sortCategory();
+    private void showComplaintsData(ComplaintList sorted){
 
         ObservableList<Complaint> data = FXCollections.observableArrayList(sorted.getAllComplaints());
 
