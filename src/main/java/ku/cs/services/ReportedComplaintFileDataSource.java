@@ -12,7 +12,7 @@ public class ReportedComplaintFileDataSource implements DataSource<ReportComplai
     private String fileName;
 
     public ReportedComplaintFileDataSource(){
-        this("executablefiles_csv/csv/","reportedComplaint.csv");
+        this("data/csv/","reportedComplaint.csv");
     }
     public ReportedComplaintFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;

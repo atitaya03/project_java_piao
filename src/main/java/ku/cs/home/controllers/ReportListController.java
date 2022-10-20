@@ -54,13 +54,13 @@ public class ReportListController {
     public void initialize(){
         admin = (Account) com.github.saacsos.FXRouter.getData();
 
-        dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
+        dataSource = new AccountFileDataSource();
         accountList = dataSource.readData();
-        dataSourceComplaint = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
+        dataSourceComplaint = new ComplaintFileDataSource();
         complaintList = dataSourceComplaint.readData();
 
-        dataSourceAcc = new ReportedAccountFileDataSource("executablefiles_csv/csv/", "reportedAccount.csv");
-        dataSourceReportedComplaint = new ReportedComplaintFileDataSource("executablefiles_csv/csv/", "reportedComplaint.csv");
+        dataSourceAcc = new ReportedAccountFileDataSource();
+        dataSourceReportedComplaint = new ReportedComplaintFileDataSource();
         reportAccList = dataSourceAcc.readData();
         reportComplaintList = dataSourceReportedComplaint.readData();
 

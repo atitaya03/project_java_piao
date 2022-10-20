@@ -57,7 +57,7 @@ public class AdminController {
         String url = getClass().getResource("/ku/cs/images/adminicon.png").toExternalForm();
         adminicon.setImage(new Image(url));
 
-        dataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
+        dataSource = new AccountFileDataSource("data/csv/", "userData.csv");
         accountList = dataSource.readData();
         accountList.sortByTime();
 

@@ -83,17 +83,17 @@ public class StaffSignUpController {
             String imageFilePath;
             if(imageFile != null){
                 System.out.println("image not null");
-                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("data/profileUsers"+ File.separator+ "temp.png");
                 String staffImage = username+".png";
-                File renameImage = new File("executablefiles_csv/profileUsers" + File.separator + staffImage);
+                File renameImage = new File("data/profileUsers" + File.separator + staffImage);
                 if (tempImagePNG.renameTo(renameImage)) {
                     System.out.println(renameImage.getPath());
-                    imageFilePath = "executablefiles_csv/profileUsers" + File.separator +staffImage;
+                    imageFilePath = "data/profileUsers" + File.separator +staffImage;
                     newStaff.setImagePath(imageFilePath);
                 }
             }
             DataSource<AccountList> write;
-            write = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
+            write = new AccountFileDataSource("data/csv/", "userData.csv");
             write.writeData(staffregis,true);
             try {
                 com.github.saacsos.FXRouter.goTo("admin");
@@ -123,7 +123,7 @@ public class StaffSignUpController {
         if(imageFile != null){
             try {
                 String imagePath = imageFile.getAbsolutePath();
-                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("data/profileUsers"+ File.separator+ "temp.png");
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);

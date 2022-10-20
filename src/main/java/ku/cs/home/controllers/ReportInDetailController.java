@@ -66,9 +66,9 @@ public class ReportInDetailController {
         DetectTheme detectTheme = new DetectTheme(parent,reporter);
     }
     public void readData(){
-        accountListDataSource = new AccountFileDataSource("executablefiles_csv/csv/", "userData.csv");
+        accountListDataSource = new AccountFileDataSource();
         accountList = accountListDataSource.readData();
-        complaintListDataSource = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
+        complaintListDataSource = new ComplaintFileDataSource();
         complaintList = complaintListDataSource.readData();
         reportAccListDataSource = new ReportedAccountFileDataSource();
         reportedAccList = reportAccListDataSource.readData();

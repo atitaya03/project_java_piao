@@ -11,8 +11,11 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import ku.cs.models.Account;
+import ku.cs.models.AccountList;
 import ku.cs.models.DetectTheme;
 import ku.cs.models.Theme;
+import ku.cs.services.AccountFileDataSource;
+import ku.cs.services.DataSource;
 import ku.cs.services.Parse;
 
 import java.io.File;
@@ -24,6 +27,7 @@ import java.nio.file.StandardCopyOption;
 
 public class EditController {
     private Account account;
+    private AccountList accountList;
     @FXML private Circle staffimage;
     @FXML private Circle newStaffImage;
 
@@ -34,16 +38,19 @@ public class EditController {
     @FXML private Label roleLabel;
     @FXML private Label orgLabel;
 
-    private Parse parse;
-    private Theme theme;
+
     @FXML
     private AnchorPane parent;
+    private File imageFile;
+    private DataSource<AccountList> dataSource;
 
 
 
 
     public void initialize(){
         account = (Account) com.github.saacsos.FXRouter.getData();
+        dataSource = new AccountFileDataSource();
+        accountList = dataSource.readData();
 
 //        account = (Account) com.github.saacsos.FXRouter.getData();
 
@@ -118,13 +125,13 @@ public class EditController {
                 = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
         fileChooser.getExtensionFilters()
                 .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
-        File imageFile = fileChooser.showOpenDialog(null);
+         imageFile = fileChooser.showOpenDialog(null);
 
 
         if(imageFile != null){
             try {
                 String imagePath = imageFile.getAbsolutePath();
-                File tempImagePNG = new File("executablefiles_csv/profileUsers"+ File.separator+ "temp.png");
+                File tempImagePNG = new File("data/profileUsers"+ File.separator+ "temp.png");
                 Path pathOut = (Path) Paths.get(tempImagePNG.getAbsolutePath());
                 Files.copy(imageFile.toPath(), pathOut, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(imagePath);
@@ -138,6 +145,30 @@ public class EditController {
         /*TODO set image url in changeProfileButton
             add newProfile image in to resource instead of using absolute path*/
 
+    }
+    @FXML
+    public void handleEditButton(ActionEvent actionEvent){
+
+        String imageFilePath;
+        if(imageFile != null){
+            File tempImagePNG = new File("data/profileUsers"+ File.separator+ "temp.png");
+            String imagename = account.getUsername()+".png";
+            File renameImage = new File("data/profileUsers" + File.separator + imagename);
+            if (tempImagePNG.renameTo(renameImage)) {
+                System.out.println(renameImage.getPath());
+                imageFilePath = "data/profileUsers" + File.separator +imagename;
+                accountList.searchAccountByUsername(account.getUsername()).setImagePath(imageFilePath);
+            }
+
+        }
+        DataSource<AccountList> write;
+        write = new AccountFileDataSource("data/csv/", "userData.csv");
+        write.writeData(accountList,false);
+        try {
+            com.github.saacsos.FXRouter.goTo("edit");
+        } catch (IOException e) {
+            System.err.println("ไปหน้าแรกไม่ได้");
+        }
     }
 
 

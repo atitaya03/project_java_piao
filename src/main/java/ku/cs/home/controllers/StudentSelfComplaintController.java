@@ -73,7 +73,7 @@ public class StudentSelfComplaintController {
         showUserData();
         dataList.add(student);
         filterer = new ComplaintFilterer();
-        complaintFileDataSource = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
+        complaintFileDataSource = new ComplaintFileDataSource();
         complaintList = complaintFileDataSource.readData();
         userComplaints =  userComplaints();
         filtered = userComplaints;

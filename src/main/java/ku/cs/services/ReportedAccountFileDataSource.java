@@ -10,7 +10,7 @@ public class ReportedAccountFileDataSource implements DataSource<ReportAccList> 
     private String fileName;
 
     public ReportedAccountFileDataSource(){
-        this("executablefiles_csv/csv/","reportedAccount.csv");
+        this("data/csv/","reportedAccount.csv");
     }
     public ReportedAccountFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;

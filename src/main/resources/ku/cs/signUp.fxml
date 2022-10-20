@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.SignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #01a57a;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.SignUpController">
     <children>
         <Pane layoutX="229.0" layoutY="44.0" prefHeight="494.0" prefWidth="319.0" style="-fx-background-color: #f1f3f6;">
             <children>
@@ -49,15 +49,15 @@
             <Label layoutX="28.0" layoutY="142.0" text="ชื่อบัญชี" textFill="#4d4d4d" />
             <Label layoutX="28.0" layoutY="185.0" text="รหัสผ่าน" textFill="#4d4d4d" />
             <Label layoutX="28.0" layoutY="227.0" text="ยืนยันรหัสผ่าน" textFill="#4d4d4d" />
-            <Button layoutX="175.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="อัพโหลดรูปภาพ" textFill="#4d4d4d" />
-            <Label layoutX="173.0" layoutY="368.0" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
+            <Button layoutX="175.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleUploadImageButton" prefHeight="26.0" prefWidth="120.0" styleClass="button-login" text="อัพโหลดรูปภาพ" textFill="#4d4d4d" />
+            <Label layoutX="173.0" layoutY="359.0" text="*JPG หรือ PNG เท่านั้น" textFill="#4d4d4d">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
             </children>
         </Pane>
-      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #f1f3f6;" text="กลับ" textFill="#01a57a">
+      <Button layoutX="714.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="56.0" styleClass="button-login" text="กลับ" textFill="#01a57a">
          <font>
             <Font name="Eras Demi ITC" size="12.0" />
          </font>

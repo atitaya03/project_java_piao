@@ -12,7 +12,7 @@ public class ComplaintFileDataSource implements DataSource<ComplaintList> {
     private String fileName;
 
     public ComplaintFileDataSource(){
-        this("executablefiles_csv/csv/","complaintData.csv");
+        this("data/csv/","complaintData.csv");
     }
     public ComplaintFileDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;

@@ -101,7 +101,7 @@ public class StudentController {
         showUserData();
         dataList.add(student);
         filterer = new ComplaintFilterer();
-        complaintFileDataSource = new ComplaintFileDataSource("executablefiles_csv/csv/", "complaintData.csv");
+        complaintFileDataSource = new ComplaintFileDataSource();
          list = complaintFileDataSource.readData();
         sortByCategoryBox.setItems(sortByCategoryBoxList);
         sortByStatusBox.setItems(sortByStatusList);
