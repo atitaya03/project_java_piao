@@ -54,9 +54,12 @@ public class SignUpController {
         String password = inputPasswordTextField.getText();
         String confirmPass = confirmPasswordTextField.getText();
         String username = inputUsernameTextField.getText();
-
-        if(accountList.usernameIsUsed(username))
-        {failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
+        if(displayname == "" || password == "" || confirmPass == "" || username == ""){
+            failed.setText("กรอกข้อมูลให้ครบ");
+            failed.setStyle("-fx-text-fill: #f61e1e");
+        }
+        else if(accountList.usernameIsUsed(username)) {
+            failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else if (!(password).equals(confirmPass))
         {failed.setText("รหัสผ่านไม่ตรงกัน");

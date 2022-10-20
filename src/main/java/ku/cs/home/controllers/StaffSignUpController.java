@@ -68,14 +68,17 @@ public class StaffSignUpController {
         String displayname = inputDisplaynameTextField.getText();
         String confirmPass = confirmPasswordTextField.getText();
         String username = inputUsernameTextField.getText();
-        if (organization==null)
-        {failed.setText("โปรดเลือกหน่วยงาน");
+        if (displayname == "" || password == "" || confirmPass == "" || username == ""){
+            failed.setText("กรอกข้อมูลให้ครบ");
+            failed.setStyle("-fx-text-fill: #f61e1e");
+        } else if (organization == null){
+            failed.setText("โปรดเลือกหน่วยงาน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
-        else if (accountList.usernameIsUsed(username))
-        {failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
+        else if (accountList.usernameIsUsed(username)) {
+            failed.setText("มีชื่อผู้ใช้บัญชีนี้แล้ว");
             failed.setStyle("-fx-text-fill: #f61e1e");}
-        else if (!(password).equals(confirmPass))
-        {failed.setText("รหัสผ่านไม่ตรงกัน");
+        else if (!(password).equals(confirmPass)) {
+            failed.setText("รหัสผ่านไม่ตรงกัน");
             failed.setStyle("-fx-text-fill: #f61e1e");}
         else {
             Account newStaff = new Account(displayname,username, password, "staff",organization);

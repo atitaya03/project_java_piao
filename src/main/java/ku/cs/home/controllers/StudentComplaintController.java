@@ -122,7 +122,10 @@ public class StudentComplaintController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 category = (String) categoryComboBox.getValue();
-                if(category!=""){
+                if(category == null){
+                    System.err.println("category is null");
+                }
+                else if(category!=""){
                     aleartLabel.setText("เลือกหมวดหมู่ "+category);
                     aleartLabel.setStyle("-fx-text-fill: #03bd00");
                     if(category.equals("ความสะอาด")||category.equals("ความปลอดภัย")||category.equals("ถนน ทางเท้า")) categoryFeaturePrompt.setText("สถานที่");

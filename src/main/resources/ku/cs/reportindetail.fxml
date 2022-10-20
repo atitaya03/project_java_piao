@@ -65,7 +65,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="alertTypeReport" layoutX="214.0" layoutY="88.0" prefHeight="20.0" prefWidth="165.0" textFill="#ff4040">
+            <Label fx:id="alertTypeReport" layoutX="432.0" layoutY="143.0" prefHeight="20.0" prefWidth="165.0" textFill="#ff4040">
                <font>
                   <Font size="14.0" />
                </font>
@@ -81,7 +81,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="215.0" layoutY="69.0" styleClass="fill-color" text="รายงานความไม่เหมาะสม" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="232.0" layoutY="76.0" styleClass="fill-color" text="รายงานความไม่เหมาะสม" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>

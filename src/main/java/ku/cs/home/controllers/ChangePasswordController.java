@@ -29,6 +29,7 @@ public class ChangePasswordController {
     @FXML private TextField usernameTextField;
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmPasswordField;
+    @FXML private PasswordField oldPasswordField;
     @FXML private Label successLabel;
 
     @FXML private Circle staffimage;
@@ -64,8 +65,17 @@ public class ChangePasswordController {
         String username = usernameTextField.getText();
         String newPassword = newPasswordField.getText();
         String confirmPassword = confirmPasswordField.getText();
+        String oldPassword = oldPasswordField.getText();
 
-        if (newPassword.equals("") || confirmPassword.equals("")){
+        if (!account.getUsername().equals(username)){
+            successLabel.setText("ชื่อบัญชีผู้ใช้ไม่ถูกต้อง");
+            successLabel.setStyle("-fx-text-fill: #f61e1e");
+        }
+        else if (!account.getPassword().equals(oldPassword)){
+            successLabel.setText("รหัสผ่านเดิมไม่ถูกต้อง");
+            successLabel.setStyle("-fx-text-fill: #f61e1e");
+        }
+        else if (newPassword.equals("") || confirmPassword.equals("")){
             successLabel.setText("กรอกรหัสผ่านไม่ครบ");
             successLabel.setStyle("-fx-text-fill: #f61e1e");
         } else if (!newPassword.equals(confirmPassword)){
@@ -87,6 +97,8 @@ public class ChangePasswordController {
     public void clearPW(){
         newPasswordField.clear();
         confirmPasswordField.clear();
+        usernameTextField.clear();
+        oldPasswordField.clear();
     }
 
     @FXML

@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
     <children>
       <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
          <children>
@@ -87,11 +87,6 @@
                </font>
             </Label>
             <Label layoutX="89.0" layoutY="65.0" styleClass="fill-color" text="หมวดหมู่" textFill="#4d4d4d">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="97.0" layoutY="457.0" styleClass="fill-color" text="อัพโหลดรูปภาพ" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
