@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StudentComplaintController">
     <children>
       <Pane prefHeight="600.0" prefWidth="147.0" styleClass="bg">
          <children>
@@ -29,7 +29,7 @@
             <Line endX="8.42529296875" layoutX="117.0" layoutY="128.0" startX="-100.0" stroke="WHITE" />
             <Button layoutX="-3.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="32.0" prefWidth="182.0" text="ออกจากระบบ" textFill="WHITE" />
             <Circle fx:id="circle" fill="DODGERBLUE" layoutX="73.0" layoutY="46.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button layoutX="-18.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleedit" prefHeight="32.0" prefWidth="174.0" text="ตั้งค่า" textAlignment="CENTER" textFill="WHITE" />
+            <Button layoutX="-8.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleedit" prefHeight="32.0" prefWidth="174.0" text="ตั้งค่าบัญชี" textAlignment="CENTER" textFill="WHITE" />
             <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/settings.png" />
@@ -69,7 +69,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="520.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #01a57a;" text="แจ้งเรื่อง" textFill="WHITE">
+            <Button layoutX="520.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="35.0" prefWidth="88.0" styleClass="button-admin" text="แจ้งเรื่อง" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

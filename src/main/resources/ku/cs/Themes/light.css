@@ -29,6 +29,10 @@
     -fx-text-fill: #01a57a;
 }
 
+.fill-text-color-green {
+    -fx-text-fill: white;
+}
+
 .bg {
     -fx-background-color: #01a57a;
 }
@@ -43,8 +47,17 @@
     -fx-text-fill: white;
 }
 
+.bg-back-admin {
+    -fx-background-color:  #f1f3f6;
+    -fx-text-fill: white;
+}
+
 .bg-ban {
     -fx-background-color:  #f1f3f6;
+}
+
+.bg-staff {
+    -fx-background-color: #D3D3D3;
 }
 
 
@@ -82,10 +95,15 @@
 }
 
 .button-choose {
-    -fx-background-color: #363636;
+    -fx-background-color: #01a57a;
     -fx-text-fill: white;
-    -fx-background-radius: 15px;
-    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.button-choose:hover {
+    -fx-background-color: #0ac292;
+    -fx-text-fill: white;
 }
 
 .button-login {

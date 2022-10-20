@@ -13,6 +13,11 @@
     -fx-text-fill: white;
 
 }
+
+.fill-text-color-green {
+    -fx-text-fill: #00c5cd;
+}
+
 .edit{
     -fx-text-fill: white;
 }
@@ -73,10 +78,15 @@
 }
 
 .button-choose {
-    -fx-background-color: #363636;
+    -fx-background-color:  #00c5cd;
     -fx-text-fill: white;
-    -fx-background-radius: 15px;
-    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.button-choose:hover {
+    -fx-background-color: #00FFFF;
+    -fx-text-fill: white;
 }
 
 .button-login {
@@ -94,3 +104,8 @@
 .bg-manager {
     -fx-background-color:  black;
 }
+
+.bg-staff {
+    -fx-background-color: black;
+}
+
