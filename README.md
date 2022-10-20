@@ -75,4 +75,5 @@
     * แก้ไขหน้า UI ให้มีความสบายตามากขึ้น, ChangePasswordController, สามารถเปลี่ยนรหัสผ่านได้ **(lemonstonex)**
     * create class Complaint, ComplaintList, ComplaintFileDataSource, นิสิตสามารถแจ้งเรื่องร้องเรียนได้ **(atitaya03)**
     * เพิ่ม method สามารถอัพโหลดรูปได้ **(Punnatud)**
+    * report.fxml, ReportController **(iamnitta)**
 
