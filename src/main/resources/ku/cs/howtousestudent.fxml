@@ -74,7 +74,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="326.0" layoutY="14.0" styleClass="fill-color" text="คู่มือการใช้งาน" textFill="WHITE">
+      <Label layoutX="326.0" layoutY="14.0" styleClass="fill-text-color-green" text="คู่มือการใช้งาน" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>

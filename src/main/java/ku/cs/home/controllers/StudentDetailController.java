@@ -93,7 +93,7 @@ public class StudentDetailController {
         }
     }
     @FXML
-    public void handleedit(MouseEvent mouseEvent){
+    public void handleedit(ActionEvent actionEvent){
         try {
             com.github.saacsos.FXRouter.goTo("edit",student);
         } catch (IOException e) {
