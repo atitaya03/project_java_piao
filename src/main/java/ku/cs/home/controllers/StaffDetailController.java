@@ -32,7 +32,7 @@ public class StaffDetailController {
     @FXML private Label nameLabel;
     @FXML private Label statusLabel;
     @FXML private Label titleLabel;
-    @FXML private Label detailLabel;
+    @FXML private TextArea detailLabel;
 //    @FXML private Label timeLabel;
     @FXML private Label orgLabel;
     @FXML private AnchorPane parent;
@@ -90,6 +90,8 @@ public class StaffDetailController {
         }
         orgLabel.setText(complaint.getCategory());
         organizerLabel.setText(complaint.getOrganizer());
+        detailLabel.setEditable(false);
+        detailLabel.setWrapText(true);
 //        timeLabel.setText(complaint.getTime());
     }
     @FXML

@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffDetailController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.StaffDetailController">
    <children>
       <Pane prefHeight="600.0" prefWidth="800.0" styleClass="bg-back">
          <children>
@@ -39,7 +39,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="managementTextArea" layoutX="41.0" layoutY="271.0" prefHeight="141.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
+                  <TextArea fx:id="managementTextArea" layoutX="46.0" layoutY="272.0" prefHeight="141.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
                   <Label fx:id="titleLabel" layoutX="155.0" layoutY="38.0" styleClass="fill-text-color-blue" text="Header" textFill="#01a57a">
                      <font>
                         <Font size="16.0" />
@@ -50,12 +50,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="detailLabel" layoutX="43.0" layoutY="110.0" prefHeight="106.0" prefWidth="549.0" styleClass="fill-text-color-blue" text="details" textFill="#01a57a">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="statusComboBox" layoutX="509.0" layoutY="298.0" prefHeight="34.0" prefWidth="145.0" promptText="จัดการสถานะ" style="-fx-background-color: #ffffff;" />
+                  <ComboBox fx:id="statusComboBox" layoutX="510.0" layoutY="272.0" prefHeight="34.0" prefWidth="145.0" promptText="จัดการสถานะ" style="-fx-background-color: #ffffff;" />
                   <Label layoutX="46.0" layoutY="38.0" styleClass="fill-color" text="หัวเรื่อง" textFill="#4d4d4d">
                      <font>
                         <Font size="16.0" />
@@ -86,6 +81,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
+                  <TextArea fx:id="detailLabel" layoutX="46.0" layoutY="110.0" prefHeight="124.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
                </children>
             </Pane>
          </children>

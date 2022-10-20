@@ -52,9 +52,6 @@ public class EditController {
         dataSource = new AccountFileDataSource();
         accountList = dataSource.readData();
 
-//        account = (Account) com.github.saacsos.FXRouter.getData();
-
-
         showUserData();
         DetectTheme detectTheme = new DetectTheme(parent,account);
 
@@ -148,7 +145,6 @@ public class EditController {
     }
     @FXML
     public void handleEditButton(ActionEvent actionEvent){
-
         String imageFilePath;
         if(imageFile != null){
             File tempImagePNG = new File("data/profileUsers"+ File.separator+ "temp.png");
