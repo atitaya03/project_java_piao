@@ -9,15 +9,15 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg-back" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" styleClass="bg-back" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.AdminController">
    <children>
       <ListView fx:id="showAccListView" layoutX="38.0" layoutY="88.0" prefHeight="486.0" prefWidth="351.0" />
       <Pane prefHeight="73.0" prefWidth="800.0" styleClass="bg">
          <children>
-            <Button layoutX="308.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReport" styleClass="button-admin" stylesheets="@Themes/light.css" text="รายงานความไม่เหมาะสม" textFill="WHITE" />
-            <Button layoutX="573.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleChangeProfile" styleClass="button-admin" stylesheets="@Themes/light.css" text="แก้ไขโปรไฟล์" textFill="WHITE" />
-            <Button layoutX="670.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" styleClass="button-admin" stylesheets="@Themes/light.css" text="ออกจากระบบ" textFill="WHITE" />
-            <Button layoutX="468.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" styleClass="button-admin" stylesheets="@Themes/light.css" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
+            <Button layoutX="308.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReport" styleClass="button-admin" text="รายงานความไม่เหมาะสม" textFill="WHITE" />
+            <Button layoutX="573.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleChangeProfile" styleClass="button-admin" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+            <Button layoutX="670.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" styleClass="button-admin" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="468.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" styleClass="button-admin" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
             <ImageView fx:id="adminicon" fitHeight="26.0" fitWidth="27.0" layoutX="265.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="modeBtn" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="22.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="33.0" prefWidth="104.0" styleClass="button-mode" text="Light Mode" textAlignment="RIGHT">
                <font>

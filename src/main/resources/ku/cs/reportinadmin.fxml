@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" style="-fx-background-color: #ffffff;" styleClass="bg" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="800" styleClass="bg-back" stylesheets="@Themes/light.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.home.controllers.ReportListController">
    <children>
       <ListView fx:id="showReportList" layoutX="29.0" layoutY="138.0" prefHeight="434.0" prefWidth="344.0" />
       <Pane prefHeight="85.0" prefWidth="800.0" styleClass="bg">
          <children>
-            <Button layoutX="367.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAccountList" styleClass="button-login" stylesheets="@Themes/light.css" text="ข้อมูลผู้ใช้งาน" textFill="WHITE" />
-            <Button layoutX="467.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" styleClass="button-login" stylesheets="@Themes/light.css" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
-            <Button layoutX="672.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" styleClass="button-login" stylesheets="@Themes/light.css" text="ออกจากระบบ" textFill="WHITE" />
-            <Button layoutX="569.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleChangeProfile" styleClass="button-login" stylesheets="@Themes/light.css" text="แก้ไขโปรไฟล์" textFill="WHITE" />
+            <Button layoutX="367.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAccountList" styleClass="button-login" text="ข้อมูลผู้ใช้งาน" textFill="WHITE" />
+            <Button layoutX="467.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleStaffSignUpButton" styleClass="button-login" text="สร้างบัญชีผู้ใช้" textFill="WHITE" />
+            <Button layoutX="672.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="98.0" styleClass="button-login" text="ออกจากระบบ" textFill="WHITE" />
+            <Button layoutX="569.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleChangeProfile" styleClass="button-login" text="แก้ไขโปรไฟล์" textFill="WHITE" />
             <Button fx:id="manageReportAccButton" layoutX="29.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleAccButton" styleClass="button-login" text="รายงานผู้ใช้" textFill="#01a57a">
                <font>
                   <Font size="14.0" />
@@ -29,34 +29,34 @@
       </Pane>
       <Pane fx:id="reportComplaintPane" layoutX="380.0" layoutY="85.0" prefHeight="345.0" prefWidth="385.0">
          <children>
-            <Label fx:id="complaintTitleLabel" layoutX="213.0" layoutY="36.0" text="complaintTitleLabel" textFill="#4d4d4d">
+            <Label fx:id="complaintTitleLabel" layoutX="213.0" layoutY="36.0" styleClass="fill-text-color-blue" text="complaintTitleLabel" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <Label layoutX="14.0" layoutY="36.0" text="เรื่องร้องเรียนที่ถูกรายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="36.0" styleClass="fill-text-color-blue" text="เรื่องร้องเรียนที่ถูกรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="76.0" text="ผู้รายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="76.0" styleClass="fill-text-color-blue" text="ผู้รายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="reporterComplaintLabel" layoutX="162.0" layoutY="76.0" text="reporterLabel" textFill="#4d4d4d">
+            <Label fx:id="reporterComplaintLabel" layoutX="162.0" layoutY="76.0" styleClass="fill-text-color-blue" text="reporterLabel" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <Label layoutX="14.0" layoutY="116.0" text="หัวข้อที่ถูกรายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="116.0" styleClass="fill-text-color-blue" text="หัวข้อที่ถูกรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="ComplaintTypeReportLabel" layoutX="162.0" layoutY="116.0" text="reporterLabel" textFill="#4d4d4d">
+            <Label fx:id="ComplaintTypeReportLabel" layoutX="162.0" layoutY="116.0" styleClass="fill-text-color-blue" text="reporterLabel" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <Label layoutX="14.0" layoutY="152.0" text="รายละเอียดการรายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="152.0" styleClass="fill-text-color-blue" text="รายละเอียดการรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
@@ -68,37 +68,37 @@
       <Button fx:id="banButton" layoutX="421.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleBanButton" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #e13f3f;" text="ระงับการใช้งาน" textFill="WHITE" />
       <Pane fx:id="reportAccountPane" layoutX="380.0" layoutY="85.0" prefHeight="339.0" prefWidth="414.0">
          <children>
-            <Label layoutX="14.0" layoutY="36.0" text="บัญชีที่ถูกรายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="36.0" styleClass="fill-text-color-blue" text="บัญชีที่ถูกรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="152.0" text="รายละเอียดการรายงาน">
+            <Label layoutX="14.0" layoutY="152.0" styleClass="fill-text-color-blue" text="รายละเอียดการรายงาน">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="116.0" text="หัวข้อที่ถูกรายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="116.0" styleClass="fill-text-color-blue" text="หัวข้อที่ถูกรายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="76.0" text="ผู้รายงาน" textFill="#4d4d4d">
+            <Label layoutX="14.0" layoutY="76.0" styleClass="fill-text-color-blue" text="ผู้รายงาน" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="reportedLabel" layoutX="167.0" layoutY="36.0" text="Label" textFill="#4d4d4d">
+            <Label fx:id="reportedLabel" layoutX="167.0" layoutY="36.0" styleClass="fill-text-color-blue" text="Label" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="reporterLabel" layoutX="167.0" layoutY="76.0" text="Label" textFill="#4d4d4d">
+            <Label fx:id="reporterLabel" layoutX="167.0" layoutY="76.0" styleClass="fill-text-color-blue" text="Label" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="reportedTypeLabel" layoutX="167.0" layoutY="116.0" text="Label" textFill="#4d4d4d">
+            <Label fx:id="reportedTypeLabel" layoutX="167.0" layoutY="116.0" styleClass="fill-text-color-blue" text="Label" textFill="#4d4d4d">
                <font>
                   <Font size="15.0" />
                </font>
