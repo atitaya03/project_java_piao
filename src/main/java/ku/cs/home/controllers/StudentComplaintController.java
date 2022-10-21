@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -14,6 +17,7 @@ import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 import ku.cs.services.Parse;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -172,13 +176,12 @@ public class StudentComplaintController {
         }
 
     }
-    @FXML
-    public void handleHowToUseButton(ActionEvent actionEvent){
+    @FXML public void handleHowToUseButton(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("howtostudent",student);
+            Desktop.getDesktop().open(new File("data" + File.separator + "manual.pdf"));
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า howtostudent ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
+            System.out.println("Cannot open manual.pdf");
+            e.printStackTrace();
         }
     }
 

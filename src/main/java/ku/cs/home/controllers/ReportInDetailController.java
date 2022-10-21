@@ -17,6 +17,7 @@ import javafx.scene.shape.Circle;
 import ku.cs.models.*;
 import ku.cs.services.*;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -179,15 +180,15 @@ public class ReportInDetailController {
 
     }
 
-    @FXML
-    public void handleHowToUseButton(ActionEvent actionEvent){
+    @FXML public void handleHowToUseButton(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("howtostudent",student);
+            Desktop.getDesktop().open(new File("data" + File.separator + "manual.pdf"));
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า howtostudent ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
+            System.out.println("Cannot open manual.pdf");
+            e.printStackTrace();
         }
     }
+
     public void clear(){
         reportTypeBox.setValue("");
         subjectBox.setValue("");

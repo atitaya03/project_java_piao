@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -24,6 +25,7 @@ import ku.cs.services.ComplaintFileDataSource;
 import ku.cs.services.DataSource;
 
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -109,7 +111,6 @@ public class StaffController {
     }
 
     private void setLightMode(){
-//        System.out.println(parent.getStylesheets());
         modeBtn.setText("Dark Mode");
         String path = getClass().getResource("/ku/cs/images/darkMode.png").toExternalForm();
         imgMode.setImage(new Image(path));
@@ -118,7 +119,6 @@ public class StaffController {
     }
 
     private void setDarkMode(){
-
         modeBtn.setText("Light Mode");
         String path = getClass().getResource("/ku/cs/images/lightMode.png").toExternalForm();
         imgMode.setImage(new Image(path));
@@ -220,24 +220,18 @@ public class StaffController {
             System.err.println("Cannot reach Dictionary");
         }
     }
-    @FXML
-    public void handledetail(ActionEvent actionEvent) {
+    
+    @FXML public void handleHowToUseButton(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("staffdetail",staff);
+            Desktop.getDesktop().open(new File("data" + File.separator + "manual.pdf"));
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า detail ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
+            System.out.println("Cannot open manual.pdf");
+            e.printStackTrace();
         }
     }
-    @FXML
-    public void handleHowToUseButton(ActionEvent actionEvent){
-        try {
-            com.github.saacsos.FXRouter.goTo("howtostaff",staff);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า howtostudent ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกําหนด route");
-        }
-    }
+
+    
+
 
 
 
