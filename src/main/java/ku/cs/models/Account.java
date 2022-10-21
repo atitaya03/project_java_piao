@@ -25,7 +25,7 @@ public class Account {
         this.username = username;
         this.password = password;
         this.organization = organization;
-        this.imagePath = "data/profileUsers/defaultProfile.jpg";
+        this.imagePath = "data/profileUsers/defaultProfile.png";
         this.isBaned = false;
         this.loginAttempt = 0;
         this.loginTime=getLoginTime();

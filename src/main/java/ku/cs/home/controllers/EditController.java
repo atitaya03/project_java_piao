@@ -161,7 +161,7 @@ public class EditController {
         write = new AccountFileDataSource("data/csv/", "userData.csv");
         write.writeData(accountList,false);
         try {
-            com.github.saacsos.FXRouter.goTo("edit",account);
+            com.github.saacsos.FXRouter.goTo("edit");
         } catch (IOException e) {
             System.err.println("ไปหน้าแรกไม่ได้");
         }
