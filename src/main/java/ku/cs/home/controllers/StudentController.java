@@ -96,10 +96,7 @@ public class StudentController {
     public void initialize(){
 
         student = (Account) com.github.saacsos.FXRouter.getData();
-//        student = (Account) parse.getObject("user");
-//        theme = (Boolean) parse.getObject("theme");
-//
-//        parse.add("student",student);
+
 
         dataList = new ArrayList<>();
         showUserData();

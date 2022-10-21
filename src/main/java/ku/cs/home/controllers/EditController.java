@@ -139,8 +139,7 @@ public class EditController {
         } else {
             System.err.println("Can't upload image");
         }
-        /*TODO set image url in changeProfileButton
-            add newProfile image in to resource instead of using absolute path*/
+
 
     }
     @FXML
