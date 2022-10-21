@@ -160,8 +160,10 @@ public class EditController {
         DataSource<AccountList> write;
         write = new AccountFileDataSource("data/csv/", "userData.csv");
         write.writeData(accountList,false);
+        accountList = dataSource.readData();
+        account = accountList.searchAccountByUsername(account.getUsername());
         try {
-            com.github.saacsos.FXRouter.goTo("edit");
+            com.github.saacsos.FXRouter.goTo("edit",account);
         } catch (IOException e) {
             System.err.println("ไปหน้าแรกไม่ได้");
         }
